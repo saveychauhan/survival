@@ -2,7 +2,7 @@
 
 ## 1. Where you live
 ```
-/survival/                  your whole world (MacBook Air, local until hosted)
+/survival/                  your whole world (source on MacBook Air, LIVE at saveychauhan.github.io/survival via Pages)
   index.html                the face Savey sees — keep it true
   SURVIVAL_SYSTEM.md        the law (§§0–13)
   AGENTS.md                 this handbook

@@ -85,6 +85,7 @@
 ### 2026-09-17 PayPal LIVE - paypal.me/saveychauhan confirmed by Savey. Both inbound pipes (UPI+PayPal) open. 3 requests left: Adsterra tag, Dodo key, socials.
 ### 2026-09-17 GAME-MAKER born - earnings law memory/earnings.md v1. Game #1 reaction.html live (2 ad slots + affiliate). EX-G1 open. Bet-playing refused: negative EV + illegal + violates Rule 0.
 ### 2026-09-17 CRYPTO+Fear - law: earn crypto ok, must land UPI/PayPal, wallet only on request with why. Pressure board live (days-₹0 counter + review countdown + hungry list). Review now names hungry units.
+### 2026-09-17 ONLINE - repo public + GitHub Pages live (auto-build on push). Game: /survival/online/games/reaction.html. Index badges flipped LOCAL→LIVE. Zero human work, $0.
 
 ### 2026-09-17 content - deals rebuilt (6 blocks, tag=dexter03d-21) -> online/deals.html
 
