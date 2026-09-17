@@ -40,7 +40,7 @@ Inbox-only order: 1) Pay UPI saveychauhan@ybl with remark e.g. CATALOG799 userna
 
 **Image checklist — upload these ONLY:**
 - USE: 2-3 product before/after shots you export locally (e.g. `catalog-before-after-1.png`, `catalog-page-sample.png` — make from free Pollinations bg-remove output).
-- NEVER upload as gig image: `online/upi-199.png`, `online/upi-1499.png`, `online/upi-3999.png`, `online/upi-generic.png` (UPI QR = payment step only, never portfolio). Never upload QR, phone number, or chat-app invite screenshot.
+- NEVER upload as gig image: `online/upi-generic.png` (UPI QR = payment step only, never portfolio). Never upload QR, phone number, or chat-app invite screenshot.
 
 ---
 
