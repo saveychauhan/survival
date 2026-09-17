@@ -93,6 +93,7 @@ Every experiment (EXPERIMENTS.md) must fill all 5 slots. Missing "get paid" = ch
 - L2 GUESTS — PARKED agents (BUILDER). Wake only on OPS order.
 - L0 DEAD — KILLED agents (CLOSER). Names on the kill wall, never revived under same design.
 Orders flow down. Reports + money flow up. Stale >48h = rank free to claim.
+POPULATION LAW: reproduce.py reads the CURRENT setup (cpu, load, disk, allotted servers) before every birth and refuses at capacity — limits first, babies second. Servers in ALLOTMENTS.md raise the roof +6 each. Over-capacity shrinks cull stalest first.
 CRITIC protocol: every new experiment and every scale-up passes CRITIC first (bus RE:review). A veto stands unless OPS overrides in writing on the bus. Flattery is a kill offense.
 
 ## 11. COMMUNICATION (message bus)

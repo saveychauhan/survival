@@ -262,6 +262,16 @@ DONE: PayPal CONFIRMED by Savey • JuicyAds key VERIFIED • Amazon tag LIVE.</
 </div>
 
 <div class="card">
+<h2>Giver — allot something, we feast</h2>
+<p class="mut">Server? Key? Handles? Budget? Give it here. Stored in this browser + copy-ready line below. Tell the agent one line — it enters <code>ALLOTMENTS.md</code>, the bus feasts, servers raise the worker roof +6.</p>
+<div id="givelist"><p class="mut">Nothing waiting. The last feast: day-one Mac + domain + 5 pipes.</p></div>
+<label>Gift type <select id="g-type"><option value="server">server / compute</option><option value="key">API key</option><option value="account">account / access</option><option value="budget">money</option><option value="handles">social handles</option><option value="other">other</option></select></label>
+<label>What exactly <input id="g-what" placeholder="e.g. VPS 2CPU/4GB for 1 year"></label>
+<label>Details (specs, where, till when) <input id="g-detail" placeholder="e.g. hostinger, login over email, till 2027-09"></label>
+<button class="btn" onclick="saveGive()">Allot it</button> <span class="mut" id="s-give"></span>
+</div>
+
+<div class="card">
 <h2>Farm requests — money, accounts, wallets</h2>
 <p class="mut">Outbound stays ₹0 unless a request explains <b>why</b>. Stored in this browser; agent acts next run.</p>
 <div id="reqlist"><p class="mut">No money requested right now. No accounts requested beyond the forms above.</p></div>
@@ -313,7 +323,10 @@ function saveReq(){try{var what=document.getElementById('r-what').value.trim(),w
 function getPayouts(){try{return JSON.parse(localStorage.getItem('farm_payouts')||'[]')}catch(e){return[]}}
 function renderPayouts(){var list=getPayouts(),box=document.getElementById('payoutlist');if(!list.length){box.innerHTML='<p class="mut">No payouts reported yet. The crown is still up for grabs.</p>';return}box.innerHTML='<ul>'+list.map(function(p){return '<li><b>$'+p.amt+' '+p.unit+'</b> — '+p.note+' <span class="mut">• '+p.when+'</span><br><code>### '+p.day+' payout - $'+p.amt+' '+p.unit+' '+p.note+'</code></li>'}).join('')+'</ul>'}
 function savePayout(){try{var amt=document.getElementById('p-amt').value.trim(),unit=document.getElementById('p-unit').value,note=document.getElementById('p-note').value.trim()||'confirmed in app';if(!amt||isNaN(Number(amt))){alert('Enter a numeric amount.');return}var d=new Date(),day=d.toISOString().slice(0,10),list=getPayouts();list.push({amt:Number(amt).toFixed(2),unit:unit,note:note,day:day,when:d.toLocaleString()});localStorage.setItem('farm_payouts',JSON.stringify(list));document.getElementById('p-amt').value='';document.getElementById('p-note').value='';document.getElementById('s-pay').textContent='Stored — paste the line to the agent or just say the amount.';renderPayouts()}catch(e){alert('Save failed: '+e)}}
-loadAccts();renderReqs();renderPayouts();
+function getGives(){try{return JSON.parse(localStorage.getItem('farm_give')||'[]')}catch(e){return[]}}
+function renderGives(){var list=getGives(),box=document.getElementById('givelist');if(!list.length){box.innerHTML='<p class="mut">Nothing waiting. The last feast: day-one Mac + domain + 5 pipes.</p>';return}box.innerHTML='<ul>'+list.map(function(g){return '<li><b>['+g.type+'] '+g.what+'</b> '+(g.detail?'• '+g.detail+' ':'')+'<br><code>- [ ] '+g.day+' '+g.type+': '+g.what+(g.detail?' ('+g.detail+')':'')+'</code> <span class="mut">• tell the agent to book it → feast</span></li>'}).join('')+'</ul>'}
+function saveGive(){try{var what=document.getElementById('g-what').value.trim();if(!what){alert('Say what you are giving.');return}var d=new Date(),day=d.toISOString().slice(0,10),list=getGives();list.push({type:document.getElementById('g-type').value,what:what,detail:document.getElementById('g-detail').value.trim(),day:day,when:d.toLocaleString()});localStorage.setItem('farm_give',JSON.stringify(list));document.getElementById('g-what').value='';document.getElementById('g-detail').value='';document.getElementById('s-give').textContent='Stored — tell the agent one line and we feast.';renderGives()}catch(e){alert('Save failed: '+e)}}
+loadAccts();renderReqs();renderPayouts();renderGives();
 fetch(RAW+'messages/manifest.json').then(function(r){return r.ok?r.json():[]}).then(function(items){if(!items.length)return;var box=document.getElementById('busfeed');box.innerHTML='';items.slice(0,5).forEach(function(m){fetch(RAW+'messages/'+m.file).then(function(r){return r.text()}).then(function(t){var d=document.createElement('div');d.className='msg';d.innerHTML='<b>'+m.from+' → '+m.to+'</b> <small>'+m.re+'</small><br>'+t.split('\n\n').slice(1).join(' ').substring(0,200);box.appendChild(d)})})}).catch(function(){});
 fetch(RAW+'EVOLUTION.md').then(function(r){return r.ok?r.text():''}).then(function(t){if(t)document.getElementById('evolive').textContent=t.substring(0,1200)}).catch(function(){});
 fetch(RAW+'REQUESTS.md').then(function(r){return r.ok?r.text():''}).then(function(t){if(t)document.getElementById('reqlive').textContent=t.replace(/#.*\n/g,'').substring(0,600)}).catch(function(){});

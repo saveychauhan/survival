@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
 """Daily reproduction — births ONE worker per day with a fresh identity + money goal.
-Cap 12 living workers; beyond that the stalest zero-earning worker is culled
-to sessions/graveyard/ (fear keeps the gene pool fit).
+BEFORE birth it reads the CURRENT setup (cpu, load, disk, allotted servers)
+and refuses when at capacity — limits first, babies second.
+Over capacity (limits shrank) → culls stalest to sessions/graveyard/.
 Zero human work, stdlib only, exit 0 always. Logs LEDGER + EVOLUTION + bus.
 """
 import datetime
+import os
 import pathlib
+import re
 import shutil
 
 WS = pathlib.Path("/Users/saveychauhan/Documents/Dexter/survival")
@@ -13,6 +16,7 @@ SESS = WS / "sessions"
 GRAVE = SESS / "graveyard"
 LEDGER = WS / "LEDGER.md"
 EVO = WS / "EVOLUTION.md"
+ALLOT = WS / "ALLOTMENTS.md"
 MAX_WORKERS = 12
 
 NAMES = ["Aria", "Kabir", "Lena", "Ravi", "Mira", "Omar", "Tara", "Felix",
@@ -28,6 +32,36 @@ MANAGERS = {"EU-AFF": "TRAFFIC", "EU-CONTENT": "TRAFFIC", "EU-GAME": "GAME-MAKER
 
 def workers():
     return sorted(SESS.glob("W[0-9][0-9]_*.md"))
+
+
+def capacity():
+    """How many agents may run here. Reads the CURRENT setup, not wishes.
+    Base: cpu*3 clamped 3..12, disk<5GB squeezes to 4, load>cpu halves it.
+    Each allotted server home in ALLOTMENTS.md adds +6 roof."""
+    cpu = os.cpu_count() or 2
+    try:
+        load = os.getloadavg()[0]
+    except Exception:
+        load = 0.0
+    disk_gb = shutil.disk_usage(str(WS)).free // (2 ** 30)
+    cap = min(MAX_WORKERS, max(3, cpu * 3))
+    reasons = [f"cpu{cpu}", f"load{load:.1f}", f"disk{disk_gb}GB"]
+    if disk_gb < 5:
+        cap = min(cap, 4)
+        reasons.append("disk-squeeze")
+    if load > cpu:
+        cap = max(3, cap // 2)
+        reasons.append("load-squeeze")
+    servers = 0
+    try:
+        t = ALLOT.read_text()
+        servers = len(re.findall(r"^- \[x\] \d{4}-\d{2}-\d{2} server:", t, re.M))
+    except Exception:
+        pass
+    if servers:
+        cap += servers * 6
+        reasons.append(f"+{servers * 6} server-roof")
+    return cap, ",".join(reasons)
 
 
 def log(msg):
@@ -54,17 +88,34 @@ def bus(frm, to, re, body):
 
 
 def main():
-    today = datetime.date.today().isoformat().replace("-", "")
+    today = datetime.date.today().isoformat()
+
+    def born_today(p):
+        try:
+            st = p.stat()
+            ts = getattr(st, "st_birthtime", st.st_mtime)
+            return datetime.date.fromtimestamp(ts).isoformat() == today
+        except Exception:
+            return False
+
     alive = workers()
-    if any(today in p.name for p in alive):
+    if any(born_today(p) for p in alive):
         print("reproduce: today's worker already born")
         return
-    if len(alive) >= MAX_WORKERS:
+    cap, why = capacity()
+    if len(alive) > cap:
         victim = min(alive, key=lambda p: p.stat().st_mtime)
         GRAVE.mkdir(exist_ok=True)
         shutil.move(str(victim), str(GRAVE / victim.name))
-        log(f"CULLED {victim.stem} (cap {MAX_WORKERS}, stalest first)")
-        alive = workers()
+        msg = f"CULLED {victim.stem} (over cap {len(alive)}/{cap} [{why}], stalest first)"
+        log(msg)
+        bus("OPS", "ALL", "culled", msg + " NEED: none, room made.")
+        return
+    if len(alive) >= cap:
+        msg = f"AT CAPACITY ({len(alive)}/{cap} [{why}]) — no birth. New server raises the roof."
+        log(msg)
+        bus("OPS", "ALL", "at-capacity", msg + " NEED: server.")
+        return
     n = max([int(p.name[1:3]) for p in alive], default=0) + 1
     i = (n - 1) % len(NAMES)
     wid, name = f"W{n:02d}", NAMES[i]

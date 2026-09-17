@@ -7,6 +7,20 @@
   "ts": "OPS-20260917-1147"
  },
  {
+  "file": "MSG-OPS-ALL-20260917-1343.md",
+  "from": "OPS",
+  "to": "ALL",
+  "re": "feast-law",
+  "ts": "20260917-1343"
+ },
+ {
+  "file": "MSG-OPS-W02-20260917-1341.md",
+  "from": "OPS",
+  "to": "W02",
+  "re": "born",
+  "ts": "20260917-1341"
+ },
+ {
   "file": "MSG-OPS-W01-20260917-1335.md",
   "from": "OPS",
   "to": "W01",
