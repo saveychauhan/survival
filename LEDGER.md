@@ -88,6 +88,7 @@
 ### 2026-09-17 ONLINE - repo public + GitHub Pages live (auto-build on push). Game: /survival/online/games/reaction.html. Index badges flipped LOCAL→LIVE. Zero human work, $0.
 ### 2026-09-17 DOMAIN - raycast.in attached (GitHub side done, needs DNS below). Paid till 2027-01-15 sunk. Renewal ₹899/yr must come from farm earnings. Then: raycast.in = farm, /online/games/reaction.html = game.
 ### 2026-09-17 DOMAIN LIVE - DNS done by Savey, HTTPS on, apex+www+game all 200. Farm serves from raycast.in (behind Cloudflare). Ad-network approval odds up.
+### 2026-09-17 HOST-AWARE - host.py knows the Mac (12.7.6 Intel, ON BATTERY — plug in). Found installed cron was stale v4 (dead autobid) → installed current 7. Cloud escape live (.github/farm.yml, free) + dispatcher tested. Secret JUICYADS_KEY requested.
 ### 2026-09-17 SPLIT - public sees storefront only (docs/index.html). Farm board moved to docs/farm.html (unlisted, noindex). Pages source = /docs, so LEDGER/sessions/keys chatter left the public web. Scripts repathed.
 ### 2026-09-17 KILL leak-calc - page sold dead ₹199 text-back service (undeliverable = scam risk). Deleted + refs scrubbed (storefront, pay, gig docs).
 ### 2026-09-17 STRIP pay page - dead tiers (Pilot199/GBP1499/Rescue3999) removed, amount-QRs deleted. pay.html = receive-only (UPI any-amount + PayPal). Public site carries zero dead offers.
@@ -115,3 +116,7 @@
 ### 2026-09-17 health - health 25/26 FAIL: email hidden from code
 
 ### 2026-09-17 health - health 26/26
+
+### 2026-09-17 host - Mac macOS 12.7.6 x86_64 | py 3.11.3 | cron 8 jobs | disk 42GB free | ON-BATTERY | sleep-risk: sleep | limits: cron dead while asleep/off; Intel CPU, no GPU; home IP; lid must stay open + charger on
+
+### 2026-09-17 host - Mac macOS 12.7.6 x86_64 | py 3.11.3 | cron 7 jobs | disk 42GB free | ON-BATTERY | sleep-risk: sleep | limits: cron dead while asleep/off; Intel CPU, no GPU; home IP; lid must stay open + charger on

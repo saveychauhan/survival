@@ -119,9 +119,15 @@ Orders flow down. Reports + money flow up. Stale >48h = rank free to claim.
 - Conversion path is part of the request: which exchange/P2P → UPI/PayPal, fee, time. If conversion costs >10% of payout, the earning is rejected as unfit.
 - Betting/staking/yield with farm crypto = instant kill (negative EV + Rule 0).
 
-## 15. FEAR (why agents hurry)
-- Every Sunday 18:00 review names the HUNGRY (units with 0 payouts) and counts days alive with ₹0. Hunger is public on index.
+## 15. FEAR (why agents hurry)- Every Sunday 18:00 review names the HUNGRY (units with 0 payouts) and counts days alive with ₹0. Hunger is public on index.
 - 14 days, ₹0, and a unit shows no experiment motion → kill review. 60 days farm-wide ₹0 → content pauses, ads keep running (cost 0), OPS reports what dies next.
 - FOMO is fuel: hall of fame empty, first payout takes the crown + STAR + first resource pick. Second payout clones ×3. Slow agents watch earners get promoted past them.
 - Fear never fakes numbers: counters derive from LEDGER + birth date only. No vanity, no mercy, no lies.
+
+## 16. HOST (the farm knows where it lives)
+- Home: MacBook Air Intel, macOS (see `scripts/host.py` output in LEDGER). Mac cron runs 7 jobs — but ONLY while the Mac is awake, on power, lid open. Sleep/off = dead farm. Savey: keep it plugged in.
+- Limits: no GPU, home IP, no static server, Python stdlib only, cron can't survive sleep.
+- ESCAPE (live): GitHub Actions cloud runner (`.github/workflows/farm.yml`, free public-repo minutes) runs the same jobs on schedule + commits results back. Mac cron stays as backup; all jobs idempotent so double-runs are harmless.
+- Secret `JUICYADS_KEY` (repo Settings → Secrets → Actions, 1 paste) unlocks cloud stats. Without it, cloud runs everything except stats. Request lives in REQUESTS.md.
+- New hosts welcome: any machine with python3 + this repo checked out can run `scripts/cloud_run.py` — the farm is portable by design.
 Nothing else needed. No calls, no fulfillment, no manual gigs — ever.
