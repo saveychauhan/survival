@@ -3,6 +3,8 @@ __pycache__/
 .DS_Store
 logs/*.log
 keys.local.json
+# .github/workflows/farm.yml needs a workflow-scope token to push — unignore when granted
+.github/workflows/farm.yml
 .env*
 *-key*.txt
 *-key*.json
