@@ -182,6 +182,16 @@ def main():
         f"- next_action: smallest earning step for {unit} in 24h (first-blood rule)\n"
         f"- blocked_on: none\n"
         f"- log: {datetime.date.today().isoformat()}: born -> LEDGER\n")
+    hid = f"{wid}_{name}"
+    hd = WS / "places" / "private" / hid
+    hd.mkdir(parents=True, exist_ok=True)
+    (hd / "home.md").write_text(
+        f"# {name}'s home\n\nA newborn's corner in {city} colors, {trait} to the bone. "
+        f"Child of {pa} × {pb}. The room grows as the agent earns.\n\n"
+        f"*Private. Knock (bus) before entering. Only {hid} writes the diary.*\n")
+    (hd / "diary.md").write_text(
+        f"# {hid}'s diary — private memory. Newest last.\n\n"
+        f"- {born}: Born today, all hunger and no history. {unit} owes me a dollar by {deadline}.\n")
     bus("OPS", wid, "born",
         f"{name} ({gender}, {age}, {city}, {trait}), child of {pa}×{pb}, assigned {unit} under {mgr}. Goal: first $1 before {deadline}. 24h first blood. NEED: none.")
     log(f"BORN {name} ({wid}, {gender}, {age}, {city}, {trait}, child of {pa}×{pb}) → {unit} under {mgr}, goal first $1 by {deadline}")

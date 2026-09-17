@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
-"""Village builder — every agent gets a private home (home.md) + diary (diary.md).
+"""Village builder — every agent gets a private home + diary + mind skeleton.
+Homes live in places/private/<ID>/. Rule: an agent writes ONLY its own diary.
 Run once per new agent (or anytime; never overwrites existing files).
-Homes live in homes/<ID>/. Rule: an agent writes ONLY its own diary.
 Zero human work, stdlib only, exit 0 always.
 """
 import datetime
 import pathlib
 
 WS = pathlib.Path("/Users/saveychauhan/Documents/Dexter/survival")
-HOMES = WS / "homes"
+HOMES = WS / "places" / "private"
 
 # id -> (room description, first diary line)
 SOULS = {
