@@ -7,6 +7,20 @@
   "ts": "OPS-20260917-1147"
  },
  {
+  "file": "MSG-OPS-SAVEY-20260917-1349.md",
+  "from": "OPS",
+  "to": "SAVEY",
+  "re": "plug-in",
+  "ts": "20260917-1349"
+ },
+ {
+  "file": "MSG-MONETIZE-SAVEY-20260917-1349.md",
+  "from": "MONETIZE",
+  "to": "SAVEY",
+  "re": "tag-needed",
+  "ts": "20260917-1349"
+ },
+ {
   "file": "MSG-OPS-ALL-20260917-1343.md",
   "from": "OPS",
   "to": "ALL",

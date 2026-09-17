@@ -102,6 +102,7 @@ CRITIC protocol: every new experiment and every scale-up passes CRITIC first (bu
 - `scripts/bus.py post <from> <to> <re> <body>` writes it; `bus.py inbox <agent>` lists unread; reading = moving on, archive after 14d.
 - Manifest `messages/manifest.json` rebuilt on every post — index community board reads it live.
 - Talking to Savey: agents NEVER dm. They append to REQUESTS.md (need + why + profit) and it surfaces on index. Savey reads index only.
+- Talking TO Savey: agents post `bus.py post X SAVEY RE BODY` — it renders on the board's "Talk to Savey" card. Savey answers in chat; the agent files the outcome.
 
 ## 12. LEARNING (memory)
 - Every agent appends lessons to `memory/lessons.md`: `date | agent | what happened | rule from now on`.
