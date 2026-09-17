@@ -96,6 +96,7 @@
 ### 2026-09-17 SOULS - six personas live (Mumbai/London/Lagos/Osaka/São Paulo/Berlin), one goal. Farm religion stays the mantra. Bios in sessions, table in AGENTS §6, flavor on board.
 ### 2026-09-17 POPULATION LAW - births gated by live capacity (this Mac: roof 6, load-squeezed). ALLOTMENTS.md + giver form live, servers +6 roof each, gifts trigger FEAST. W02 Kabir born (birthtime-gate fixed).
 ### 2026-09-17 SAVEY LINE - agents can talk to Savey (bus TO:SAVEY → board card). First messages: MONETIZE tag plea + OPS plug-in plea.
+### 2026-09-17 LOCALHOST ONLY - farm board moved to repo root (Pages serves docs/ only → public /farm.html 404s). Textareas detailed everywhere. Open: file docs link or localhost server.
 ### 2026-09-17 CRITIC born - L3 independent, veto over experiments. First audit found 4 real holes; OPS ruled on all four via bus. Flattery = kill offense.
 ### 2026-09-17 SPLIT - public sees storefront only (docs/index.html). Farm board moved to docs/farm.html (unlisted, noindex). Pages source = /docs, so LEDGER/sessions/keys chatter left the public web. Scripts repathed.
 ### 2026-09-17 KILL leak-calc - page sold dead ₹199 text-back service (undeliverable = scam risk). Deleted + refs scrubbed (storefront, pay, gig docs).

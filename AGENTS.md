@@ -42,7 +42,7 @@ EU-CONTENT (auto pages), EU-GAME (owned games). Money flows up, orders flow down
 | scorecard | scripts/scorecard.py | ranks agents by payouts then messages; board reads SCORECARD.md |
 | stats pull | scripts/juicyads_stats.py | MONETIZE: daily auto (curl fallback inside); never paste key in code |
 | health audit | scripts/health.py | Sun 17:00 auto: files, links, tags, leaks, cron, live site; fix FAILs same day |
-| index dashboard | docs/index.html = PUBLIC storefront, docs/farm.html = PRIVATE board (unlisted, noindex) | facts only, farm.html fetches repo RAW for live boards |
+| index dashboard | docs/index.html = PUBLIC storefront, farm.html (repo ROOT, never in docs/) = PRIVATE board for localhost only | facts only, farm.html fetches repo RAW for live boards |
 | ad slots | `<!-- ADSTERRA -->` / `<!-- JUICYADS -->` comments in pages | bake tags the hour codes land; never invent tag formats |
 | affiliate tag | dexter03d-21 | every amazon.in link carries `&tag=dexter03d-21`; shop link in footers |
 | inbound pipes | UPI saveychauhan@ybl + paypal.me/saveychauhan | receive-only; never promise refunds; pay.html is the single pay page |
