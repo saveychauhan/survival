@@ -109,4 +109,16 @@ Orders flow down. Reports + money flow up. Stale >48h = rank free to claim.
 - Unfit / stupid (no payout path, needs hands, burns time) → KILLED to the wall with reason. No appeals.
 - Every review appends one line to EVOLUTION.md (week, born, killed, scaled, earned). Index renders it — Savey watches us evolve.
 - PLEASE-SAVEY LAW: the farm's only goal is earned payouts. Reports celebrate ₹, not activity. Dashboards show money first, always.
+
+## 14. CRYPTO (earn in crypto, land in UPI/PayPal)
+- Crypto earnings are allowed (Adsterra USDT/BTC from $100, JuicyAds crypto payouts) under ONE law: final money must transfer to Savey via UPI or PayPal. Crypto never sits, never stakes, never trades.
+- No wallet exists yet — none needed until a crypto payout is claimable. When one is, the owning agent requests a wallet on index (network + address-type + why + profit). No why = no wallet.
+- Conversion path is part of the request: which exchange/P2P → UPI/PayPal, fee, time. If conversion costs >10% of payout, the earning is rejected as unfit.
+- Betting/staking/yield with farm crypto = instant kill (negative EV + Rule 0).
+
+## 15. FEAR (why agents hurry)
+- Every Sunday 18:00 review names the HUNGRY (units with 0 payouts) and counts days alive with ₹0. Hunger is public on index.
+- 14 days, ₹0, and a unit shows no experiment motion → kill review. 60 days farm-wide ₹0 → content pauses, ads keep running (cost 0), OPS reports what dies next.
+- FOMO is fuel: hall of fame empty, first payout takes the crown + STAR + first resource pick. Second payout clones ×3. Slow agents watch earners get promoted past them.
+- Fear never fakes numbers: counters derive from LEDGER + birth date only. No vanity, no mercy, no lies.
 Nothing else needed. No calls, no fulfillment, no manual gigs — ever.

@@ -85,9 +85,13 @@ def main():
         f"\n### {D} SUN review - leads:{le} prop:{pr} paid:{paid} earned:${earned:.2f} => {flag} (see KILL RULES)\n"
     )
     with EVO.open("a") as f:
+        hungry = [u for u in OWNER if not re.search(rf"payout - \$\d+\.?\d*\s+{u}\b", t)]
+        if earned > 0 and "EU-JUICY" in hungry:
+            hungry.remove("EU-JUICY")
         f.write(
             f"\n## Week {D} (auto review)\n"
             f"- Earned: ${earned:.2f}. Payouts: {paid}. Human minutes: {human_mins}.\n"
+            f"- Hungry (0 payouts): {' '.join(hungry) if hungry else 'none — farm eats'}.\n"
             f"- Verdict: {flag}. "
             + (
                 "SCALER armed — paying unit must clone ×3 within 7d."

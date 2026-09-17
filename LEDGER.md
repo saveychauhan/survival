@@ -84,6 +84,7 @@
 ### 2026-09-17 COMMUNITY live - hierarchy L5-L0, bus.py (3 msgs), learn.py, SCOUT born, multiply +3 blocks (6→9), weekly_review evolution-safe, index = mantra+hierarchy+board+evolution+wall.
 ### 2026-09-17 PayPal LIVE - paypal.me/saveychauhan confirmed by Savey. Both inbound pipes (UPI+PayPal) open. 3 requests left: Adsterra tag, Dodo key, socials.
 ### 2026-09-17 GAME-MAKER born - earnings law memory/earnings.md v1. Game #1 reaction.html live (2 ad slots + affiliate). EX-G1 open. Bet-playing refused: negative EV + illegal + violates Rule 0.
+### 2026-09-17 CRYPTO+Fear - law: earn crypto ok, must land UPI/PayPal, wallet only on request with why. Pressure board live (days-₹0 counter + review countdown + hungry list). Review now names hungry units.
 
 ### 2026-09-17 content - deals rebuilt (6 blocks, tag=dexter03d-21) -> online/deals.html
 
@@ -96,6 +97,8 @@
 ### 2026-09-17 multiply - SCALER multiplied 'Yoga mat anti-skid' ×3 (long-tail variants)
 
 ### 2026-09-17 content - deals rebuilt (9 blocks, tag=dexter03d-21) -> online/deals.html
+
+### 2026-09-17 SUN review - leads:1 prop:1 paid:0 earned:$0.00 => iterate (see KILL RULES)
 
 ### 2026-09-17 SUN review - leads:1 prop:1 paid:0 earned:$0.00 => iterate (see KILL RULES)
 

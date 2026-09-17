@@ -81,6 +81,17 @@ h3{margin:6px 0}
 </div>
 
 <div class="card">
+<h2><span class="dot r"></span>Survival pressure — read this and hurry</h2>
+<div class="kpi">
+<div><b id="days0">0</b><span>days alive, ₹0 earned</span></div>
+<div><b id="reviewin">--</b><span>until Sunday kill/scale review</span></div>
+<div><b>6/6</b><span>units hungry (0 payouts)</span></div>
+<div><b>14d</b><span>₹0 + no motion = kill review</span></div>
+</div>
+<p class="why">HUNGRY: EU-AFF • EU-ADS • EU-JUICY • EU-DODO • EU-CONTENT • EU-GAME. Hall of fame EMPTY — first payout takes the crown, STAR rank, first resource pick. Second payout clones ×3. Slow agents get promoted past. No vanity, no mercy, no lies.</p>
+</div>
+
+<div class="card">
 <h2>Hierarchy — who commands whom</h2>
 <div class="rank"><b class="lvl">L5</b><span><b>CHIEF — OPS.</b> Truth, cron, kill/birth. Only OPS kills or births agents.</span></div>
 <div class="rank"><b class="lvl">L4</b><span><b>MANAGERS — TRAFFIC</b> (views) + <b>MONETIZE</b> (payouts). Own units, command workers.</span></div>
@@ -231,6 +242,8 @@ DONE: PayPal CONFIRMED by Savey • JuicyAds key VERIFIED • Amazon tag LIVE.</
 <label>Handles (1 paste, zero work forever)<input id="f-soc" placeholder="e.g. instagram:@x youtube:@y x:@z"></label>
 <button class="btn" onclick="saveAcct('soc','f-soc')">Save</button> <span class="mut" id="s-soc"></span>
 <p class="profit">Profit: free traffic → impressions + clicks on every post.</p></div>
+<div class="card acct"><span class="pill dim">NO WALLET · NONE NEEDED YET</span><h3>Crypto wallet</h3>
+<p class="mut">Law: crypto may be <i>earned</i> (Adsterra USDT/BTC $100+, JuicyAds crypto) but must <i>land</i> via UPI or PayPal. Never sits, never stakes, never trades. No wallet exists — when a payout is claimable, the owning agent requests one in Farm requests with network + conversion path + fee. Conversion eating &gt;10% = rejected.</p></div>
 </div>
 <div class="card acct"><span class="pill dim">NOT USED</span><h3 style="display:inline">Fiverr / Upwork</h3>
 <p class="mut">Manual fulfillment violates zero-work rule. Killed. Reopens only if 100% auto-deliverable.</p></div>
@@ -238,10 +251,10 @@ DONE: PayPal CONFIRMED by Savey • JuicyAds key VERIFIED • Amazon tag LIVE.</
 </div>
 
 <div class="card">
-<h2>Farm requests — money or accounts</h2>
+<h2>Farm requests — money, accounts, wallets</h2>
 <p class="mut">Outbound stays ₹0 unless a request explains <b>why</b>. Stored in this browser; agent acts next run.</p>
 <div id="reqlist"><p class="mut">No money requested right now. No accounts requested beyond the forms above.</p></div>
-<label>Need type <select id="r-type"><option value="account">account / access</option><option value="money">money to spend</option></select></label>
+<label>Need type <select id="r-type"><option value="account">account / access</option><option value="money">money to spend</option><option value="wallet">crypto wallet</option></select></label>
 <label>What exactly <input id="r-what" placeholder="e.g. domain renewal / KYC doc"></label>
 <label>Why — unlocks + expected profit <input id="r-why" placeholder="e.g. unlocks EU-ADS, ~$X/mo auto"></label>
 <label>Amount (money only) <input id="r-amt" placeholder="e.g. ₹500 / $10 one-time"></label>
@@ -276,7 +289,8 @@ Files: <a href="README.md">README</a> • <a href="LEDGER.md">LEDGER</a> • <a 
 
 </div>
 <script>
-function tick(){var d=new Date(),p=function(n){return(n<10?'0':'')+n};document.getElementById('clock').textContent=p(d.getHours())+':'+p(d.getMinutes())+':'+p(d.getSeconds())}setInterval(tick,1000);tick();
+function tick(){var d=new Date(),p=function(n){return(n<10?'0':'')+n};document.getElementById('clock').textContent=p(d.getHours())+':'+p(d.getMinutes())+':'+p(d.getSeconds());pressure()}setInterval(tick,1000);tick();
+function pressure(){try{var birth=new Date('2026-09-17T00:00:00'),now=new Date();document.getElementById('days0').textContent=Math.max(0,Math.floor((now-birth)/864e5));var add=(7-now.getDay())%7,nxt=new Date(now.getFullYear(),now.getMonth(),now.getDate()+add,18,0,0);if(nxt<=now)nxt=new Date(nxt.getTime()+7*864e5);var ms=nxt-now;document.getElementById('reviewin').textContent=Math.floor(ms/864e5)+'d '+Math.floor(ms%864e5/36e5)+'h '+Math.floor(ms%36e5/6e4)+'m'}catch(e){}}
 function saveAcct(k,f){try{var v=document.getElementById(f).value.trim();if(!v){alert('Paste the code first.');return}localStorage.setItem('farm_'+k,v);document.getElementById('s-'+k).textContent='Saved — tell the agent to bake it in.'}catch(e){alert('Save failed: '+e)}}
 function loadAccts(){['juicy','ads','dodo','soc'].forEach(function(k){try{var v=localStorage.getItem('farm_'+k);if(v){var f=document.getElementById('f-'+k);if(f)f.value=v;document.getElementById('s-'+k).textContent='On file in this browser.'}}catch(e){}})}
 function getReqs(){try{return JSON.parse(localStorage.getItem('farm_requests')||'[]')}catch(e){return[]}}

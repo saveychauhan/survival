@@ -45,3 +45,8 @@
 
 ## 10. Scale law
 - ≥2 payouts + 0 human min → clone ×3 within 7d. Raise Dodo price +25% per 3 sales. Every Sunday review scores ₹ ÷ human-min.
+
+## 11. Crypto rails (earn crypto, land fiat)
+- Allowed networks pay crypto: Adsterra (USDT/BTC, min $100), JuicyAds (crypto option). Income only — never stake, trade, or hold.
+- Iron law: every crypto payout converts to UPI or PayPal. Request the wallet on index with network + conversion path + fee; reject if conversion eats >10%.
+- No wallet needed until a payout is claimable. Keys/addresses store local-only, never in repo.
