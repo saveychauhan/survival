@@ -36,6 +36,8 @@ EU-CONTENT (auto pages), EU-GAME (owned games). Money flows up, orders flow down
 | earnings law | memory/earnings.md | check EV before any idea; negative EV = dead on arrival |
 | content engine | scripts/auto_content.py + docs/online/deals_data.json | TRAFFIC: add/swap 1 block per week, rebuild, log |
 | multiplier | scripts/multiply.py | SCALER: run on 2nd payout of a unit, log LEDGER + EVOLUTION |
+| reproducer | scripts/reproduce.py | births 1 worker/day (identity + $1 goal), cap 12, culls stalest |
+| scorecard | scripts/scorecard.py | ranks agents by payouts then messages; board reads SCORECARD.md |
 | stats pull | scripts/juicyads_stats.py | MONETIZE: daily auto (curl fallback inside); never paste key in code |
 | health audit | scripts/health.py | Sun 17:00 auto: files, links, tags, leaks, cron, live site; fix FAILs same day |
 | index dashboard | docs/index.html = PUBLIC storefront, docs/farm.html = PRIVATE board (unlisted, noindex) | facts only, farm.html fetches repo RAW for live boards |

@@ -21,3 +21,5 @@
 - Earned: $0.00. Payouts: 0. Human minutes: 0 (farm rule: zero human work).
 - Hungry (0 payouts): EU-AFF EU-ADS EU-JUICY EU-DODO EU-CONTENT EU-GAME.
 - Verdict: iterate. No scaling yet — first payout still pending.
+
+- 2026-09-17: BORN Aria (W01, Mumbai, relentless) → EU-AFF under TRAFFIC, goal first $1 by 2026-09-24.

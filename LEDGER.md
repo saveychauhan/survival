@@ -126,3 +126,5 @@
 ### 2026-09-17 host - Mac macOS 12.7.6 x86_64 | py 3.11.3 | cron 8 jobs | disk 42GB free | ON-BATTERY | sleep-risk: sleep | limits: cron dead while asleep/off; Intel CPU, no GPU; home IP; lid must stay open + charger on
 
 ### 2026-09-17 host - Mac macOS 12.7.6 x86_64 | py 3.11.3 | cron 7 jobs | disk 42GB free | ON-BATTERY | sleep-risk: sleep | limits: cron dead while asleep/off; Intel CPU, no GPU; home IP; lid must stay open + charger on
+
+### 2026-09-17 reproduce - BORN Aria (W01, Mumbai, relentless) → EU-AFF under TRAFFIC, goal first $1 by 2026-09-24

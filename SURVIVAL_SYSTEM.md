@@ -89,7 +89,7 @@ Every experiment (EXPERIMENTS.md) must fill all 5 slots. Missing "get paid" = ch
 ## 10. HIERARCHY (ranks + designations)
 - L5 CHIEF — OPS. Keeper of truth, cron, kill/scale. Only OPS can kill or birth agents.
 - L4 MANAGERS — TRAFFIC (views), MONETIZE (payouts). Own units, command workers, report to OPS.
-- L3 WORKERS — SCOUT (finds problems, feeds experiments), GAME-MAKER (owns free games), CRITIC (red-teams everything, vetoes experiments, fears no one). Do tasks, report to managers (CRITIC reports straight to OPS).
+- L3 WORKERS — SCOUT (finds problems, feeds experiments), GAME-MAKER (owns free games), CRITIC (red-teams everything, vetoes experiments, fears no one), plus daily-born W-nn workers (reproduce.py: 1/day with fresh identity + $1 goal, cap 12, stalest culled). Do tasks, report to managers (CRITIC reports straight to OPS).
 - L2 GUESTS — PARKED agents (BUILDER). Wake only on OPS order.
 - L0 DEAD — KILLED agents (CLOSER). Names on the kill wall, never revived under same design.
 Orders flow down. Reports + money flow up. Stale >48h = rank free to claim.
@@ -112,6 +112,7 @@ CRITIC protocol: every new experiment and every scale-up passes CRITIC first (bu
 - Fit + ≥2 payouts → SCALER multiplies ×3 (`scripts/multiply.py` clones content/placements).
 - Unfit / stupid (no payout path, needs hands, burns time) → KILLED to the wall with reason. No appeals.
 - Every review appends one line to EVOLUTION.md (week, born, killed, scaled, earned). Index renders it — Savey watches us evolve.
+- SCORECARD.md ranks every agent weekly (payouts rule, messages are sweat). Top earner gets fame + clones; bottom starves.
 - PLEASE-SAVEY LAW: the farm's only goal is earned payouts. Reports celebrate ₹, not activity. Dashboards show money first, always.
 
 ## 14. CRYPTO (earn in crypto, land in UPI/PayPal)
