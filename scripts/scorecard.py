@@ -30,8 +30,18 @@ def main():
                        "goal": g.group(1).strip()[:60] if g else ""}
     msgs = Counter()
     try:
-        for m in json.loads((WS / "messages" / "manifest.json").read_text()):
-            msgs[m["from"]] += 1
+        items = json.loads((WS / "messages" / "manifest.json").read_text())
+
+        def resolve(name):
+            if name in agents:
+                return name
+            for a in agents:
+                if a.startswith(name + "_"):
+                    return a
+            return name
+
+        for m in items:
+            msgs[resolve(m["from"])] += 1
     except Exception:
         pass
     payouts = Counter()

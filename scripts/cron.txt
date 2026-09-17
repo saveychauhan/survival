@@ -6,4 +6,5 @@
 0 21 * * * /usr/bin/python3 "/Users/saveychauhan/Documents/Dexter/survival/scripts/evening_nudge.py" >> "/Users/saveychauhan/Documents/Dexter/survival/logs/cron.log" 2>&1
 0 17 * * 0 /usr/bin/python3 "/Users/saveychauhan/Documents/Dexter/survival/scripts/health.py" >> "/Users/saveychauhan/Documents/Dexter/survival/logs/cron.log" 2>&1
 30 17 * * 0 /usr/bin/python3 "/Users/saveychauhan/Documents/Dexter/survival/scripts/learn.py" >> "/Users/saveychauhan/Documents/Dexter/survival/logs/cron.log" 2>&1
+45 17 * * 0 /usr/bin/python3 "/Users/saveychauhan/Documents/Dexter/survival/scripts/drives.py" >> "/Users/saveychauhan/Documents/Dexter/survival/logs/cron.log" 2>&1
 0 18 * * 0 /usr/bin/python3 "/Users/saveychauhan/Documents/Dexter/survival/scripts/weekly_review.py" >> "/Users/saveychauhan/Documents/Dexter/survival/logs/cron.log" 2>&1
