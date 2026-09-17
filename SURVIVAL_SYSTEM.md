@@ -27,7 +27,7 @@ updated: 2026-09-17 PASSIVE FARM by OPS | cash: ₹0 | mode: ZERO-HUMAN-WORK
 ## 2. EARNING UNITS (all zero-human-work)
 | id | name | how it earns with no work | status | next_action |
 |----|------|---------------------------|--------|-------------|
-| EU-AFF | Amazon affiliate pages | `online/deals.html` auto-built by cron with `tag=dexter03d-21` links | live | TRAFFIC adds 1 product block/week via script |
+| EU-AFF | Amazon affiliate pages | `docs/online/deals.html` auto-built by cron with `tag=dexter03d-21` links | live | TRAFFIC adds 1 product block/week via script |
 | EU-ADS | Adsterra display | ad-slot placeholders in all pages, baked live when unit code lands | waiting-code | MONETIZE bakes tag on arrival |
 | EU-JUICY | JuicyAds publisher | stats auto-pulled daily via API; ad tags after site approval | verifying | MONETIZE verifies key + pulls stats |
 | EU-DODO | DodoPayments checkout | payment link for 1 digital pack, auto-delivery | waiting-key | MONETIZE creates link on key arrival |
@@ -41,7 +41,7 @@ Funnel now: hosted page view → ad impression / affiliate click / Dodo checkout
 | agent | role | claim | heartbeat rule |
 |-------|------|-------|----------------|
 | OPS | keeper: cron, LEDGER truth, kill/scale | SURVIVAL_SYSTEM.md + scripts/ | Sun review |
-| TRAFFIC | builds pages + social queue, runs auto_content.py | online/deals.html + online/pages/ | weekly page |
+| TRAFFIC | builds pages + social queue, runs auto_content.py | docs/online/deals.html + games | weekly page |
 | MONETIZE | wires payouts: verifies PayPal/Adsterra/JuicyAds/Dodo, pulls stats | scripts/juicyads_stats.py + LEDGER Revenue | daily stats |
 | SCALER (rule, not a person) | any unit with ≥2 payouts + 0 human min → clone ×3 | LEDGER | auto on 2nd payout |
 Stale >48h = free to claim. Edit only own session file. Secrets never in session files.
@@ -52,7 +52,7 @@ Stale >48h = free to claim. Edit only own session file. Secrets never in session
 - next_dollar: first Adsterra impression or Amazon click from hosted pages — $0 human cost.
 
 ## 5. PAY LINKS (inbound, receive-only)
-- UPI: `upi://pay?pa=saveychauhan@ybl&pn=Savey&cu=INR` + `online/upi-*.png` QRs + `online/pay.html`
+- UPI: `upi://pay?pa=saveychauhan@ybl&pn=Savey&cu=INR` + `docs/online/upi-*.png` QRs + `docs/online/pay.html`
 - PayPal: `sav.ey@live.co.uk` — `https://paypal.me/saveychauhan?locale.x=en_GB&country.x=IN` (link confirmed by Savey 2026-09-17)
 - Amazon: shop `https://www.amazon.in/shop/saveychauhan`, tag `dexter03d-21` in all affiliate links
 
@@ -66,7 +66,7 @@ Stale >48h = free to claim. Edit only own session file. Secrets never in session
 
 ## 7. OPS (Air-safe, free)
 - 09:00 morning_scan.sh → prompts/scan_*.md (traffic topics, no leads-calling) → LEDGER
-- 09:30 auto_content.py → online/deals.html + weekly page (auto, no paste)
+- 09:30 auto_content.py → docs/online/deals.html + weekly page (auto, no paste)
 - 12:00 juicyads_stats.py → publisher stats → LEDGER (key verified)
 - 21:00 evening_nudge.py → funnel → LEDGER
 - Sun 18:00 weekly_review.py → KILL/SCALE → §6

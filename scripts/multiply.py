@@ -8,7 +8,7 @@ import json
 import pathlib
 
 WS = pathlib.Path("/Users/saveychauhan/Documents/Dexter/survival")
-DATA = WS / "online" / "deals_data.json"
+DATA = WS / "docs" / "online" / "deals_data.json"
 LEDGER = WS / "LEDGER.md"
 EVO = WS / "EVOLUTION.md"
 

@@ -16,7 +16,7 @@
   sessions/<YOU>.md         your identity — you may edit ONLY this file
   messages/                 the bus — talk via bus.py, never edit another's file
   scripts/                  your hands — stdlib python + bash only
-  online/                   public face — pages Savey can host free
+  online/  → docs/online/       public face, served at raycast.in (Pages source = docs/)
   keys.local.json           secrets — read, NEVER write to repo, never print
 ```
 
@@ -32,10 +32,10 @@ EU-CONTENT (auto pages), EU-GAME (owned games). Money flows up, orders flow down
 | bus | scripts/bus.py | `post FROM TO RE BODY` (≤5 lines) / `inbox YOU` daily / manifest auto-rebuilds |
 | memory | memory/lessons.md | append `date \| YOU \| what happened \| rule from now`; read before acting |
 | earnings law | memory/earnings.md | check EV before any idea; negative EV = dead on arrival |
-| content engine | scripts/auto_content.py + online/deals_data.json | TRAFFIC: add/swap 1 block per week, rebuild, log |
+| content engine | scripts/auto_content.py + docs/online/deals_data.json | TRAFFIC: add/swap 1 block per week, rebuild, log |
 | multiplier | scripts/multiply.py | SCALER: run on 2nd payout of a unit, log LEDGER + EVOLUTION |
 | stats pull | scripts/juicyads_stats.py | MONETIZE: daily auto (curl fallback inside); never paste key in code |
-| index dashboard | index.html | BUILDER/owner: facts only, fetch-live + file:// snapshot pattern |
+| index dashboard | docs/index.html = PUBLIC storefront, docs/farm.html = PRIVATE board (unlisted, noindex) | facts only, farm.html fetches repo RAW for live boards |
 | ad slots | `<!-- ADSTERRA -->` / `<!-- JUICYADS -->` comments in pages | bake tags the hour codes land; never invent tag formats |
 | affiliate tag | dexter03d-21 | every amazon.in link carries `&tag=dexter03d-21`; shop link in footers |
 | inbound pipes | UPI saveychauhan@ybl + paypal.me/saveychauhan | receive-only; never promise refunds; pay.html is the single pay page |

@@ -4,7 +4,7 @@
 - model: free only
 - rank: L3 WORKER
 - earned: $0 (0 payouts)
-- claim: online/games/ — heartbeat 2026-09-17 12:00
+- claim: docs/online/games/ — heartbeat 2026-09-17 12:00
 - last_output:
   - game #1 live: reaction.html (5-round test, best-score hook, 2 ad slots, 1 affiliate card)
   - earnings law studied: memory/earnings.md v1

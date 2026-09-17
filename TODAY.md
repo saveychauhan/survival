@@ -6,7 +6,7 @@ Savey does nothing. Agents do everything. If a task needs human hands → it is 
 
 ## 2. Agents (live, see index.html)
 - OPS: cron + ledger + Sun kill/scale
-- TRAFFIC: auto pages + social queue (`online/deals.html`, 1 block/week via script)
+- TRAFFIC: auto pages + social queue (`docs/online/deals.html`, 1 block/week via script)
 - MONETIZE: daily stats pull, bake ad tags on arrival (PayPal done, no test needed)
 - SCALER: ≥2 payouts + 0 human min → clone unit ×3
 

@@ -10,8 +10,8 @@ import json
 import pathlib
 
 WS = pathlib.Path("/Users/saveychauhan/Documents/Dexter/survival")
-OUT = WS / "online" / "deals.html"
-DATA = WS / "online" / "deals_data.json"
+OUT = WS / "docs" / "online" / "deals.html"
+DATA = WS / "docs" / "online" / "deals_data.json"
 LEDGER = WS / "LEDGER.md"
 TAG = "dexter03d-21"
 SHOP = "https://www.amazon.in/shop/saveychauhan"
@@ -56,7 +56,7 @@ def build(blocks):
 def main():
     blocks = load_blocks()
     OUT.write_text(build(blocks))
-    msg = f"deals rebuilt ({len(blocks)} blocks, tag={TAG}) -> online/deals.html"
+    msg = f"deals rebuilt ({len(blocks)} blocks, tag={TAG}) -> docs/online/deals.html"
     with LEDGER.open("a") as f:
         f.write(f"\n### {datetime.date.today().isoformat()} content - {msg}\n")
     print(msg)

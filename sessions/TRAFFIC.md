@@ -4,7 +4,7 @@
 - model: free only
 - rank: L4 MANAGER
 - earned: $0 (0 payouts)
-- claim: online/deals.html + online/pages/ — heartbeat 2026-09-17 12:00
+- claim: docs/online/deals.html + docs/online/games/ — heartbeat 2026-09-17 12:00
 - last_output:
   - deals.html auto-built with Amazon tag dexter03d-21
   - ad-slot placeholders in all pages (bake on code arrival)
