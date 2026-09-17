@@ -4,7 +4,7 @@ Goal: 2 copy-paste listings you can post on Upwork / Contra / Fiverr / LinkedIn 
 
 > How to list in <1 hr (do this now):
 > 1. Pick ONE platform (fastest cash in India: LinkedIn Services + WhatsApp status; fastest USD: Contra/Upwork). (10 min)
-> 2. Copy-paste Gig 1 OR Gig 2 below as-is. Replace only [BRACKETS]. Upload 1 screenshot: use `../index.html` or `leak-calculator.html` as portfolio image. (20 min)
+> 2. Copy-paste Gig 1 OR Gig 2 below as-is. Replace only [BRACKETS]. Upload 1 screenshot: use `../index.html` as portfolio image. (20 min)
 > 3. Send 10 DMs using the Outreach DM at bottom. First dollar = UPI screenshot to `saveychauhan@ybl`. (30 min)
 
 ---
@@ -172,8 +172,6 @@ Live in 48 hrs. You approve every message once — nothing auto-sends without yo
 > Can I run YOUR last-week numbers free? Just reply: misses/week + avg bill. I'll send your leak math in 1 msg, no follow-up spam if not fit.
 > Live demo slots: Tue 11am / Wed 4pm — which suits?
 > Pay only if yes: UPI `saveychauhan@ybl` → screenshot here = booked.
->
-> P.S. Free tool to check yourself: open my `leak-calculator.html` (offline, 30 sec) — it shows your monthly leak in ₹.
 
 **Fill-in cheat (30 sec/prospect):** misses/week default 10 if unknown; avg ticket: plumber ₹4,500 / electrician ₹3,500 / AC ₹5,000 / salon ₹1,200 / clinic ₹1,500. Monthly leak = misses/wk × 4.33 × ticket × 0.25. Example: 10×4.33×1500×0.25 = ₹16,237/mo.
 
@@ -181,5 +179,5 @@ Live in 48 hrs. You approve every message once — nothing auto-sends without yo
 > [Name], holding 2 pilot slots this week (cap 10/wk for 48-hr promise). No pressure — want me to close the loop with YES (Tue go-live) or NOT NOW? Either is fine, I'll stop nudging. — Savey
 
 ---
-*Files in this folder: `gig-kit.md` (this file) · `leak-calculator.html` (free lead magnet + UPI upsell) · `lead-tracker-template.csv` (delivery bonus + retention tool). All stdlib/offline, Intel-2017 safe.*
+*Files in this folder: `gig-kit.md` (this file) · `lead-tracker-template.csv` (delivery bonus + retention tool). All stdlib/offline, Intel-2017 safe.*
 *Ledger rule: log every DM sent in `../LEDGER.md` same day. No lead dies without 3 touches.*

@@ -1,7 +1,7 @@
 # Fiverr + Contra Packs — Inbox-only, UPI-only, Free-only
 
 Status: delivery = marketplace inbox-only (no email). Trading PARKED (no live trades). No mobile number, no external chat-app link, no calls. Async only, reply <12h.
-UPI: `saveychauhan@ybl` (name: Savey). Source gig: `online/ai-services.md`. Portfolio: `online/pay.html`, `online/leak-calculator.html`.
+UPI: `saveychauhan@ybl` (name: Savey). Source gig: `online/ai-services.md`. Portfolio: `online/pay.html`.
 Stack: 2017 Air + Pollinations free tier only. Zero paid tools.
 
 ---
@@ -69,7 +69,6 @@ I turn messy shop photos into clean white-bg cutouts + same-size catalog PDF wit
    - UPI string everywhere: `saveychauhan@ybl` + remark format `CATALOG799 username`. Buyer also sends UTR in same inbox thread.
 4. Portfolio without phone (both platforms):
    - Link 1 (payment/menu): `online/pay.html` — label "Price menu + UPI pay page".
-   - Link 2 (interactive proof): `online/leak-calculator.html` — label "Free leak calculator I built (try live)".
    - Never put phone, chat-app invite, email in portfolio text. Contact CTA = "Message me in inbox here — reply <12h."
 
 ---

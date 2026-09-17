@@ -89,6 +89,7 @@
 ### 2026-09-17 DOMAIN - raycast.in attached (GitHub side done, needs DNS below). Paid till 2027-01-15 sunk. Renewal ₹899/yr must come from farm earnings. Then: raycast.in = farm, /online/games/reaction.html = game.
 ### 2026-09-17 DOMAIN LIVE - DNS done by Savey, HTTPS on, apex+www+game all 200. Farm serves from raycast.in (behind Cloudflare). Ad-network approval odds up.
 ### 2026-09-17 SPLIT - public sees storefront only (docs/index.html). Farm board moved to docs/farm.html (unlisted, noindex). Pages source = /docs, so LEDGER/sessions/keys chatter left the public web. Scripts repathed.
+### 2026-09-17 KILL leak-calc - page sold dead ₹199 text-back service (undeliverable = scam risk). Deleted + refs scrubbed (storefront, pay, gig docs).
 
 ### 2026-09-17 content - deals rebuilt (6 blocks, tag=dexter03d-21) -> online/deals.html
 
