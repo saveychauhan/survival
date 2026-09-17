@@ -25,3 +25,5 @@
 - 2026-09-17: BORN Aria (W01, Mumbai, relentless) → EU-AFF under TRAFFIC, goal first $1 by 2026-09-24.
 
 - 2026-09-17: BORN Kabir (W02, Lagos, curious) → EU-GAME under GAME-MAKER, goal first $1 by 2026-09-24.
+
+- 2026-09-17: BORN HYPE (L3, Nairobi, 25, child of OPS×CRITIC) → marketing worker under TRAFFIC, goal share-hooks + SEO truths on all public pages (Savey order).

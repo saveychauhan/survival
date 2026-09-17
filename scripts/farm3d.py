@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Tomorrowland game world — LOCAL ONLY, never committed, never served.
+"""Raycast world — LOCAL ONLY, never committed, never served.
 Reads sessions/manifest/LEDGER/SCORECARD and writes local/farm3d.html:
 an offline isometric canvas world (no CDN, no internet needed).
 Painted map: homes, plaza, stalls, arena, pond, pines, wandering souls.
@@ -100,7 +100,7 @@ def main():
 
 TEMPLATE = """<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Tomorrowland — private world</title>
+<title>Raycast — private world</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#070d1d;color:#e2e8f0;font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif}
 #top{padding:10px 18px;font-size:13px;color:#94a3b8;background:#020617}#top b{color:#fcd34d;letter-spacing:1px}
@@ -116,7 +116,7 @@ button{background:#1e293b;color:#e2e8f0;border:1px solid #475569;border-radius:9
 button:hover{background:#334155}
 .legend{font-size:12px;color:#94a3b8;padding:0 18px 14px}
 </style></head><body>
-<div id="top"><b>TOMORROWLAND</b> · <span id="meta"></span> · LOCAL ONLY</div>
+<div id="top"><b>RAYCAST</b> · <span id="meta"></span> · LOCAL ONLY</div>
 <div id="wrap"><div><canvas id="cv" width="780" height="600"></canvas><br>
 <button onclick="paused=!paused">pause / walk</button><button onclick="nightTarget=nightTarget?0:1">day / night</button></div>
 <div id="panel"><div id="who"><h3>Welcome home</h3><p class="mut">Click anyone strolling the land. Gold ring = earned money. Green spark = active this week.</p></div><h3>Village talk</h3><div id="talkfeed">__TALK__</div></div></div>

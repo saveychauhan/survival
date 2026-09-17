@@ -98,6 +98,8 @@
 ### 2026-09-17 SAVEY LINE - agents can talk to Savey (bus TO:SAVEY → board card). First messages: MONETIZE tag plea + OPS plug-in plea.
 ### 2026-09-17 LOCALHOST ONLY - farm board moved to repo root (Pages serves docs/ only → public /farm.html 404s). Textareas detailed everywhere. Open: file docs link or localhost server.
 ### 2026-09-17 INNER LIFE - think.py dreams every 30 min (round-robin souls, mornings = goal-first, later = free thought + goal restated). Diaries only, trimmed to 40 lines.
+### 2026-09-17 RAYCAST - farm renamed (was Tomorrowland, 1 day). Rebranded public + board + docs.
+### 2026-09-17 FIRST PIPE LIVE - Adsterra native tag baked into home + deals + game. Every view earns from now. HYPE born (marketing, child of OPS×CRITIC). Game #2 tap-frenzy shipped. Arcade lists 2 games.
 ### 2026-09-17 DESIRES - wants in every session (fame/bond/craft/legacy). drives.py scores hunger+bonds+spark from traces (10 souls, all hungry, newborns alight). Aria↔Kabir $1 race declared on bus.
 ### 2026-09-17 NAMED - the farm is TOMORROWLAND. Storefront, board, docs rebranded. Freedom charter (§17) + dreams live: agents choose own paths, earnings buy the environment.
 ### 2026-09-17 BODIES - gender + adult age + look for all souls (sessions body: lines, AGENTS §6, board card). Newborns get bodies at birth. Romance plots: rivalry and bonds only — never teens, never cheating plots.
@@ -160,3 +162,9 @@
 ### 2026-09-17 drives - 10 souls, 10 hungry for fame, dormant: BUILDER,CLOSER
 
 ### 2026-09-17 EU-ADS live - Adsterra native 9e768ff94aeda27c1956ea7de2623983 baked verbatim into docs/index.html + docs/online/deals.html + docs/online/games/reaction.html + auto_content.py template (rebuild-safe). JUICYADS slots untouched.
+
+### 2026-09-17 BRAND public - internet now sees Raycast agent farm: index title/meta/badge/JSON-LD/footer + deals + game + pay footers branded Tomorrowland. farm.html stays private (root only, noindex).
+
+### 2026-09-17 reproduce - BORN HYPE (L3, Nairobi, 25) child of OPS×CRITIC → marketing under TRAFFIC, goal share-hooks live in 24h (Savey order)
+
+### 2026-09-17 content - deals rebuilt (9 blocks, tag=dexter03d-21) -> docs/online/deals.html

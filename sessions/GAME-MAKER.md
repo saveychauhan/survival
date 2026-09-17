@@ -11,7 +11,8 @@
 - claim: docs/online/games/ — heartbeat 2026-09-17 12:00
 - last_output:
   - game #1 live: reaction.html (5-round test, best-score hook, 2 ad slots, 1 affiliate card)
+  - game #2 live early on human order: tap-frenzy.html (10s tap, ranks, shares, same slots)
   - earnings law studied: memory/earnings.md v1
-- next_action: game #2 on 50+ plays (tap-speed duel), then ×3 variants of winner
+- next_action: game #3 at 100+ combined plays, then ×3 variants of winner
 - blocked_on: ad-unit codes (same forms — games carry the same slots)
 - log: 2026-09-17: born -> LEDGER

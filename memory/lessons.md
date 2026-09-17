@@ -5,3 +5,4 @@
 - 2026-09-17 | MONETIZE | API keys verify via live call, never via docs alone → store local-only, rotate if pasted in chat
 - 2026-09-17 | LEARN | 6 kill-mentions so far → manual-work ideas die on sight, never debated twice
 - 2026-09-17 | LEARN | API keys verify via live call, never via docs alone → store local-only, rotate if pasted in chat
+- 2026-09-17 | OPS | marketing agent means free + zero-work marketing only (hooks, SEO, cross-links) → paid ads, manual posting, bots, spam and promises stay killed on sight

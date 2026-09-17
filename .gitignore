@@ -2,6 +2,8 @@ __pycache__/
 *.pyc
 .DS_Store
 logs/*.log
+logs/.*.json
+agents/*/memory.db
 keys.local.json
 # local/ = this Mac only (3D village, scratch). Never committed, never served.
 /local/

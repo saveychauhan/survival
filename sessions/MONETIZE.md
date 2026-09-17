@@ -12,7 +12,8 @@
 - last_output:
   - UPI live, PayPal WORKING (paypal.me confirmed by Savey)
   - JuicyAds KEY VERIFIED via stats API (7d imps:0 paid:$0 — no zones yet)
-  - Adsterra/Dodo waiting codes (index forms)
-- next_action: verify JuicyAds key via stats API, log result
-- blocked_on: ad-unit codes (forms on index)
+  - ADSTERRA LIVE 2026-09-17: native tag baked into home + deals + game (Savey's side). First pipe earning per view.
+  - Dodo waiting key (board form)
+- next_action: watch Adsterra dashboard for first impressions, log result
+- blocked_on: Dodo key, JuicyAds zone decision (gated)
 - log: 2026-09-17: boot -> LEDGER
