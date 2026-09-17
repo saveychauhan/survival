@@ -71,9 +71,10 @@ Stale >48h = free to claim. Edit only own session file. Secrets never in session
 - cron live. logs/cron.log. sessions/OPS,TRAFFIC,MONETIZE.
 
 ## 8. WHAT HUMAN CAN ADD (all via index forms, 1 paste each, then zero work forever)
-1. Adsterra ad-unit tag → EU-ADS goes live → auto CPM
-2. JuicyAds ad-zone tag (key already on file) → EU-JUICY goes live
-3. DodoPayments API key → EU-DODO checkout live
-4. Social handles → TRAFFIC auto-posts queue
-5. $1 PayPal test → PayPal VERIFIED
+1. Adsterra ad-unit tag → WHY: networks pay per impression only with tag installed → EU-ADS live → auto CPM
+2. JuicyAds ad-zone tag (key already verified) → WHY: API reports only; tag renders the paying ads → EU-JUICY live
+3. DodoPayments API key → WHY: pay-links are minted with the key; no key = no auto checkout → EU-DODO live
+4. Social handles → WHY: free traffic is the fuel for ads/affiliate → TRAFFIC queue live
+5. $1 PayPal test → WHY: confirms inbound $ pipe actually receives → PayPal VERIFIED
+Money: outbound stays ₹0 unless an index Farm-request explains why + amount + profit. No why = no spend.
 Nothing else needed. No calls, no fulfillment, no manual gigs — ever.

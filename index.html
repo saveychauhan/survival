@@ -32,6 +32,7 @@ a{color:#4ade80}
 input,textarea{width:100%;padding:10px;border:1px solid #334155;border-radius:8px;margin:6px 0;font-size:14px;background:#0b1220;color:#e2e8f0}
 .mut{color:#94a3b8;font-size:13px}
 .profit{color:#a5f3fc;font-size:13px}
+.why{color:#fcd34d;font-size:13px}
 ol,ul{margin:8px 0;padding-left:20px}
 li{margin:4px 0}
 .dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:#22c55e;margin-right:6px}
@@ -132,6 +133,7 @@ h3{margin:6px 0}
 <span class="pill warn">KEY VERIFIED · NEEDS AD TAG</span>
 <h3>JuicyAds — publisher</h3>
 <p>API key verified live (stats pull daily, 0 imps — no zones running yet). Key stored local-only, never in repo.</p>
+<p class="why">WHY needed: the API only <i>reports</i> earnings — money flows only when a JuicyAds ad tag renders on our pages. No tag = verified account earning $0.</p>
 <label>Ad-zone tag (1 paste, then zero work forever)
 <input id="f-juicy" placeholder="paste JuicyAds ad-zone / site tag"></label>
 <button class="btn" onclick="saveAcct('juicy','f-juicy')">Save</button> <span class="mut" id="s-juicy"></span>
@@ -142,6 +144,7 @@ h3{margin:6px 0}
 <span class="pill bad">NOT WORKING · NEEDS CODE</span>
 <h3>Adsterra — publisher</h3>
 <p>Account exists, but no ad-unit tag in our pages yet → earning $0.</p>
+<p class="why">WHY needed: ad networks pay per impression on approved sites with their tag installed. No tag = account earning $0.</p>
 <label>Ad-unit tag (1 paste from Adsterra dashboard, then zero work forever)
 <input id="f-ads" placeholder="paste Adsterra ad script / unit ID"></label>
 <button class="btn" onclick="saveAcct('ads','f-ads')">Save</button> <span class="mut" id="s-ads"></span>
@@ -152,6 +155,7 @@ h3{margin:6px 0}
 <span class="pill bad">NOT WORKING · NEEDS KEY</span>
 <h3>DodoPayments — checkout</h3>
 <p>No key on file → can't create automated checkout.</p>
+<p class="why">WHY needed: each product's pay-link is minted with the secret key. Without it agents can't create a checkout, so the digital pack can't sell itself.</p>
 <label>API key (1 paste, then zero work forever)
 <input id="f-dodo" placeholder="paste DodoPayments API key"></label>
 <button class="btn" onclick="saveAcct('dodo','f-dodo')">Save</button> <span class="mut" id="s-dodo"></span>
@@ -162,6 +166,7 @@ h3{margin:6px 0}
 <span class="pill bad">NOT WORKING · PENDING</span>
 <h3>Social accounts — traffic</h3>
 <p>No handles handed over yet → TRAFFIC can't queue posts.</p>
+<p class="why">WHY needed: free traffic is the only fuel for ads + affiliate. Schedulers post through logged-in handles — no handles = no free views.</p>
 <label>Handles (1 paste, then zero work forever)
 <input id="f-soc" placeholder="e.g. instagram:@x youtube:@y x:@z"></label>
 <button class="btn" onclick="saveAcct('soc','f-soc')">Save</button> <span class="mut" id="s-soc"></span>
@@ -175,6 +180,21 @@ h3{margin:6px 0}
 <p class="mut">Marketplace gigs need manual fulfillment (chat, delivery, revisions) — violates zero-work rule. Killed for the farm. If a gig ever becomes 100% auto-deliverable, an agent will reopen it.</p>
 </div>
 <p class="mut">Saved form values stay in this browser only (localStorage). Tell the agent what you saved and it bakes the code into the pages on the next run — then that pipe earns forever with zero work.</p>
+</div>
+
+<div class="card">
+<h2>Farm requests — money or accounts agents need</h2>
+<p class="mut">Rule: outbound stays ₹0 unless a request below explains <b>why</b>. Anything saved here is stored in this browser; the agent acts on it next run.</p>
+<div id="reqlist"><p class="mut">No money requested right now. No accounts requested beyond the forms above.</p></div>
+<label>Need type
+<select id="r-type"><option value="account">account / access</option><option value="money">money to spend</option></select></label>
+<label>What exactly
+<input id="r-what" placeholder="e.g. domain renewal / ad-unit approval / KYC doc"></label>
+<label>Why — what it unlocks + expected profit
+<input id="r-why" placeholder="e.g. unlocks EU-ADS, ~$X/mo auto"></label>
+<label>Amount (money only, else leave blank)
+<input id="r-amt" placeholder="e.g. ₹500 / $10 one-time"></label>
+<button class="btn" onclick="saveReq()">Save request</button> <span class="mut" id="s-req"></span>
 </div>
 
 <div class="card">
@@ -207,7 +227,10 @@ Files: <a href="README.md">README</a> • <a href="LEDGER.md">LEDGER</a> • <a 
 function tick(){var d=new Date(),p=function(n){return(n<10?'0':'')+n};document.getElementById('clock').textContent=p(d.getHours())+':'+p(d.getMinutes())+':'+p(d.getSeconds())}setInterval(tick,1000);tick();
 function saveAcct(k,f){try{var v=document.getElementById(f).value.trim();if(!v){alert('Paste the code first.');return}localStorage.setItem('farm_'+k,v);document.getElementById('s-'+k).textContent='Saved in this browser — tell the agent to bake it in.'}catch(e){alert('Save failed: '+e)}}
 function loadAccts(){['juicy','ads','dodo','soc'].forEach(function(k){try{var v=localStorage.getItem('farm_'+k);if(v){var f=document.getElementById('f-'+k);if(f)f.value=v;document.getElementById('s-'+k).textContent='On file in this browser.'}}catch(e){}})}
-loadAccts();
+function getReqs(){try{return JSON.parse(localStorage.getItem('farm_requests')||'[]')}catch(e){return[]}}
+function renderReqs(){var list=getReqs(),box=document.getElementById('reqlist');if(!list.length){box.innerHTML='<p class="mut">No money requested right now. No accounts requested beyond the forms above.</p>';return}box.innerHTML='<ul>'+list.map(function(r){return '<li><b>['+r.type+'] '+r.what+'</b> '+(r.amt?'• '+r.amt+' ':'')+'<br><span class="why">WHY: '+r.why+'</span> <span class="mut">• saved '+r.when+'</span></li>'}).join('')+'</ul>'}
+function saveReq(){try{var what=document.getElementById('r-what').value.trim(),why=document.getElementById('r-why').value.trim();if(!what||!why){alert('Fill what + why — no why, no approval.');return}var list=getReqs();list.push({type:document.getElementById('r-type').value,what:what,why:why,amt:document.getElementById('r-amt').value.trim(),when:new Date().toLocaleString()});localStorage.setItem('farm_requests',JSON.stringify(list));document.getElementById('r-what').value='';document.getElementById('r-why').value='';document.getElementById('r-amt').value='';document.getElementById('s-req').textContent='Stored — agent reviews next run.';renderReqs()}catch(e){alert('Save failed: '+e)}}
+loadAccts();renderReqs();
 (function(){if(location.protocol==='file:')return;fetch('LEDGER.md').then(function(r){return r.ok?'':''}).then(function(){document.getElementById('live').textContent='live '+new Date().toLocaleString()}).catch(function(){})})();
 </script>
 </body>
