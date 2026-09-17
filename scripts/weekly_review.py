@@ -20,6 +20,53 @@ def cnt(t, sec):
     return max(0, len([ln for ln in s.splitlines() if ln.strip().startswith("|")]) - 2)
 
 
+OWNER = {
+    "EU-AFF": "TRAFFIC",
+    "EU-ADS": "MONETIZE",
+    "EU-JUICY": "MONETIZE",
+    "EU-DODO": "MONETIZE",
+    "EU-CONTENT": "TRAFFIC",
+    "EU-GAME": "GAME-MAKER",
+}
+RW = WS / "REWARDS.md"
+
+
+def reward_step(t, D, earned):
+    """Credit unit owners for real payouts. Convention agents use:
+    ### DATE payout - $AMT EU-XXX [note]   (plus juicy earned>0 counts EU-JUICY)
+    Appends REWARDS ledger + EVOLUTION lines. Returns summary string."""
+    found = {}
+    for amt, unit in re.findall(r"payout - \$(\d+\.?\d*)\s+(EU-\w+)", t):
+        try:
+            if float(amt) > 0 and unit in OWNER:
+                found[unit] = found.get(unit, 0) + 1
+        except ValueError:
+            pass
+    if earned > 0:
+        found["EU-JUICY"] = found.get("EU-JUICY", 0) + 1
+    if not found:
+        with RW.open("a") as f:
+            f.write(f"- {D}: no payouts — no rewards. Hunger is the motivator.\n")
+        return "rewards: none"
+    rw = RW.read_text() if RW.exists() else ""
+    out = []
+    with EVO.open("a") as evo, RW.open("a") as f:
+        for unit, n_new in sorted(found.items()):
+            credited = len(re.findall(rf"credit {unit}\b", rw))
+            for i in range(n_new):
+                credited += 1
+                who = OWNER[unit]
+                line = f"- {D}: credit {unit} → {who} (payout #{credited})"
+                if credited == 1:
+                    line += " — STAR rank + hall of fame + first resource pick"
+                elif credited == 2:
+                    line += " — SCALER clones ×3 within 7d + half-rank promotion"
+                f.write(line + "\n")
+                evo.write(f"\n- {D}: {who} earned via {unit} (payout #{credited}).\n")
+                out.append(f"{who}#{credited}")
+    return "rewards: " + ", ".join(out)
+
+
 def main():
     t = L.read_text() if L.exists() else ""
     D = datetime.date.today().isoformat()
@@ -62,6 +109,7 @@ def main():
         if s2 != s:
             S.write_text(s2)
     print(f"review: {flag} earned:${earned:.2f}")
+    print(reward_step(t, D, earned))
 
 
 if __name__ == "__main__":

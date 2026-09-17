@@ -2,6 +2,8 @@
 - role: OPS
 - goal: keep farm truth + cron alive, zero human minutes, scale what pays
 - model: free only
+- rank: L5 CHIEF
+- earned: $0 (0 payouts)
 - claim: SURVIVAL_SYSTEM.md + scripts/ + LEDGER Totals — heartbeat 2026-09-17 12:00
 - last_output:
   - passive rewrite: UPI + PayPal inbound, manual gigs killed

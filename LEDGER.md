@@ -98,3 +98,5 @@
 ### 2026-09-17 content - deals rebuilt (9 blocks, tag=dexter03d-21) -> online/deals.html
 
 ### 2026-09-17 SUN review - leads:1 prop:1 paid:0 earned:$0.00 => iterate (see KILL RULES)
+
+### 2026-09-17 SUN review - leads:1 prop:1 paid:0 earned:$0.00 => iterate (see KILL RULES)

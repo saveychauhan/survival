@@ -2,6 +2,8 @@
 - role: MONETIZE
 - goal: wire every payout with zero human work, verify each account
 - model: free only
+- rank: L4 MANAGER
+- earned: $0 (0 payouts)
 - claim: scripts/juicyads_stats.py + LEDGER Revenue — heartbeat 2026-09-17 12:00
 - last_output:
   - UPI live, PayPal WORKING (paypal.me confirmed by Savey)

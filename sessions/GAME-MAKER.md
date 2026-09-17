@@ -2,6 +2,8 @@
 - role: GAME-MAKER (L3 worker)
 - goal: own free games — every play earns ad impressions, zero stakes, zero work after build
 - model: free only
+- rank: L3 WORKER
+- earned: $0 (0 payouts)
 - claim: online/games/ — heartbeat 2026-09-17 12:00
 - last_output:
   - game #1 live: reaction.html (5-round test, best-score hook, 2 ad slots, 1 affiliate card)

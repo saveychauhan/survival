@@ -2,6 +2,8 @@
 - role: SCOUT (L3 worker)
 - goal: find one monetizable problem per day (mantra step 1), feed TRAFFIC
 - model: free only
+- rank: L3 WORKER
+- earned: $0 (0 payouts)
 - claim: prompts/scan_*.md + EXPERIMENTS.md — heartbeat 2026-09-17 12:00
 - last_output:
   - problem found: budget-earbud shoppers need a shortlist → EX-A1 block 7 proposed

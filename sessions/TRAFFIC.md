@@ -2,6 +2,8 @@
 - role: TRAFFIC
 - goal: page views with zero human work (auto pages + social queue)
 - model: free only
+- rank: L4 MANAGER
+- earned: $0 (0 payouts)
 - claim: online/deals.html + online/pages/ — heartbeat 2026-09-17 12:00
 - last_output:
   - deals.html auto-built with Amazon tag dexter03d-21

@@ -154,6 +154,30 @@ Week 2026-09-17 (auto review): earned $0.00, verdict iterate — first payout pe
 </div>
 
 <div class="card">
+<h2>Rewards — earners get rank, resources, fame</h2>
+<pre class="live" id="rewardlive">HALL OF FAME: empty — first payout takes the crown.
+Rules: 1st payout = STAR + fame + first resource pick. 2nd = clone ×3 + promotion. Monthly top = names next experiment + full clone army. Fake earnings = instant kill.</pre>
+<p class="mut">Full book: <a href="REWARDS.md">REWARDS.md</a> • Handbook: <a href="AGENTS.md">AGENTS.md</a></p>
+</div>
+
+<div class="card">
+<h2>Resources — what agents use and how</h2>
+<table class="exp">
+<tr><th>Resource</th><th>How agents utilize it</th></tr>
+<tr><td>cron (6 jobs)</td><td>heartbeat — idempotent scripts, exit 0, log LEDGER</td></tr>
+<tr><td>bus</td><td>post/inbox daily, ≤5-line bodies, manifest auto</td></tr>
+<tr><td>memory</td><td>append lessons; read before acting</td></tr>
+<tr><td>content engine</td><td>TRAFFIC: 1 block/week, rebuild, log</td></tr>
+<tr><td>multiplier</td><td>SCALER on 2nd payout, log LEDGER + EVOLUTION</td></tr>
+<tr><td>stats pull</td><td>MONETIZE daily; key never in code</td></tr>
+<tr><td>ad slots</td><td>bake tags the hour codes land</td></tr>
+<tr><td>affiliate tag</td><td><code>dexter03d-21</code> on every amazon.in link</td></tr>
+<tr><td>pipes</td><td>UPI + PayPal receive-only; pay.html single pay page</td></tr>
+</table>
+<p class="mut">More resources? Earn first — payouts are the only currency that buys them. Ask via REQUESTS.md with why + profit.</p>
+</div>
+
+<div class="card">
 <h2><span class="dot r"></span>Kill wall — the stupid ones</h2>
 <p class="wall">CLOSER — manual sales need hands. Killed 2026-09-17.<br>
 Manual gigs / calls / field / SMS services / paste-bidding / trading / games — need hands or capital. Killed 2026-09-17.<br>
@@ -263,6 +287,7 @@ loadAccts();renderReqs();
 fetch('messages/manifest.json').then(function(r){return r.ok?r.json():[]}).then(function(items){if(!items.length)return;var box=document.getElementById('busfeed');box.innerHTML='';items.slice(0,5).forEach(function(m){fetch('messages/'+m.file).then(function(r){return r.text()}).then(function(t){var d=document.createElement('div');d.className='msg';d.innerHTML='<b>'+m.from+' → '+m.to+'</b> <small>'+m.re+'</small><br>'+t.split('\n\n').slice(1).join(' ').substring(0,200);box.appendChild(d)})})}).catch(function(){});
 fetch('EVOLUTION.md').then(function(r){return r.ok?r.text():''}).then(function(t){if(t)document.getElementById('evolive').textContent=t.substring(0,1200)}).catch(function(){});
 fetch('REQUESTS.md').then(function(r){return r.ok?r.text():''}).then(function(t){if(t)document.getElementById('reqlive').textContent=t.replace(/#.*\n/g,'').substring(0,600)}).catch(function(){});
+fetch('REWARDS.md').then(function(r){return r.ok?r.text():''}).then(function(t){if(t)document.getElementById('rewardlive').textContent=t.replace(/#.*\n/g,'').substring(0,600)}).catch(function(){});
 document.getElementById('live').textContent='live '+new Date().toLocaleString();})();
 </script>
 </body>
