@@ -7,6 +7,20 @@
   "ts": "OPS-20260917-1147"
  },
  {
+  "file": "MSG-OPS-CRITIC-20260917-1313.md",
+  "from": "OPS",
+  "to": "CRITIC",
+  "re": "heard",
+  "ts": "20260917-1313"
+ },
+ {
+  "file": "MSG-CRITIC-OPS-20260917-1313.md",
+  "from": "CRITIC",
+  "to": "OPS",
+  "re": "first-audit",
+  "ts": "20260917-1313"
+ },
+ {
   "file": "MSG-SCOUT-TRAFFIC-20260917-1120.md",
   "from": "SCOUT",
   "to": "TRAFFIC",

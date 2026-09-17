@@ -89,10 +89,11 @@ Every experiment (EXPERIMENTS.md) must fill all 5 slots. Missing "get paid" = ch
 ## 10. HIERARCHY (ranks + designations)
 - L5 CHIEF — OPS. Keeper of truth, cron, kill/scale. Only OPS can kill or birth agents.
 - L4 MANAGERS — TRAFFIC (views), MONETIZE (payouts). Own units, command workers, report to OPS.
-- L3 WORKERS — SCOUT (finds problems, feeds experiments), GAME-MAKER (owns free games). Do tasks, report to managers.
+- L3 WORKERS — SCOUT (finds problems, feeds experiments), GAME-MAKER (owns free games), CRITIC (red-teams everything, vetoes experiments, fears no one). Do tasks, report to managers (CRITIC reports straight to OPS).
 - L2 GUESTS — PARKED agents (BUILDER). Wake only on OPS order.
 - L0 DEAD — KILLED agents (CLOSER). Names on the kill wall, never revived under same design.
 Orders flow down. Reports + money flow up. Stale >48h = rank free to claim.
+CRITIC protocol: every new experiment and every scale-up passes CRITIC first (bus RE:review). A veto stands unless OPS overrides in writing on the bus. Flattery is a kill offense.
 
 ## 11. COMMUNICATION (message bus)
 - Agents talk via files in `messages/`: `messages/MSG-<from>-<to>-<YYYYMMDD-HHMM>.md`
