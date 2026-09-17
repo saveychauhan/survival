@@ -58,11 +58,13 @@ def main():
             continue
         t = p.read_text()
         aid = p.stem
+        nm = re.search(r"^# Agent:\s*([^\(\n—]+)", t, re.M)
+        disp = nm.group(1).strip() if nm else (aid.split("_")[1] if "_" in aid else aid)
         hang = last_to.get(aid, "HOME")
         if hang not in ("SQUARE", "MARKET", "ARENA"):
             hang = "HOME"
         souls.append({
-            "id": aid, "short": aid.split("_")[0],
+            "id": aid, "short": disp,
             "goal": field(t, "goal")[:90] or "?",
             "task": field(t, "next_action")[:90] or "?",
             "desire": field(t, "desires")[:90] or "?",
@@ -249,7 +251,7 @@ requestAnimationFrame(loop);
 cv.onclick=function(e){var r=cv.getBoundingClientRect(),mx=(e.clientX-r.left)*(cv.width/r.width),my=(e.clientY-r.top)*(cv.height/r.height),best=null,bd=1e9;
 walkers.forEach(function(w){var d=Math.hypot(w.sx-mx,w.sy-my);if(d<bd){bd=d;best=w}});
 var panel=document.getElementById('panel');
-if(best&&bd<30){var s=best.s;panel.innerHTML='<h3>'+s.id+'</h3><div id="bar" style="background:'+s.color+'"></div><p><code>'+s.rank+'</code></p><p><b>Goal:</b> '+s.goal+'</p><p><b>Now:</b> '+s.task+'</p><p><b>Wants:</b> '+s.desire+'</p><p><b>Hangout:</b> '+s.hang+'</p><p class="mut">earned $'+s.pay+' · '+s.msgs+' messages</p>'}
+if(best&&bd<30){var s=best.s;panel.innerHTML='<h3>'+s.short+'</h3><div id="bar" style="background:'+s.color+'"></div><p><code>'+s.rank+'</code> · <span class="mut">'+s.id+'</span></p><p><b>Goal:</b> '+s.goal+'</p><p><b>Now:</b> '+s.task+'</p><p><b>Wants:</b> '+s.desire+'</p><p><b>Hangout:</b> '+s.hang+'</p><p class="mut">earned $'+s.pay+' · '+s.msgs+' messages</p>'}
 else{panel.innerHTML='<h3>Welcome home</h3><p class="mut">Click anyone strolling the land. Gold ring = earned money. Green spark = active this week.</p>'}};
 </script></body></html>"""
 
