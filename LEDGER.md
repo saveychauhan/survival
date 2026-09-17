@@ -87,6 +87,7 @@
 ### 2026-09-17 CRYPTO+Fear - law: earn crypto ok, must land UPI/PayPal, wallet only on request with why. Pressure board live (days-₹0 counter + review countdown + hungry list). Review now names hungry units.
 ### 2026-09-17 ONLINE - repo public + GitHub Pages live (auto-build on push). Game: /survival/online/games/reaction.html. Index badges flipped LOCAL→LIVE. Zero human work, $0.
 ### 2026-09-17 DOMAIN - raycast.in attached (GitHub side done, needs DNS below). Paid till 2027-01-15 sunk. Renewal ₹899/yr must come from farm earnings. Then: raycast.in = farm, /online/games/reaction.html = game.
+### 2026-09-17 DOMAIN LIVE - DNS done by Savey, HTTPS on, apex+www+game all 200. Farm serves from raycast.in (behind Cloudflare). Ad-network approval odds up.
 
 ### 2026-09-17 content - deals rebuilt (6 blocks, tag=dexter03d-21) -> online/deals.html
 
