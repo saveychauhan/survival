@@ -1,0 +1,7 @@
+name,phone,call_time,service,status
+Rahul Mehta,98765 43210,07:42 PM,AC repair,missed
+Priya Nair,+91-98200-12345,08:15 PM,leaking tap,after_hours
+Amit Verma,9987076543,11:20 AM,water heater install,missed
+Neha Shah,98111 22233,06:05 PM,drain cleaning,missed
+Karan Patel,98989 77766,09:30 PM,emergency plumbing,after_hours
+Test Bad Row,,10:00 AM,test,missed

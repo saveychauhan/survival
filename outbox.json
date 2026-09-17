@@ -1,0 +1,73 @@
+{
+  "generated_at": "2026-09-17T09:51:10",
+  "business": "Test Shop",
+  "roi": {
+    "leads": 5,
+    "expected_recovered_jobs": 1.2,
+    "expected_revenue": 5400.0,
+    "avg_job_value": 4500.0,
+    "close_rate": 0.25
+  },
+  "messages": [
+    {
+      "phone": "9876543210",
+      "name": "Rahul Mehta",
+      "kind": "missed_call_textback",
+      "send_at": "2026-09-17 09:56",
+      "followup_at": "2026-09-18 08:56",
+      "message_1": "Hi Rahul, this is Test Shop \u2014 sorry we missed your call at 07:42 PM. Are you needing AC repair? Reply YES and I'll get you booked in the next 2 hrs. - Savey",
+      "message_2_nudge_if_no_reply": "Hi Rahul, Savey from Test Shop again \u2014 holding a slot for you tomorrow. Want morning or afternoon? Reply 1 for AM, 2 for PM.",
+      "service": "AC repair",
+      "chars_1": 156,
+      "segments_1": 1
+    },
+    {
+      "phone": "919820012345",
+      "name": "Priya Nair",
+      "kind": "after_hours_textback",
+      "send_at": "2026-09-17 09:56",
+      "followup_at": "2026-09-18 08:56",
+      "message_1": "Hi Priya, you reached Test Shop after hours (08:15 PM). We open at 8am-7pm. Reply with your issue + address and we'll prioritize you first thing. - Savey",
+      "message_2_nudge_if_no_reply": "Hi Priya, Savey from Test Shop again \u2014 holding a slot for you tomorrow. Want morning or afternoon? Reply 1 for AM, 2 for PM.",
+      "service": "leaking tap",
+      "chars_1": 153,
+      "segments_1": 1
+    },
+    {
+      "phone": "9987076543",
+      "name": "Amit Verma",
+      "kind": "missed_call_textback",
+      "send_at": "2026-09-17 09:56",
+      "followup_at": "2026-09-18 08:56",
+      "message_1": "Hi Amit, this is Test Shop \u2014 sorry we missed your call at 11:20 AM. Are you needing water heater install? Reply YES and I'll get you booked in the next 2 hrs. - Savey",
+      "message_2_nudge_if_no_reply": "Hi Amit, Savey from Test Shop again \u2014 holding a slot for you tomorrow. Want morning or afternoon? Reply 1 for AM, 2 for PM.",
+      "service": "water heater install",
+      "chars_1": 166,
+      "segments_1": 2
+    },
+    {
+      "phone": "9811122233",
+      "name": "Neha Shah",
+      "kind": "missed_call_textback",
+      "send_at": "2026-09-17 09:56",
+      "followup_at": "2026-09-18 08:56",
+      "message_1": "Hi Neha, this is Test Shop \u2014 sorry we missed your call at 06:05 PM. Are you needing drain cleaning? Reply YES and I'll get you booked in the next 2 hrs. - Savey",
+      "message_2_nudge_if_no_reply": "Hi Neha, Savey from Test Shop again \u2014 holding a slot for you tomorrow. Want morning or afternoon? Reply 1 for AM, 2 for PM.",
+      "service": "drain cleaning",
+      "chars_1": 160,
+      "segments_1": 2
+    },
+    {
+      "phone": "9898977766",
+      "name": "Karan Patel",
+      "kind": "after_hours_textback",
+      "send_at": "2026-09-17 09:56",
+      "followup_at": "2026-09-18 08:56",
+      "message_1": "Hi Karan, you reached Test Shop after hours (09:30 PM). We open at 8am-7pm. Reply with your issue + address and we'll prioritize you first thing. - Savey",
+      "message_2_nudge_if_no_reply": "Hi Karan, Savey from Test Shop again \u2014 holding a slot for you tomorrow. Want morning or afternoon? Reply 1 for AM, 2 for PM.",
+      "service": "emergency plumbing",
+      "chars_1": 153,
+      "segments_1": 1
+    }
+  ]
+}

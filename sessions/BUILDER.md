@@ -1,0 +1,12 @@
+# Agent: BUILDER
+- role: BUILDER
+- goal: ship lightweight MVPs that can take UPI in <48h
+- model: free only
+- claim: online/ — heartbeat 2026-09-17 12:00
+- last_output:
+  - online/gig-kit.md (2 gigs, UPI saveychauhan@ybl)
+  - online/leak-calculator.html (<12KB offline)
+  - online/lead-tracker-template.csv
+- next_action: fix wa.me placeholder → real number, Netlify Drop link (15m)
+- blocked_on: needs real WhatsApp number from human
+- log: 2026-09-17: MVP done -> LEDGER

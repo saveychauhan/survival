@@ -1,0 +1,12 @@
+# Agent: CLOSER
+- role: CLOSER
+- goal: 3 pilots in 7 days via calls+WA, UPI saveychauhan@ybl
+- model: free only
+- claim: GO_TO_MARKET.md leads 1-20 — heartbeat 2026-09-17 12:00
+- last_output:
+  - scripts ready in GO_TO_MARKET.md + gig-kit.md DM
+  - target: Andheri/Goregaon 4.0-4.4★ trades + salons
+  - funnel: 20 calls → 8 connects → 5 demos → 3 pilots → 2 paid
+- next_action: call 10 + WA 10 today 11am/3pm, log LEDGER Leads (60m)
+- blocked_on: needs payment link + Netlify links from BUILDER
+- log: 2026-09-17: waiting for links

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Savey Store — Posters, Catalogs, Thumbnails | UPI-only</title>
+<meta name="description" content="Diwali posters, product catalogs, thumbnails, GBP audit. Pay UPI saveychauhan@ybl, get files in inbox. No phone needed.">
+<style>
+*{box-sizing:border-box}body{font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;margin:0;background:#fafafa;color:#111;line-height:1.5}
+.wrap{max-width:720px;margin:0 auto;padding:20px}
+.hero{background:#0f172a;color:#fff;border-radius:16px;padding:28px 22px;margin-top:16px}
+.hero h1{font-size:30px;margin:0 0 10px}.hero p{color:#cbd5e1;margin:8px 0}
+.badge{display:inline-block;background:#22c55e;color:#052e16;font-weight:800;font-size:12px;padding:5px 11px;border-radius:999px;margin-bottom:10px}
+.btn{display:inline-block;background:#22c55e;color:#052e16;font-weight:800;padding:13px 20px;border-radius:10px;text-decoration:none;margin:8px 8px 0 0;border:0;cursor:pointer;font-size:16px}
+.btn.line{background:#fff;color:#0f172a;border:2px solid #0f172a}
+.card{background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:18px;margin:14px 0}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media(max-width:640px){.grid{grid-template-columns:1fr}.hero h1{font-size:24px}}
+.price{font-size:28px;font-weight:800}
+.small{font-size:13px;color:#64748b}code{background:#f1f5f9;padding:2px 6px;border-radius:6px}
+.upi{background:#f0fdf4;border:2px solid #22c55e;border-radius:12px;padding:14px;margin:12px 0}
+img.demo{width:100%;border-radius:10px;border:1px solid #e5e7eb}
+img.qr{width:170px;height:170px;border:1px solid #e2e8f0;border-radius:12px;display:block;margin:8px 0}
+input,select{width:100%;padding:11px;border:1px solid #cbd5e1;border-radius:8px;margin:6px 0;font-size:15px}
+.footer{color:#64748b;font-size:13px;margin:26px 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="hero">
+<div class="badge">UPI-ONLY • INBOX DELIVERY • NO PHONE</div>
+<h1>Posters & catalogs that sell.</h1>
+<p>Diwali posters, Meesho catalogs, thumbnails, GBP audit. Pay UPI, get files in inbox &lt;48h.</p>
+<p><a class="btn" href="#buy">Buy ₹399 →</a> <a class="btn line" style="background:transparent;color:#fff;border-color:#334155" href="#work">See demo</a></p>
+<p class="small" style="color:#94a3b8">UPI <code style="background:#1e293b;color:#fff">saveychauhan@ybl</code> • Remark = order • Reply &lt;12h in inbox</p>
+</div>
+
+<div class="card" id="work">
+<h2 style="margin-top:0">Demo</h2>
+<img class="demo" src="online/demo-poster.png" alt="Diwali salon poster demo" loading="lazy" onerror="this.style.display='none'">
+<p class="small">Real output: gold/purple Diwali poster. More: <a href="online/ai-services.md">gig details</a> • <a href="online/fiverr-contra-packs.md">Fiverr packs</a></p>
+</div>
+
+<div class="card" id="buy">
+<h2 style="margin-top:0">Buy — 2 taps</h2>
+<div class="grid">
+<div><p><strong>Poster / Thumbnail</strong></p><p class="price">₹399+</p><p class="small">2 posters ₹399 • 6 for ₹999 • 15+10 ₹1999. 24-72h.</p><p><a class="btn" href="upi://pay?pa=saveychauhan@ybl&pn=Savey&am=399&cu=INR&tn=Poster399">Pay ₹399</a></p></div>
+<div><p><strong>Catalog BG-remove</strong></p><p class="price">₹299+</p><p class="small">10 imgs ₹299 • 30 ₹799 • 70 ₹1499. 24h-4d.</p><p><a class="btn" href="upi://pay?pa=saveychauhan@ybl&pn=Savey&am=299&cu=INR&tn=Catalog299">Pay ₹299</a></p></div>
+</div>
+<div class="upi">
+<strong>Step 1:</strong> Pay UPI <code>saveychauhan@ybl</code> — <a href="online/pay.html">QR page →</a><br>
+<strong>Step 2:</strong> In UPI remark write <code>POSTER399 youremail / CATALOG799 youremail</code> — that IS your order.<br>
+<strong>Step 3:</strong> Send requirements + UTR in Fiverr/Contra inbox. Files back in inbox.
+<br><img class="qr" src="online/upi-399.png" alt="QR" onerror="this.style.display='none'">
+<span class="small">No 399 QR yet? Use generic: <a href="online/pay.html">pay.html</a> (upi-199/1499/3999/generic live).</span>
+</div>
+<label>Quick remark maker<select id="svc" onchange="mk()"><option value="POSTER399">Poster ₹399</option><option value="POSTER999">Poster pack ₹999</option><option value="CATALOG299">Catalog ₹299</option><option value="CATALOG799">Catalog ₹799</option><option value="GBP1499">GBP audit ₹1499</option></select></label>
+<label>Your inbox/email (for delivery)<input id="ct" placeholder="e.g. fiverr:user123 / you@gmail.com"></label>
+<pre id="out" class="small" style="white-space:pre-wrap;background:#0f172a;color:#e2e8f0;padding:12px;border-radius:10px;">POSTER399 your-contact</pre>
+<p class="small">Full menu: <a href="online/pay.html">pay.html</a> • GBP audit ₹1499: <a href="upi://pay?pa=saveychauhan@ybl&pn=Savey&am=1499&cu=INR&tn=GBPfix">pay ₹1499</a></p>
+</div>
+
+<div class="card">
+<h2 style="margin-top:0">FAQ</h2>
+<p><strong>No phone?</strong> Yes. All inbox. No calls, no OTP.</p>
+<p><strong>How fast?</strong> Posters 24-48h, catalogs 24h-4d. 1 revision.</p>
+<p><strong>Missed-call textback?</strong> Paused — needs SMS gateway + phone forwarding. Moved off homepage. Files kept in repo, not sold now.</p>
+<p class="small">Old tools still here: <a href="online/leak-calculator.html">leak calc</a> • Trading/games parked — services only.</p>
+</div>
+
+<div class="footer">© 2026 Savey • UPI <code>saveychauhan@ybl</code> • <a href="online/pay.html">pay</a> • <a href="online/ai-services.md">gigs</a></div>
+</div>
+<script>
+function copyUPI(){var u="saveychauhan@ybl";if(navigator.clipboard)navigator.clipboard.writeText(u).then(function(){alert("Copied "+u)});else prompt("Copy:",u)}
+function mk(){var s=document.getElementById('svc').value,c=document.getElementById('ct').value||"your-contact";document.getElementById('out').textContent=s+" "+c+"\n→ Paste in UPI remark + inbox with UTR."}
+mk();
+</script>
+</body>
+</html>
