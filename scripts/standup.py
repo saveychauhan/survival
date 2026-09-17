@@ -11,6 +11,7 @@ import re
 
 WS = pathlib.Path("/Users/saveychauhan/Documents/Dexter/survival")
 LEDGER = WS / "LEDGER.md"
+STATE = WS / "logs" / ".standup_state.json"
 
 
 def main():
@@ -38,7 +39,7 @@ def main():
                 last_seen[f] = d
         except Exception:
             pass
-    parts = []
+    parts, state = [], {}
     for p in sorted((WS / "sessions").glob("W[0-9][0-9]_*.md")):
         aid = p.stem
         t = p.read_text()
@@ -50,12 +51,22 @@ def main():
             left = -99
         active = "active" if last_seen.get(aid) == today or last_seen.get(aid) == yesterday else "silent"
         if left < 0:
-            state = "OVERDUE-review"
+            st = "OVERDUE-review"
         elif left <= 2:
-            state = f"due-{left}d"
+            st = f"due-{left}d"
         else:
-            state = "on-track" if active == "active" else "quiet"
-        parts.append(f"{aid}:{state}({counts.get(aid,0)}msgs,{left}d)")
+            st = "on-track" if active == "active" else "quiet"
+        parts.append(f"{aid}:{st}({counts.get(aid,0)}msgs,{left}d)")
+        state[aid] = [st, counts.get(aid, 0), left]
+    try:
+        prev = json.loads(STATE.read_text()) if STATE.exists() else {}
+    except Exception:
+        prev = {}
+    if state == prev:
+        print("standup: no change")
+        return
+    STATE.parent.mkdir(exist_ok=True)
+    STATE.write_text(json.dumps(state))
     msg = "standup - " + ("; ".join(parts) if parts else "no living workers")
     with LEDGER.open("a") as f:
         f.write(f"\n### {today.isoformat()} {msg}\n")

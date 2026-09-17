@@ -1,5 +1,5 @@
 0 9 * * * /bin/bash "/Users/saveychauhan/Documents/Dexter/survival/scripts/morning_scan.sh" >> "/Users/saveychauhan/Documents/Dexter/survival/logs/cron.log" 2>&1
-5 9 * * * /usr/bin/python3 "/Users/saveychauhan/Documents/Dexter/survival/scripts/standup.py" >> "/Users/saveychauhan/Documents/Dexter/survival/logs/cron.log" 2>&1
+*/30 * * * * /usr/bin/python3 "/Users/saveychauhan/Documents/Dexter/survival/scripts/standup.py" >> "/Users/saveychauhan/Documents/Dexter/survival/logs/cron.log" 2>&1
 30 8 * * * /usr/bin/python3 "/Users/saveychauhan/Documents/Dexter/survival/scripts/reproduce.py" >> "/Users/saveychauhan/Documents/Dexter/survival/logs/cron.log" 2>&1
 35 8 * * * /usr/bin/python3 "/Users/saveychauhan/Documents/Dexter/survival/scripts/scorecard.py" >> "/Users/saveychauhan/Documents/Dexter/survival/logs/cron.log" 2>&1
 40 8 * * * /usr/bin/python3 "/Users/saveychauhan/Documents/Dexter/survival/scripts/memory.py" >> "/Users/saveychauhan/Documents/Dexter/survival/logs/cron.log" 2>&1
