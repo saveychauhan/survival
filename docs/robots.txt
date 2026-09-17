@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Allow: /online/games/
+Allow: /online/deals.html
+Allow: /online/pay.html
+Disallow: /farm.html
+Disallow: /online/upi-generic.png
+
+Sitemap: https://raycast.in/sitemap.xml

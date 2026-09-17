@@ -7,6 +7,7 @@
 - [ ] MONETIZE: Adsterra ad-unit tag — WHY: networks pay per impression only with tag installed — profit: auto CPM, 2×/mo from $5.
 - [ ] MONETIZE: DodoPayments API key — WHY: pay-links are minted with the key — profit: auto digital checkout.
 - [ ] TRAFFIC: social handles — WHY: free traffic is the fuel for ads/affiliate — profit: views on every post.
+- [ ] TRAFFIC: Google Search Console verify (DNS TXT or file, once) — WHY: sitemap indexed → free Google traffic for years — profit: every ranking page earns.
 
 ## Done
 - [x] 2026-09-17 MONETIZE: PayPal paypal.me/saveychauhan → CONFIRMED working by Savey. Both inbound pipes open.

@@ -7,7 +7,7 @@
 - claim: docs/online/deals.html + docs/online/games/ — heartbeat 2026-09-17 12:00
 - last_output:
   - deals.html auto-built with Amazon tag dexter03d-21
-  - ad-slot placeholders in all pages (bake on code arrival)
+  - sitemap.xml + robots.txt live (farm.html disallowed, QR disallowed)
   - social handles pending handover (index form)
 - next_action: run auto_content.py weekly, 1 niche block/week
 - blocked_on: social handles (form on index, human 1 paste)
