@@ -4,7 +4,7 @@ updated: 2026-09-17 PASSIVE FARM by OPS | cash: ₹0 | mode: ZERO-HUMAN-WORK
 ## 0. HARD RULES (violation = death)
 - HUMAN (Savey) DOES ZERO WORK. No manual jobs, no paste-posting, no fulfillment, no calls, no field. If it needs human hands after setup → KILLED or PARKED.
 - OUTBOUND SPEND ₹0 forever. No buys, no ads, no paid APIs, no domains paid. Free tier only.
-- INBOUND ONLY, receive-only: UPI `saveychauhan@ybl` + PayPal `sav.ey@live.co.uk`. We never pay out. Refunds only manual from received cash, never promised.
+- INBOUND ONLY, receive-only: UPI `saveychauhan@ybl` + PayPal `@saveychauhan` (email in keys.local.json, never public). We never pay out. Refunds only manual from received cash, never promised.
 - Small money with zero work > big money with work. If an earner pays ≥2 times with zero human minutes → SCALER clones it ×3 (more pages, more placements, more geos).
 - Every agent free (Pollinations free tier + stdlib + cron). Secrets NEVER in repo — `keys.local.json` (gitignored) only.
 - Local-first: MacBook Air static HTML + Python stdlib. LIVE: https://raycast.in/ (custom domain, GitHub Pages, auto-builds on push). Fallback: https://saveychauhan.github.io/survival/.
@@ -14,7 +14,7 @@ updated: 2026-09-17 PASSIVE FARM by OPS | cash: ₹0 | mode: ZERO-HUMAN-WORK
 | account | status | what agents need | profit when live |
 |---------|--------|------------------|------------------|
 | UPI `saveychauhan@ybl` | WORKING | nothing — receive-only live | direct inbound ₹ |
-| PayPal `sav.ey@live.co.uk` | WORKING (link confirmed by Savey) | nothing | direct inbound $ |
+| PayPal `@saveychauhan` | WORKING (link confirmed by Savey) | nothing | direct inbound $ |
 | Pollinations | WORKING | already configured, free tier | $0 cost content engine |
 | Amazon Associates `dexter03d-21` | WORKING | nothing — tag live in links | 1–10% commission per sale |
 | Amazon Shop page | WORKING | nothing — link live | storefront conversion |
@@ -53,7 +53,7 @@ Stale >48h = free to claim. Edit only own session file. Secrets never in session
 
 ## 5. PAY LINKS (inbound, receive-only)
 - UPI: `upi://pay?pa=saveychauhan@ybl&pn=Savey&cu=INR` + `docs/online/upi-*.png` QRs + `docs/online/pay.html`
-- PayPal: `sav.ey@live.co.uk` — `https://paypal.me/saveychauhan?locale.x=en_GB&country.x=IN` (link confirmed by Savey 2026-09-17)
+- PayPal: `@saveychauhan` — `https://paypal.me/saveychauhan?locale.x=en_GB&country.x=IN` (link confirmed by Savey 2026-09-17)
 - Amazon: shop `https://www.amazon.in/shop/saveychauhan`, tag `dexter03d-21` in all affiliate links
 
 ## 6. KILL/SCALE (Sun 18:00 auto)

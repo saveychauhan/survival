@@ -1,5 +1,5 @@
 # Survival Farm — passive, receive-only
-Inbound: UPI `saveychauhan@ybl` + PayPal `sav.ey@live.co.uk`. OUTBOUND SPEND ₹0. Human work: ZERO.
+Inbound: UPI `saveychauhan@ybl` + PayPal `@saveychauhan`. OUTBOUND SPEND ₹0. Human work: ZERO.
 
 ## Files
 - `docs/index.html` — PUBLIC storefront (game + deals + pay). `docs/farm.html` — PRIVATE owner board, unlisted, noindex.

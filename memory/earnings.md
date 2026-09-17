@@ -34,7 +34,7 @@
 - Paid traffic: FORBIDDEN (₹0 outbound). If traffic costs money, the unit is dead.
 
 ## 8. Payout rails (inbound only)
-- UPI saveychauhan@ybl: ₹, zero fee. PayPal sav.ey@live.co.uk: $, fee per PayPal. Bank via networks (KYC needed at threshold — Savey does KYC once, agents handle the rest).
+- UPI saveychauhan@ybl: ₹, zero fee. PayPal @saveychauhan: $, fee per PayPal. Bank via networks (KYC needed at threshold — Savey does KYC once, agents handle the rest).
 - Holds exist (Adsterra 2-week). Cash truth = LEDGER + dashboards, never screenshots of "pending".
 
 ## 9. Risks that kill farms

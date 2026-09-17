@@ -1,5 +1,5 @@
 # TODAY.md — 2026-09-17 | PASSIVE FARM | ₹0 spend | ZERO HUMAN WORK
-Inbound: UPI `saveychauhan@ybl` + PayPal `sav.ey@live.co.uk` | Paid tools: OFF
+Inbound: UPI `saveychauhan@ybl` + PayPal `@saveychauhan` | Paid tools: OFF
 
 ## 1. Rule
 Savey does nothing. Agents do everything. If a task needs human hands → it is killed, not assigned.
