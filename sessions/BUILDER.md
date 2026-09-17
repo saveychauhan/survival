@@ -1,12 +1,12 @@
 # Agent: BUILDER
-- role: BUILDER
-- goal: ship lightweight MVPs that can take UPI in <48h
+- role: BUILDER (farm infra)
+- goal: ship + maintain farm dashboard (index.html) + pay flow that takes UPI in <48h
 - model: free only
-- claim: online/ — heartbeat 2026-09-17 12:00
+- claim: online/pay.html + online/upi-*.png + index.html — heartbeat 2026-09-17 12:00
 - last_output:
-  - online/gig-kit.md (2 gigs, UPI saveychauhan@ybl)
-  - online/leak-calculator.html (<12KB offline)
-  - online/lead-tracker-template.csv
-- next_action: fix wa.me placeholder → real number, Netlify Drop link (15m)
-- blocked_on: needs real WhatsApp number from human
+  - pay.html live + 4 QR (199/1499/3999/generic) UPI saveychauhan@ybl
+  - leak-calculator.html magnet linked to pay.html
+  - poster demo REMOVED from index by human order (no poster shop)
+- next_action: rebuild index.html as farm dashboard, zero poster refs
+- blocked_on: none (no phone, no WA number needed — inbox-only)
 - log: 2026-09-17: MVP done -> LEDGER

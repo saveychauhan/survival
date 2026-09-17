@@ -10,7 +10,7 @@ drafts = f"""# Bid drafts {D} — paste manually, DO NOT bot-post (ban risk)
 UPI: {UPI} | Reply <12h inbox-only | No phone
 
 ## 1. Catalog BG-remove (Meesho/Amazon seller, Upwork search: background removal)
-> Hi, I clean 15 product photos to white-bg + 2-page catalog PDF in 24h for Rs499 UPI. 3 free samples in 6h — pay only if you like. Remark: BG-[username]-[count] to {UPI}. Demo: [your hosted demo-poster link]. Send Drive link + UTR here?
+> Hi, I clean 15 product photos to white-bg + 2-page catalog PDF in 24h for Rs499 UPI. 3 free samples in 6h — pay only if you like. Remark: BG-[username]-[count] to {UPI}. Pay: online/pay.html. Send Drive link + UTR here?
 
 ## 2. Diwali Poster Pack (Fiverr/Contra, Maps email-form only)
 > Namaste, free 1 Diwali sample with your shop name in 24h. Pack 5 for Rs499, 10+QR for Rs999 UPI {UPI}. Remark: FEST-[shop]-[pack]. Inbox delivery, no calls. Want sample? Send shop name + offer + logo.

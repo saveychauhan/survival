@@ -66,7 +66,7 @@ Claim own sessions/*.md only. AUTO: 09:30 autobid.py -> scripts/bid_drafts/*.md 
 - cron live. logs/cron.log. sessions/OPS,BUILDER,CLOSER.
 
 ## 8. UPI-ONLY CHECKLIST + YOU CAN ADD (email-only, no mobile OTP)
-Live: [x] QRs 199/1499/3999/generic [x] pay.html [x] index UPI-only + AI section [x] demo-poster.png/jpg + palette + ai-services.md [x] cron 9am/9pm/Sun
+Live: [x] QRs 199/1499/3999/generic [x] pay.html [x] index = farm dashboard (no poster, no shop) [x] palette + ai-services.md [x] cron 9am/9:30/9pm/Sun
 1. [ ] Host free: drag `survival/` to Netlify Drop / GitHub Pages / Cloudflare Pages → URL (needs GitHub email-only account — YOU CAN ADD)
 2. [ ] Post Gig A+B from `online/ai-services.md` to Fiverr/Contra/Upwork (needs marketplace email-only account — YOU CAN ADD)
 3. [ ] Optional Google Form (email-only, 2m) to backup UPI remark — paste link into pay.html `forms.gle/REPLACE` (YOU CAN ADD if you want)

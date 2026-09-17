@@ -78,3 +78,4 @@
 
 ### 2026-09-17 RECEIVE-ONLY lock - UPI inbound only, OUTBOUND Rs0. No buys. README parked SMS, S2 free-scale only.
 ### 2026-09-17 UPI receive-only confirmed - `saveychauhan@ybl` inbound only, zero outbound/payouts. Razorpay removed from GO_TO_MARKET, SURVIVAL tightened.
+### 2026-09-17 farm pivot - poster killed by human. index.html rebuilt as farm dashboard (agents + cash, 0 poster refs, all links OK). Sessions OPS/BUILDER/CLOSER set inbox-only.

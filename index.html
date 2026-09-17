@@ -3,76 +3,162 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Savey Store — Posters, Catalogs, Thumbnails | UPI-only</title>
-<meta name="description" content="Diwali posters, product catalogs, thumbnails, GBP audit. Pay UPI saveychauhan@ybl, get files in inbox. No phone needed.">
+<title>Survival Farm — agents + cash</title>
+<meta name="description" content="Local farm dashboard: what subagents are doing, money in via UPI receive-only.">
 <style>
-*{box-sizing:border-box}body{font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;margin:0;background:#fafafa;color:#111;line-height:1.5}
-.wrap{max-width:720px;margin:0 auto;padding:20px}
-.hero{background:#0f172a;color:#fff;border-radius:16px;padding:28px 22px;margin-top:16px}
-.hero h1{font-size:30px;margin:0 0 10px}.hero p{color:#cbd5e1;margin:8px 0}
-.badge{display:inline-block;background:#22c55e;color:#052e16;font-weight:800;font-size:12px;padding:5px 11px;border-radius:999px;margin-bottom:10px}
-.btn{display:inline-block;background:#22c55e;color:#052e16;font-weight:800;padding:13px 20px;border-radius:10px;text-decoration:none;margin:8px 8px 0 0;border:0;cursor:pointer;font-size:16px}
-.btn.line{background:#fff;color:#0f172a;border:2px solid #0f172a}
-.card{background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:18px;margin:14px 0}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media(max-width:640px){.grid{grid-template-columns:1fr}.hero h1{font-size:24px}}
-.price{font-size:28px;font-weight:800}
-.small{font-size:13px;color:#64748b}code{background:#f1f5f9;padding:2px 6px;border-radius:6px}
-.upi{background:#f0fdf4;border:2px solid #22c55e;border-radius:12px;padding:14px;margin:12px 0}
-img.demo{width:100%;border-radius:10px;border:1px solid #e5e7eb}
-img.qr{width:170px;height:170px;border:1px solid #e2e8f0;border-radius:12px;display:block;margin:8px 0}
-input,select{width:100%;padding:11px;border:1px solid #cbd5e1;border-radius:8px;margin:6px 0;font-size:15px}
-.footer{color:#64748b;font-size:13px;margin:26px 0}
+*{box-sizing:border-box}body{font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;margin:0;background:#0b1220;color:#e2e8f0;line-height:1.5}
+.wrap{max-width:860px;margin:0 auto;padding:20px}
+.top{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:14px}
+.badge{display:inline-block;background:#22c55e;color:#052e16;font-weight:800;font-size:12px;padding:5px 11px;border-radius:999px}
+.badge.dim{background:#1e293b;color:#94a3b8;border:1px solid #334155}
+h1{font-size:28px;margin:10px 0 4px;color:#fff}
+.sub{color:#94a3b8;margin:0 0 12px}
+.card{background:#0f172a;border:1px solid #1e293b;border-radius:14px;padding:16px;margin:12px 0}
+.card h2{margin:0 0 8px;font-size:18px;color:#fff}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media(max-width:700px){.grid{grid-template-columns:1fr}h1{font-size:22px}}
+.kpi{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}@media(max-width:700px){.kpi{grid-template-columns:1fr 1fr}}
+.kpi div{background:#111c33;border:1px solid #1e293b;border-radius:10px;padding:10px;text-align:center}
+.kpi b{display:block;font-size:20px;color:#fff}.kpi span{font-size:12px;color:#94a3b8}
+.agent{border-left:4px solid #22c55e}
+.agent.stale{border-color:#f59e0b}.agent small{color:#94a3b8}
+code{background:#1e293b;padding:2px 6px;border-radius:6px;color:#fff;font-size:13px}
+a{color:#4ade80}
+.btn{display:inline-block;background:#22c55e;color:#052e16;font-weight:800;padding:11px 16px;border-radius:10px;text-decoration:none;margin:6px 6px 0 0;border:0;cursor:pointer}
+.btn.line{background:transparent;color:#e2e8f0;border:2px solid #334155}
+input,select{width:100%;padding:10px;border:1px solid #334155;border-radius:8px;margin:6px 0;font-size:14px;background:#0b1220;color:#e2e8f0}
+pre.out{background:#020617;border:1px solid #1e293b;color:#a5f3fc;padding:12px;border-radius:10px;white-space:pre-wrap;font-size:13px}
+.mut{color:#94a3b8;font-size:13px}
+ol,ul{margin:8px 0;padding-left:20px}
+li{margin:4px 0}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:#22c55e;margin-right:6px}
 </style>
 </head>
 <body>
 <div class="wrap">
-<div class="hero">
-<div class="badge">UPI-ONLY • INBOX DELIVERY • NO PHONE</div>
-<h1>Posters & catalogs that sell.</h1>
-<p>Diwali posters, Meesho catalogs, thumbnails, GBP audit. Pay UPI, get files in inbox &lt;48h.</p>
-<p><a class="btn" href="#buy">Buy ₹399 →</a> <a class="btn line" style="background:transparent;color:#fff;border-color:#334155" href="#work">See demo</a></p>
-<p class="small" style="color:#94a3b8">UPI <code style="background:#1e293b;color:#fff">saveychauhan@ybl</code> • Remark = order • Reply &lt;12h in inbox</p>
-</div>
 
-<div class="card" id="work">
-<h2 style="margin-top:0">Demo</h2>
-<img class="demo" src="online/demo-poster.png" alt="Diwali salon poster demo" loading="lazy" onerror="this.style.display='none'">
-<p class="small">Real output: gold/purple Diwali poster. More: <a href="online/ai-services.md">gig details</a> • <a href="online/fiverr-contra-packs.md">Fiverr packs</a></p>
+<div class="top">
+<span class="badge">FARM DASHBOARD • LOCAL ONLY</span>
+<span class="badge dim">UPI RECEIVE-ONLY • ₹0 OUTBOUND</span>
+<span class="badge dim" id="clock">--:--</span>
 </div>
+<h1>Survival farm — who does what, where money comes in.</h1>
+<p class="sub">No poster shop. No demo. 3 subagents + 1 auto-bidder, inbox-only, no calls. Money in = UPI <code id="upi1">saveychauhan@ybl</code> + remark. <span id="live">snapshot 2026-09-17</span></p>
 
-<div class="card" id="buy">
-<h2 style="margin-top:0">Buy — 2 taps</h2>
-<div class="grid">
-<div><p><strong>Poster / Thumbnail</strong></p><p class="price">₹399+</p><p class="small">2 posters ₹399 • 6 for ₹999 • 15+10 ₹1999. 24-72h.</p><p><a class="btn" href="upi://pay?pa=saveychauhan@ybl&pn=Savey&am=399&cu=INR&tn=Poster399">Pay ₹399</a></p></div>
-<div><p><strong>Catalog BG-remove</strong></p><p class="price">₹299+</p><p class="small">10 imgs ₹299 • 30 ₹799 • 70 ₹1499. 24h-4d.</p><p><a class="btn" href="upi://pay?pa=saveychauhan@ybl&pn=Savey&am=299&cu=INR&tn=Catalog299">Pay ₹299</a></p></div>
+<div class="card">
+<h2>Cash truth</h2>
+<div class="kpi">
+<div><b>₹0</b><span>cash / revenue</span></div>
+<div><b>₹0</b><span>MRR</span></div>
+<div><b id="kLeads">0</b><span>leads → inbox → UPI</span></div>
+<div><b>≤14d</b><span>target to next UPI</span></div>
 </div>
-<div class="upi">
-<strong>Step 1:</strong> Pay UPI <code>saveychauhan@ybl</code> — <a href="online/pay.html">QR page →</a><br>
-<strong>Step 2:</strong> In UPI remark write <code>POSTER399 youremail / CATALOG799 youremail</code> — that IS your order.<br>
-<strong>Step 3:</strong> Send requirements + UTR in Fiverr/Contra inbox. Files back in inbox.
-<br><img class="qr" src="online/upi-399.png" alt="QR" onerror="this.style.display='none'">
-<span class="small">No 399 QR yet? Use generic: <a href="online/pay.html">pay.html</a> (upi-199/1499/3999/generic live).</span>
-</div>
-<label>Quick remark maker<select id="svc" onchange="mk()"><option value="POSTER399">Poster ₹399</option><option value="POSTER999">Poster pack ₹999</option><option value="CATALOG299">Catalog ₹299</option><option value="CATALOG799">Catalog ₹799</option><option value="GBP1499">GBP audit ₹1499</option></select></label>
-<label>Your inbox/email (for delivery)<input id="ct" placeholder="e.g. fiverr:user123 / you@gmail.com"></label>
-<pre id="out" class="small" style="white-space:pre-wrap;background:#0f172a;color:#e2e8f0;padding:12px;border-radius:10px;">POSTER399 your-contact</pre>
-<p class="small">Full menu: <a href="online/pay.html">pay.html</a> • GBP audit ₹1499: <a href="upi://pay?pa=saveychauhan@ybl&pn=Savey&am=1499&cu=INR&tn=GBPfix">pay ₹1499</a></p>
+<p class="mut">Source of truth = <code>LEDGER.md</code> + UPI app history. Funnel: views → inbox → UPI hits → paid. <a href="LEDGER.md">LEDGER</a> • <a href="SURVIVAL_SYSTEM.md">SYSTEM</a> • <a href="TODAY.md">TODAY</a></p>
 </div>
 
 <div class="card">
-<h2 style="margin-top:0">FAQ</h2>
-<p><strong>No phone?</strong> Yes. All inbox. No calls, no OTP.</p>
-<p><strong>How fast?</strong> Posters 24-48h, catalogs 24h-4d. 1 revision.</p>
-<p><strong>Missed-call textback?</strong> Paused — needs SMS gateway + phone forwarding. Moved off homepage. Files kept in repo, not sold now.</p>
-<p class="small">Old tools still here: <a href="online/leak-calculator.html">leak calc</a> • Trading/games parked — services only.</p>
+<h2>Subagents — live status</h2>
+<div class="grid">
+<div class="card agent" id="a-ops">
+<h3><span class="dot"></span>OPS — keeper</h3>
+<small>claim: SURVIVAL_SYSTEM.md + scripts/ • heartbeat 2026-09-17 12:00</small>
+<p><b>Doing:</b> cron alive, ledger truth, kill/scale Sun 18:00.</p>
+<p><b>Last:</b> UPI receive-only lock, 4 cron jobs live.</p>
+<p><b>Next:</b> verify 09:00 scan fires, review EX01-03.</p>
+<p class="mut">File: <a href="sessions/OPS.md">sessions/OPS.md</a></p>
+</div>
+<div class="card agent" id="a-builder">
+<h3><span class="dot"></span>BUILDER — infra</h3>
+<small>claim: online/pay.html + index.html • heartbeat 2026-09-17 12:00</small>
+<p><b>Doing:</b> farm dashboard + pay flow (no poster).</p>
+<p><b>Last:</b> pay.html + 4 QRs live, poster removed.</p>
+<p><b>Next:</b> keep index = farm only, zero shop refs.</p>
+<p class="mut">File: <a href="sessions/BUILDER.md">sessions/BUILDER.md</a></p>
+</div>
+<div class="card agent" id="a-closer">
+<h3><span class="dot"></span>CLOSER — sales, inbox-only</h3>
+<small>claim: TODAY.md + bid_drafts/ • heartbeat 2026-09-17 12:00</small>
+<p><b>Doing:</b> 2 listings + 10 async audits/day, no calls.</p>
+<p><b>Last:</b> inbox opener + Maps targets ready.</p>
+<p><b>Next:</b> paste 6 bids, log views/inbox/UPI.</p>
+<p class="mut">File: <a href="sessions/CLOSER.md">sessions/CLOSER.md</a> • <a href="scripts/bid_drafts/2026-09-17.md">today's bids</a></p>
+</div>
+<div class="card agent" id="a-auto">
+<h3><span class="dot"></span>AUTO-BIDDER — cron, no bot</h3>
+<small>scripts/autobid.py • 09:30 daily • paste-only</small>
+<p><b>Doing:</b> generates 3 paste-ready proposals/day.</p>
+<p><b>Last:</b> <a href="scripts/bid_drafts/2026-09-17.md">2026-09-17.md</a> (catalog / poster-free audit / GBP).</p>
+<p><b>Next:</b> human pastes 2/day each, logs LEDGER.</p>
+<p class="mut">Ban-safe: never auto-posts. Files: <a href="scripts/autobid.py">autobid.py</a> • <a href="scripts/cron.txt">cron.txt</a></p>
+</div>
+</div>
+<p class="mut">Stale &gt;2h = free to claim. Rule: read other <code>sessions/*.md</code> before work, edit only own file.</p>
 </div>
 
-<div class="footer">© 2026 Savey • UPI <code>saveychauhan@ybl</code> • <a href="online/pay.html">pay</a> • <a href="online/ai-services.md">gigs</a></div>
+<div class="card">
+<h2>Farm — how money comes in</h2>
+<ol>
+<li><b>Listing / bid / audit seen</b> → buyer opens <a href="online/pay.html">pay.html</a></li>
+<li><b>Pays UPI</b> <code>saveychauhan@ybl</code> — QR or link below. Amount = tier.</li>
+<li><b>Remark = order:</b> <code>SERVICE Biz Contact</code> e.g. <code>GBP Sharma salon@gmail.com</code></li>
+<li><b>We check UPI history daily</b> → confirm in marketplace inbox &lt;12h</li>
+<li><b>Deliver via inbox</b> → log Revenue in LEDGER → ask 2 referrals</li>
+</ol>
+<p>
+<a class="btn" href="upi://pay?pa=saveychauhan@ybl&pn=Savey&am=199&cu=INR&tn=Pilot199">Pay ₹199 pilot</a>
+<a class="btn" href="upi://pay?pa=saveychauhan@ybl&pn=Savey&am=1499&cu=INR&tn=GBPfix">Pay ₹1499 GBP fix</a>
+<a class="btn" href="upi://pay?pa=saveychauhan@ybl&pn=Savey&am=3999&cu=INR&tn=Rescue3999">Pay ₹3999 rescue</a>
+<a class="btn line" href="online/pay.html">QR page →</a>
+<button class="btn line" onclick="copyUPI()">Copy UPI</button>
+</p>
+<label>Remark maker — service
+<select id="svc">
+<option value="PILOT199">Pilot ₹199</option>
+<option value="GBP1499">GBP fix ₹1499</option>
+<option value="RESCUE3999">Rescue ₹3999</option>
+<option value="CATALOG799">Catalog ₹799</option>
+</select></label>
+<label>Your inbox / email for delivery
+<input id="ct" placeholder="e.g. fiverr:user123 / you@gmail.com"></label>
+<pre class="out" id="out">PILOT199 your-contact</pre>
+<p class="mut">Full QR menu: <a href="online/pay.html">online/pay.html</a> (199 / 1499 / 3999 / generic). Leak magnet: <a href="online/leak-calculator.html">leak-calculator.html</a></p>
+</div>
+
+<div class="card">
+<h2>Today — human does 5 (15-60m, async)</h2>
+<ol>
+<li><b>Host once (15m):</b> drag <code>survival/online/</code> to Netlify Drop → paste URL into listings.</li>
+<li><b>2 listings (30m):</b> copy from <a href="online/gig-kit.md">gig-kit.md</a> + <a href="online/fiverr-contra-packs.md">packs</a> to Fiverr/Contra. Attach pay.html + leak-calc link.</li>
+<li><b>10 audits (30m, no calls):</b> Maps: plumber / electrician / AC / salon / dental / garage Andheri-Goregaon, 4.0-4.4★ 20-200 revs → inbox opener from <a href="TODAY.md">TODAY.md</a>.</li>
+<li><b>Log (5m):</b> views / inbox / UPI hits in <a href="LEDGER.md">LEDGER</a>.</li>
+<li><b>On UPI hit:</b> read remark → deliver in inbox → log Revenue → 2 referrals.</li>
+</ol>
+<p class="mut">Inbox opener: <code>Namaste [Name], Savey here. Your Maps misses top-3. Free audit + calc: [LINK]. Fix 48h ₹1499 via UPI saveychauhan@ybl, remark “GBP [Biz] [email]”. Confirm &lt;12h. Want audit?</code></p>
+</div>
+
+<div class="card">
+<h2>Automation — Air-safe, free</h2>
+<ul>
+<li>09:00 <code>scripts/morning_scan.sh</code> → <code>prompts/scan_*.md</code> (5 async leads, no calls)</li>
+<li>09:30 <code>scripts/autobid.py</code> → <code>scripts/bid_drafts/*.md</code> (paste-only)</li>
+<li>21:00 <code>scripts/evening_nudge.py</code> → funnel → LEDGER</li>
+<li>Sun 18:00 <code>scripts/weekly_review.py</code> → kill/scale</li>
+</ul>
+<p class="mut">Kill: 5 listings+100 views/14d 0 inbox → rewrite. 20 audits/14d 0 UPI → ₹99 tripwire. &gt;15h/14d ₹0 → pause, gig-hunt only. Scale: ≥3 paid → +25% price, 2 referrals/client.</p>
+</div>
+
+<div class="card mut">
+Repo files: <a href="README.md">README</a> • <a href="GO_TO_MARKET.md">GO_TO_MARKET</a> • <a href="OFFER.md">OFFER</a> • <a href="LEDGER.md">LEDGER</a> • <a href="SURVIVAL_SYSTEM.md">SYSTEM</a> • <a href="TODAY.md">TODAY</a> • <a href="online/pay.html">pay</a> • <a href="online/leak-calculator.html">leak calc</a><br>
+© 2026 Savey • UPI <code>saveychauhan@ybl</code> receive-only • local file, not hosted until you drag to Netlify.
+</div>
+
 </div>
 <script>
-function copyUPI(){var u="saveychauhan@ybl";if(navigator.clipboard)navigator.clipboard.writeText(u).then(function(){alert("Copied "+u)});else prompt("Copy:",u)}
-function mk(){var s=document.getElementById('svc').value,c=document.getElementById('ct').value||"your-contact";document.getElementById('out').textContent=s+" "+c+"\n→ Paste in UPI remark + inbox with UTR."}
-mk();
+function tick(){var d=new Date(),p=function(n){return(n<10?'0':'')+n};document.getElementById('clock').textContent=p(d.getHours())+':'+p(d.getMinutes())+':'+p(d.getSeconds())}setInterval(tick,1000);tick();
+function copyUPI(){var u='saveychauhan@ybl';if(navigator.clipboard)navigator.clipboard.writeText(u).then(function(){alert('Copied '+u)});else prompt('Copy:',u)}
+function mk(){var s=document.getElementById('svc').value,c=(document.getElementById('ct').value||'your-contact').trim();document.getElementById('out').textContent=s+' '+c+'\n→ Paste in UPI remark + inbox with UTR.'}
+document.getElementById('svc').addEventListener('change',mk);document.getElementById('ct').addEventListener('input',mk);mk();
+// Try live-load agent files when hosted (http), silent fallback to snapshot on file://
+(function(){if(location.protocol==='file:')return;var files=['sessions/OPS.md','sessions/BUILDER.md','sessions/CLOSER.md','LEDGER.md'];Promise.all(files.map(function(f){return fetch(f).then(function(r){return r.ok?r.text():''}).catch(function(){return''})})).then(function(t){if(t[0]||t[3])document.getElementById('live').textContent='live '+new Date().toLocaleString();}).catch(function(){})})();
 </script>
 </body>
 </html>

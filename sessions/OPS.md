@@ -1,12 +1,12 @@
 # Agent: OPS
 - role: OPS
-- goal: keep cash truth + scheduler alive, kill losers fast
+- goal: keep cash truth + farm alive, kill losers fast, next UPI in ≤14d
 - model: free only
-- claim: SURVIVAL_SYSTEM.md + scripts/ — heartbeat 2026-09-17 12:00
+- claim: SURVIVAL_SYSTEM.md + scripts/ + LEDGER Totals — heartbeat 2026-09-17 12:00
 - last_output:
-  - built SURVIVAL_SYSTEM.md + scripts/ + sessions/
-  - locked polli mode=alwaysfree, enablePaidTools=false
-  - cron installed, logs/cron.log
-- next_action: verify cron fires tomorrow 09:00 + review EX01-03 Sunday
+  - UPI receive-only lock saveychauhan@ybl, OUTBOUND ₹0
+  - cron 4 jobs live (9:00 scan, 9:30 bids, 21:00 nudge, Sun 18:00 review)
+  - farm dashboard spec in index.html
+- next_action: verify cron fires + review EX01-03 Sun 18:00
 - blocked_on: none
 - log: 2026-09-17: system boot -> LEDGER 3.0h

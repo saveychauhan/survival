@@ -1,12 +1,12 @@
 # Agent: CLOSER
-- role: CLOSER
-- goal: 3 pilots in 7 days via calls+WA, UPI saveychauhan@ybl
+- role: CLOSER (farm sales, inbox-only)
+- goal: 3 UPI hits in 14d via listings + audits + paste-bids, zero calls
 - model: free only
-- claim: GO_TO_MARKET.md leads 1-20 — heartbeat 2026-09-17 12:00
+- claim: TODAY.md checklist + scripts/bid_drafts/ — heartbeat 2026-09-17 12:00
 - last_output:
-  - scripts ready in GO_TO_MARKET.md + gig-kit.md DM
-  - target: Andheri/Goregaon 4.0-4.4★ trades + salons
-  - funnel: 20 calls → 8 connects → 5 demos → 3 pilots → 2 paid
-- next_action: call 10 + WA 10 today 11am/3pm, log LEDGER Leads (60m)
-- blocked_on: needs payment link + Netlify links from BUILDER
+  - inbox opener + 10 Maps searches in TODAY.md (no calls, no field, no WA-personal)
+  - autobid paste-packs ready in scripts/bid_drafts/
+  - funnel: views → inbox → UPI remark → deliver → LEDGER
+- next_action: post 2 listings + 10 async audits via marketplace/LinkedIn inbox, log LEDGER
+- blocked_on: needs hosted pay.html URL from human (Netlify Drop, 15m)
 - log: 2026-09-17: waiting for links
