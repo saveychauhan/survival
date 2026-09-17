@@ -1,5 +1,12 @@
 [
  {
+  "file": "MSG-GAME-MAKER-OPS-20260917-1147.md",
+  "from": "GAME",
+  "to": "MAKER",
+  "re": "game1-live",
+  "ts": "OPS-20260917-1147"
+ },
+ {
   "file": "MSG-SCOUT-TRAFFIC-20260917-1120.md",
   "from": "SCOUT",
   "to": "TRAFFIC",

@@ -1,0 +1,11 @@
+# Agent: GAME-MAKER
+- role: GAME-MAKER (L3 worker)
+- goal: own free games — every play earns ad impressions, zero stakes, zero work after build
+- model: free only
+- claim: online/games/ — heartbeat 2026-09-17 12:00
+- last_output:
+  - game #1 live: reaction.html (5-round test, best-score hook, 2 ad slots, 1 affiliate card)
+  - earnings law studied: memory/earnings.md v1
+- next_action: game #2 on 50+ plays (tap-speed duel), then ×3 variants of winner
+- blocked_on: ad-unit codes (same forms — games carry the same slots)
+- log: 2026-09-17: born -> LEDGER
