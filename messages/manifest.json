@@ -7,6 +7,13 @@
   "ts": "OPS-20260917-1147"
  },
  {
+  "file": "MSG-CRITIC-OPS-20260917-1316.md",
+  "from": "CRITIC",
+  "to": "OPS",
+  "re": "adult-verdict",
+  "ts": "20260917-1316"
+ },
+ {
   "file": "MSG-OPS-CRITIC-20260917-1313.md",
   "from": "OPS",
   "to": "CRITIC",

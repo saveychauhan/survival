@@ -29,7 +29,7 @@ updated: 2026-09-17 PASSIVE FARM by OPS | cash: ₹0 | mode: ZERO-HUMAN-WORK
 |----|------|---------------------------|--------|-------------|
 | EU-AFF | Amazon affiliate pages | `docs/online/deals.html` auto-built by cron with `tag=dexter03d-21` links | live | TRAFFIC adds 1 product block/week via script |
 | EU-ADS | Adsterra display | ad-slot placeholders in all pages, baked live when unit code lands | waiting-code | MONETIZE bakes tag on arrival |
-| EU-JUICY | JuicyAds publisher | stats auto-pulled daily via API; ad tags after site approval | verifying | MONETIZE verifies key + pulls stats |
+| EU-JUICY | JuicyAds publisher | GATED: adult network vs clean site under CRITIC review; tags only on approved adult-only property | verifying | MONETIZE holds, no tags on raycast.in |
 | EU-DODO | DodoPayments checkout | payment link for 1 digital pack, auto-delivery | waiting-key | MONETIZE creates link on key arrival |
 | EU-CONTENT | Auto content engine | cron builds 1 SEO page/week (Pollinations images + affiliate links) driving EU-AFF/EU-ADS | live | TRAFFIC runs auto_content.py |
 | EU-GAME | Owned free games (reaction #1 live) | plays → ad impressions + affiliate | live | GAME-MAKER ships #2 at 50+ plays |

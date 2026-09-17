@@ -14,7 +14,8 @@
 
 ## 3. Networks live in this farm (verified, not rumored)
 - Adsterra publisher: no traffic minimum, auto payouts 2×/mo (1–2, 16–17), NET15 + 2-week hold. Min from $5 (Paxum/WebMoney); PayPal/local higher. Needs ad-unit tag installed or earns $0.
-- JuicyAds publisher: banners/native/pop/interstitial, weekly payouts. API v1 stats verified live with our key. API reports only — ad-zone tag must render to earn.
+- Adsterra adult-ads toggle: OPTIONAL per-site CPM boost. RULE: stays OFF on raycast.in — adult ads next to Amazon links risk an Associates ban, and adult-content sites can be refused outright. Adult money needs its own property + domain (parked till Savey approves).
+- JuicyAds publisher: adult network; API stats verified live with our key. Tags GATED — never on clean pages with Amazon links.
 - Both need hosted pages with real views. Tags bake in once codes land (index forms).
 
 ## 4. Affiliate (live: Amazon Associates dexter03d-21)
