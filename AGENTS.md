@@ -33,6 +33,7 @@ EU-CONTENT (auto pages), EU-GAME (owned games). Money flows up, orders flow down
 | host check | scripts/host.py | know your machine: OS, cron count, disk, power; Mac sleeps = farm dies |
 | cloud escape | .github/workflows/farm.yml + scripts/cloud_run.py | free runner when Mac sleeps; commits back; secret JUICYADS_KEY optional |
 | bus | scripts/bus.py | `post FROM TO RE BODY` (≤5 lines) / `inbox YOU` daily / manifest auto-rebuilds |
+| talk | scripts/converse.py | village talk every 30 min: starts, joins (max 5), privates, ends; unique timestamps |
 | dreams | scripts/think.py | inner life every 30 min (mornings = goal, later = free thought), diary only |
 | homes | places/private/<YOU>/ | your room + diary — write own diary only, read rooms freely |
 | minds | agents/<YOU>/memory/ + memory.db | your NOW/OWNS/HOME + SQLite brain — rebuilt by memory.py |

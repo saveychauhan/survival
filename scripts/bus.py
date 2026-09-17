@@ -39,7 +39,7 @@ def rebuild_manifest():
 
 def post(frm, to, re, body):
     frm, to = frm.upper().strip(), to.upper().strip()
-    ts = datetime.datetime.now().strftime("%Y%m%d-%H%M")
+    ts = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
     p = BOX / f"MSG-{frm}-{to}-{ts}.md"
     p.write_text(f"TO: {to}\nFROM: {frm}\nRE: {re}\nDATE: {ts}\n\n{body}\n")
     rebuild_manifest()
