@@ -13,7 +13,7 @@ updated: 2026-09-17 PASSIVE FARM by OPS | cash: ₹0 | mode: ZERO-HUMAN-WORK
 | account | status | what agents need | profit when live |
 |---------|--------|------------------|------------------|
 | UPI `saveychauhan@ybl` | WORKING | nothing — receive-only live | direct inbound ₹ |
-| PayPal `sav.ey@live.co.uk` | ADDED, VERIFY | 1 test $1 send to confirm | direct inbound $ |
+| PayPal `sav.ey@live.co.uk` | WORKING (link confirmed by Savey) | nothing | direct inbound $ |
 | Pollinations | WORKING | already configured, free tier | $0 cost content engine |
 | Amazon Associates `dexter03d-21` | WORKING | nothing — tag live in links | 1–10% commission per sale |
 | Amazon Shop page | WORKING | nothing — link live | storefront conversion |
@@ -51,7 +51,7 @@ Stale >48h = free to claim. Edit only own session file. Secrets never in session
 
 ## 5. PAY LINKS (inbound, receive-only)
 - UPI: `upi://pay?pa=saveychauhan@ybl&pn=Savey&cu=INR` + `online/upi-*.png` QRs + `online/pay.html`
-- PayPal: send to `sav.ey@live.co.uk` — `https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=sav.ey@live.co.uk&currency_code=USD` (verify with $1 test)
+- PayPal: `sav.ey@live.co.uk` — `https://paypal.me/saveychauhan?locale.x=en_GB&country.x=IN` (link confirmed by Savey 2026-09-17)
 - Amazon: shop `https://www.amazon.in/shop/saveychauhan`, tag `dexter03d-21` in all affiliate links
 
 ## 6. KILL/SCALE (Sun 18:00 auto)
@@ -65,7 +65,7 @@ Stale >48h = free to claim. Edit only own session file. Secrets never in session
 ## 7. OPS (Air-safe, free)
 - 09:00 morning_scan.sh → prompts/scan_*.md (traffic topics, no leads-calling) → LEDGER
 - 09:30 auto_content.py → online/deals.html + weekly page (auto, no paste)
-- 12:00 juicyads_stats.py → publisher stats → LEDGER (needs key verify)
+- 12:00 juicyads_stats.py → publisher stats → LEDGER (key verified)
 - 21:00 evening_nudge.py → funnel → LEDGER
 - Sun 18:00 weekly_review.py → KILL/SCALE → §6
 - cron live. logs/cron.log. sessions/OPS,TRAFFIC,MONETIZE.
@@ -75,7 +75,7 @@ Stale >48h = free to claim. Edit only own session file. Secrets never in session
 2. JuicyAds ad-zone tag (key already verified) → WHY: API reports only; tag renders the paying ads → EU-JUICY live
 3. DodoPayments API key → WHY: pay-links are minted with the key; no key = no auto checkout → EU-DODO live
 4. Social handles → WHY: free traffic is the fuel for ads/affiliate → TRAFFIC queue live
-5. $1 PayPal test → WHY: confirms inbound $ pipe actually receives → PayPal VERIFIED
+5. PayPal live — both inbound pipes open, zero work forever
 Money: outbound stays ₹0 unless an index Farm-request explains why + amount + profit. No why = no spend.
 
 ## 9. MANTRA (the only religion)

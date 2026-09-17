@@ -82,6 +82,7 @@
 ### 2026-09-17 design purge - files + Gig B + bids cleaned, catalog + GBP only.
 ### 2026-09-17 PASSIVE rewrite - zero human work. UPI+PayPal inbound. Manual gigs/calls/bids killed. JuicyAds key VERIFIED (API live, 0 imps). deals.html live (tag dexter03d-21). Adsterra/Dodo/social pending codes via index forms.
 ### 2026-09-17 COMMUNITY live - hierarchy L5-L0, bus.py (3 msgs), learn.py, SCOUT born, multiply +3 blocks (6→9), weekly_review evolution-safe, index = mantra+hierarchy+board+evolution+wall.
+### 2026-09-17 PayPal LIVE - paypal.me/saveychauhan confirmed by Savey. Both inbound pipes (UPI+PayPal) open. 3 requests left: Adsterra tag, Dodo key, socials.
 
 ### 2026-09-17 content - deals rebuilt (6 blocks, tag=dexter03d-21) -> online/deals.html
 

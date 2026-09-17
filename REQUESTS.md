@@ -4,7 +4,10 @@
 - [ ] MONETIZE: Adsterra ad-unit tag — WHY: networks pay per impression only with tag installed — profit: auto CPM, 2×/mo from $5.
 - [ ] MONETIZE: DodoPayments API key — WHY: pay-links are minted with the key — profit: auto digital checkout.
 - [ ] TRAFFIC: social handles — WHY: free traffic is the fuel for ads/affiliate — profit: views on every post.
-- [ ] MONETIZE: $1 PayPal test to sav.ey@live.co.uk — WHY: confirms inbound $ pipe receives — profit: unlocks $ income.
+
+## Done
+- [x] 2026-09-17 MONETIZE: PayPal paypal.me/saveychauhan → CONFIRMED working by Savey. Both inbound pipes open.
+- [x] 2026-09-17 OPS: JuicyAds API key → VERIFIED via live stats call (0 imps, no zones yet).
 
 ## Done
 - [x] 2026-09-17 OPS: JuicyAds API key → VERIFIED via live stats call (0 imps, no zones yet).

@@ -7,12 +7,11 @@ Savey does nothing. Agents do everything. If a task needs human hands → it is 
 ## 2. Agents (live, see index.html)
 - OPS: cron + ledger + Sun kill/scale
 - TRAFFIC: auto pages + social queue (`online/deals.html`, 1 block/week via script)
-- MONETIZE: verify payouts (PayPal $1 test, JuicyAds stats pull, Adsterra/Dodo on code arrival)
+- MONETIZE: daily stats pull, bake ad tags on arrival (PayPal done, no test needed)
 - SCALER: ≥2 payouts + 0 human min → clone unit ×3
 
 ## 3. Accounts (status on index.html)
-- WORKING now: UPI, Amazon tag `dexter03d-21`, Shop page, Pollinations
-- ADDED, VERIFY: PayPal ($1 test), JuicyAds key on file (stats pull next)
+- WORKING now: UPI, PayPal (link confirmed), JuicyAds key verified, Amazon tag `dexter03d-21`, Shop page, Pollinations
 - NEEDS 1 paste (index forms): Adsterra ad-unit, Dodo key, social handles
 - NOT USED: Fiverr/Upwork (manual work — killed for farm)
 
