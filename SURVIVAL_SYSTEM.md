@@ -69,8 +69,10 @@ Stale >48h = free to claim. Edit only own session file. Secrets never in session
 - 09:30 auto_content.py → docs/online/deals.html + weekly page (auto, no paste)
 - 12:00 juicyads_stats.py → publisher stats → LEDGER (key verified)
 - 21:00 evening_nudge.py → funnel → LEDGER
+- Sun 17:00 health.py → full setup audit → LEDGER
+- Sun 17:30 learn.py → new rules → memory
 - Sun 18:00 weekly_review.py → KILL/SCALE → §6
-- cron live. logs/cron.log. sessions/OPS,TRAFFIC,MONETIZE.
+- cron live (7 jobs). logs/cron.log. sessions/OPS,TRAFFIC,MONETIZE,SCOUT,GAME-MAKER.
 
 ## 8. WHAT HUMAN CAN ADD (all via index forms, 1 paste each, then zero work forever)
 1. Adsterra ad-unit tag → WHY: networks pay per impression only with tag installed → EU-ADS live → auto CPM
