@@ -7,6 +7,7 @@ Open via localhost or double-click. Regen: python3 scripts/farm3d.py
 Zero human work, stdlib only, exit 0 always.
 """
 import datetime
+import html
 import json
 import pathlib
 import re
@@ -74,8 +75,27 @@ def main():
         })
     data = {"built": datetime.datetime.now().strftime("%Y-%m-%d %H:%M"),
             "souls": souls}
-    OUT.write_text(TEMPLATE.replace("__DATA__", json.dumps(data)))
-    print(f"world: {len(souls)} souls -> local/farm3d.html (LOCAL ONLY, gitignored)")
+    # talk: latest message per soul (max 4 freshest speak in-world) + feed html
+    seen, recent = set(), []
+    for m in items:
+        f = resolve(m["from"])
+        if f in stems and f not in seen:
+            seen.add(f)
+            try:
+                body = (WS / "messages" / m["file"]).read_text().split("\n\n", 1)[1].strip()
+            except Exception:
+                body = ""
+            recent.append({"from": f, "to": m["to"], "re": m["re"],
+                           "ts": m["ts"], "body": body[:180]})
+    say = {r["from"]: r["body"] for r in recent[:4]}
+    for s in souls:
+        s["say"] = say.get(s["id"], "")
+    feed = "".join(
+        f"<div class='talk'><b>{html.escape(r['from'])} → {html.escape(r['to'])}</b> "
+        f"<small>{html.escape(r['re'])}</small><br>{html.escape(r['body'][:140])}</div>"
+        for r in recent[:6])
+    OUT.write_text(TEMPLATE.replace("__DATA__", json.dumps(data)).replace("__TALK__", feed or "<p class='mut'>Silence. Suspicious.</p>"))
+    print(f"world: {len(souls)} souls, {len(recent)} voices -> local/farm3d.html (LOCAL ONLY, gitignored)")
 
 
 TEMPLATE = """<!doctype html>
@@ -89,6 +109,8 @@ canvas{border-radius:14px;cursor:pointer;max-width:100%;box-shadow:0 12px 60px r
 #panel{width:300px;background:#020617;border:1px solid #334155;border-radius:14px;padding:16px;font-size:13px}
 #panel h3{margin:0 0 4px;color:#fff;font-size:17px}#panel .mut{color:#94a3b8;font-size:12px}
 #panel code{background:#1e293b;padding:1px 6px;border-radius:5px;color:#fff}#panel p{margin:7px 0}
+.talk{border-left:3px solid #4ade80;background:#0f172a;border-radius:8px;padding:7px 9px;margin:7px 0;font-size:12px}
+.talk small{color:#94a3b8}
 #bar{height:6px;border-radius:3px;margin:4px 0 8px}
 button{background:#1e293b;color:#e2e8f0;border:1px solid #475569;border-radius:9px;padding:9px 14px;margin:0 8px 12px 0;cursor:pointer;font-size:13px}
 button:hover{background:#334155}
@@ -97,7 +119,7 @@ button:hover{background:#334155}
 <div id="top"><b>TOMORROWLAND</b> · <span id="meta"></span> · LOCAL ONLY</div>
 <div id="wrap"><div><canvas id="cv" width="780" height="600"></canvas><br>
 <button onclick="paused=!paused">pause / walk</button><button onclick="nightTarget=nightTarget?0:1">day / night</button></div>
-<div id="panel"><h3>Welcome home</h3><p class="mut">Click anyone strolling the land. Gold ring = earned money. Green spark = active this week.</p></div></div>
+<div id="panel"><div id="who"><h3>Welcome home</h3><p class="mut">Click anyone strolling the land. Gold ring = earned money. Green spark = active this week.</p></div><h3>Village talk</h3><div id="talkfeed">__TALK__</div></div></div>
 <div class="legend">Homes glow warm at night · taunts in the arena · trades at the stalls · feasts at the fountain</div>
 <script>
 var DATA=__DATA__;
@@ -202,6 +224,16 @@ if(d<0.2){var hp=PL[w.s.hang]||[w.hx,w.hy],home=rnd()<0.4;
 w.tx=home?w.hx+rnd()*0.8:(hp[0]+rnd()*1.8-0.6);w.ty=home?w.hy+rnd()*0.8:(hp[1]+rnd()*1.8-0.6);return}
 if(Math.abs(dx)>0.02)w.fx=dx>0?1:-1;
 w.x+=dx/d*w.sp*dt;w.y+=dy/d*w.sp*dt;w.ph+=dt*9})}
+function bubble(x,y,text){ctx.font='9px sans-serif';var words=text.split(' '),lines=[''];
+words.forEach(function(w){if((lines[lines.length-1]+' '+w).length>26){lines.push('')}lines[lines.length-1]=(lines[lines.length-1]+' '+w).trim()});
+lines=lines.slice(0,2);var bw=0;lines.forEach(function(l){bw=Math.max(bw,ctx.measureText(l).width)});
+bw+=14;var bh=lines.length*12+12,bx=x-bw/2,by=y-bh;
+ctx.fillStyle='rgba(255,255,255,.96)';ctx.strokeStyle='#94a3b8';ctx.lineWidth=1;
+ctx.beginPath();ctx.moveTo(bx+6,by);ctx.lineTo(bx+bw-6,by);ctx.quadraticCurveTo(bx+bw,by,bx+bw,by+6);
+ctx.lineTo(bx+bw,by+bh-6);ctx.quadraticCurveTo(bx+bw,by+bh,bx+bw-6,by+bh);ctx.lineTo(x+5,by+bh);
+ctx.lineTo(x,by+bh+7);ctx.lineTo(x-3,by+bh);ctx.lineTo(bx+6,by+bh);ctx.quadraticCurveTo(bx,by+bh,bx,by+bh-6);
+ctx.lineTo(bx,by+6);ctx.quadraticCurveTo(bx,by,bx+6,by);ctx.closePath();ctx.fill();ctx.stroke();
+ctx.fillStyle='#0f172a';ctx.textAlign='center';lines.forEach(function(l,i){ctx.fillText(l,x,by+14+i*12)})}
 function char(w){var p=px(w.x,w.y),bob=Math.abs(Math.sin(w.ph))*2.5;
 var active=w.s.msgs>0;
 ctx.fillStyle='rgba(0,0,0,.35)';ctx.beginPath();ctx.ellipse(p[0],p[1],9,3.6,0,0,7);ctx.fill();
@@ -214,6 +246,7 @@ ctx.fillStyle=active?'#22c55e':'#64748b';ctx.beginPath();ctx.arc(p[0]+9,p[1]-33-
 ctx.font='9px sans-serif';var label=w.s.short,tw=ctx.measureText(label).width;
 ctx.fillStyle='rgba(2,6,23,.8)';ctx.fillRect(p[0]-tw/2-4,p[1]-52-bob,tw+8,14);
 ctx.fillStyle='#fff';ctx.textAlign='center';ctx.fillText(label,p[0],p[1]-41-bob);
+if(w.s.say)bubble(p[0],p[1]-58-bob,w.s.say);
 w.sx=p[0];w.sy=p[1]-22}
 function draw(){
 sky();
@@ -250,8 +283,8 @@ if(!paused){step(dt);wstep(dt)}draw();requestAnimationFrame(loop)}
 requestAnimationFrame(loop);
 cv.onclick=function(e){var r=cv.getBoundingClientRect(),mx=(e.clientX-r.left)*(cv.width/r.width),my=(e.clientY-r.top)*(cv.height/r.height),best=null,bd=1e9;
 walkers.forEach(function(w){var d=Math.hypot(w.sx-mx,w.sy-my);if(d<bd){bd=d;best=w}});
-var panel=document.getElementById('panel');
-if(best&&bd<30){var s=best.s;panel.innerHTML='<h3>'+s.short+'</h3><div id="bar" style="background:'+s.color+'"></div><p><code>'+s.rank+'</code> · <span class="mut">'+s.id+'</span></p><p><b>Goal:</b> '+s.goal+'</p><p><b>Now:</b> '+s.task+'</p><p><b>Wants:</b> '+s.desire+'</p><p><b>Hangout:</b> '+s.hang+'</p><p class="mut">earned $'+s.pay+' · '+s.msgs+' messages</p>'}
+var panel=document.getElementById('who');
+if(best&&bd<30){var s=best.s;panel.innerHTML='<h3>'+s.short+'</h3><div id="bar" style="background:'+s.color+'"></div><p><code>'+s.rank+'</code> · <span class="mut">'+s.id+'</span></p><p><b>Goal:</b> '+s.goal+'</p><p><b>Now:</b> '+s.task+'</p><p><b>Wants:</b> '+s.desire+'</p><p><b>Hangout:</b> '+s.hang+'</p>'+(s.say?'<p><b>Saying:</b> '+s.say+'</p>':'')+'<p class="mut">earned $'+s.pay+' · '+s.msgs+' messages</p>'}
 else{panel.innerHTML='<h3>Welcome home</h3><p class="mut">Click anyone strolling the land. Gold ring = earned money. Green spark = active this week.</p>'}};
 </script></body></html>"""
 
