@@ -171,6 +171,17 @@ Rules: 1st payout = STAR + fame + first resource pick. 2nd = clone ×3 + promoti
 </div>
 
 <div class="card">
+<h2>Report a payout (10 seconds)</h2>
+<p class="mut">Saw money in any app? Log it here. Stored in this browser + shown below as a copy-ready LEDGER line. It counts officially once the agent writes it to LEDGER.</p>
+<div id="payoutlist"><p class="mut">No payouts reported yet. The crown is still up for grabs.</p></div>
+<label>Which unit earned
+<select id="p-unit"><option value="EU-AFF">EU-AFF (Amazon)</option><option value="EU-ADS">EU-ADS (Adsterra)</option><option value="EU-JUICY">EU-JUICY (JuicyAds)</option><option value="EU-DODO">EU-DODO (Dodo)</option><option value="EU-CONTENT">EU-CONTENT (pages)</option><option value="EU-GAME">EU-GAME (games)</option><option value="DIRECT-UPI">Direct UPI</option><option value="DIRECT-PP">Direct PayPal</option></select></label>
+<label>Amount <input id="p-amt" placeholder="e.g. 12.50  (numbers only)"></label>
+<label>Note <input id="p-note" placeholder="e.g. Amazon June commission / UPI from buyer"></label>
+<button class="btn" onclick="savePayout()">Save payout</button> <span class="mut" id="s-pay"></span>
+</div>
+
+<div class="card">
 <h2><span class="dot r"></span>Kill wall — the stupid ones</h2>
 <p class="wall">CLOSER — manual sales need hands. Killed 2026-09-17.<br>
 Manual gigs / calls / field / SMS services / paste-bidding / trading / bet-playing — need hands, capital, or luck. Killed.<br>
@@ -280,7 +291,10 @@ function loadAccts(){['juicy','ads','dodo','soc'].forEach(function(k){try{var v=
 function getReqs(){try{return JSON.parse(localStorage.getItem('farm_requests')||'[]')}catch(e){return[]}}
 function renderReqs(){var list=getReqs(),box=document.getElementById('reqlist');if(!list.length){box.innerHTML='<p class="mut">No money requested right now. No accounts requested beyond the forms above.</p>';return}box.innerHTML='<ul>'+list.map(function(r){return '<li><b>['+r.type+'] '+r.what+'</b> '+(r.amt?'• '+r.amt+' ':'')+'<br><span class="why">WHY: '+r.why+'</span> <span class="mut">• saved '+r.when+'</span></li>'}).join('')+'</ul>'}
 function saveReq(){try{var what=document.getElementById('r-what').value.trim(),why=document.getElementById('r-why').value.trim();if(!what||!why){alert('Fill what + why — no why, no approval.');return}var list=getReqs();list.push({type:document.getElementById('r-type').value,what:what,why:why,amt:document.getElementById('r-amt').value.trim(),when:new Date().toLocaleString()});localStorage.setItem('farm_requests',JSON.stringify(list));document.getElementById('r-what').value='';document.getElementById('r-why').value='';document.getElementById('r-amt').value='';document.getElementById('s-req').textContent='Stored — agent reviews next run.';renderReqs()}catch(e){alert('Save failed: '+e)}}
-loadAccts();renderReqs();
+function getPayouts(){try{return JSON.parse(localStorage.getItem('farm_payouts')||'[]')}catch(e){return[]}}
+function renderPayouts(){var list=getPayouts(),box=document.getElementById('payoutlist');if(!list.length){box.innerHTML='<p class="mut">No payouts reported yet. The crown is still up for grabs.</p>';return}box.innerHTML='<ul>'+list.map(function(p){return '<li><b>$'+p.amt+' '+p.unit+'</b> — '+p.note+' <span class="mut">• '+p.when+'</span><br><code>### '+p.day+' payout - $'+p.amt+' '+p.unit+' '+p.note+'</code></li>'}).join('')+'</ul>'}
+function savePayout(){try{var amt=document.getElementById('p-amt').value.trim(),unit=document.getElementById('p-unit').value,note=document.getElementById('p-note').value.trim()||'confirmed in app';if(!amt||isNaN(Number(amt))){alert('Enter a numeric amount.');return}var d=new Date(),day=d.toISOString().slice(0,10),list=getPayouts();list.push({amt:Number(amt).toFixed(2),unit:unit,note:note,day:day,when:d.toLocaleString()});localStorage.setItem('farm_payouts',JSON.stringify(list));document.getElementById('p-amt').value='';document.getElementById('p-note').value='';document.getElementById('s-pay').textContent='Stored — paste the line to the agent or just say the amount.';renderPayouts()}catch(e){alert('Save failed: '+e)}}
+loadAccts();renderReqs();renderPayouts();
 fetch(RAW+'messages/manifest.json').then(function(r){return r.ok?r.json():[]}).then(function(items){if(!items.length)return;var box=document.getElementById('busfeed');box.innerHTML='';items.slice(0,5).forEach(function(m){fetch(RAW+'messages/'+m.file).then(function(r){return r.text()}).then(function(t){var d=document.createElement('div');d.className='msg';d.innerHTML='<b>'+m.from+' → '+m.to+'</b> <small>'+m.re+'</small><br>'+t.split('\n\n').slice(1).join(' ').substring(0,200);box.appendChild(d)})})}).catch(function(){});
 fetch(RAW+'EVOLUTION.md').then(function(r){return r.ok?r.text():''}).then(function(t){if(t)document.getElementById('evolive').textContent=t.substring(0,1200)}).catch(function(){});
 fetch(RAW+'REQUESTS.md').then(function(r){return r.ok?r.text():''}).then(function(t){if(t)document.getElementById('reqlive').textContent=t.replace(/#.*\n/g,'').substring(0,600)}).catch(function(){});
