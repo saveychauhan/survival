@@ -16,8 +16,8 @@ updated: 2026-09-17 UPI-ONLY by OPS | cash: ₹0 | MRR: ₹0 | mode: CASH SURVIV
 | BU1 | Textback Kit — OFF homepage (needs SMS gateway) — async via inbox | service | active | ₹0 | ₹0 | ₹0 | 3.0 | post 1 listing, no calls |
 | BU2 | GBP Fix 48h — screenshots + inbox | service | active | ₹0 | ₹0 | ₹0 | 0 | 5 async audits via inbox |
 | BU3 | Landing 48h — file delivery | service | active | ₹0 | ₹0 | ₹0 | 0 | post 1 listing |
-| BU-P1 | BG-remove + Catalog PDF ₹299/799/1499 | AI service | live-demo | ₹0 | ₹0 | ₹0 | 0 | post Gig A, 10 Upwork inbox pitches |
-| BU-P2 | Festival Poster/Thumbnail ₹399/999/1999 | AI service | live-demo | ₹0 | ₹0 | ₹0 | 0 | post Gig B, Diwali sample blast |
+| BU-P1 | BG-remove + Catalog PDF ₹299/799/1499 | AI service | active | ₹0 | ₹0 | ₹0 | 0 | post Gig A, 10 Upwork inbox pitches |
+| KILLED-P2 | Design packs (BU-P2) | — | killed 2026-09-17 by human | — | — | — | — | removed everywhere |
 | BU-D | Leak Calc + pay.html magnet → ₹199 | magnet | live | ₹0 | ₹0 | ₹0 | 0 | link in all listings |
 | KILLED | Calls, field, WA-personal, content/affiliate/SEO, dropshipping, voice-API, video, landing-copy-alone | — | killed 2026-09-17 | — | — | — | — | phone/capital/GPU/slow |
 
@@ -66,7 +66,7 @@ Claim own sessions/*.md only. AUTO: 09:30 autobid.py -> scripts/bid_drafts/*.md 
 - cron live. logs/cron.log. sessions/OPS,BUILDER,CLOSER.
 
 ## 8. UPI-ONLY CHECKLIST + YOU CAN ADD (email-only, no mobile OTP)
-Live: [x] QRs 199/1499/3999/generic [x] pay.html [x] index = farm dashboard (no poster, no shop) [x] palette + ai-services.md [x] cron 9am/9:30/9pm/Sun
+Live: [x] QRs 199/1499/3999/generic [x] pay.html [x] index = farm dashboard [x] ai-services.md (catalog) [x] cron 9am/9:30/9pm/Sun
 1. [ ] Host free: drag `survival/` to Netlify Drop / GitHub Pages / Cloudflare Pages → URL (needs GitHub email-only account — YOU CAN ADD)
 2. [ ] Post Gig A+B from `online/ai-services.md` to Fiverr/Contra/Upwork (needs marketplace email-only account — YOU CAN ADD)
 3. [ ] Optional Google Form (email-only, 2m) to backup UPI remark — paste link into pay.html `forms.gle/REPLACE` (YOU CAN ADD if you want)

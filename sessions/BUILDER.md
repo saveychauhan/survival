@@ -6,7 +6,7 @@
 - last_output:
   - pay.html live + 4 QR (199/1499/3999/generic) UPI saveychauhan@ybl
   - leak-calculator.html magnet linked to pay.html
-  - poster demo REMOVED from index by human order (no poster shop)
-- next_action: rebuild index.html as farm dashboard, zero poster refs
+  - index.html = farm dashboard
+- next_action: keep index = farm only
 - blocked_on: none (no phone, no WA number needed — inbox-only)
 - log: 2026-09-17: MVP done -> LEDGER

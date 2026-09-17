@@ -9,4 +9,4 @@ Unlock rules (ALL must be true):
 Until then: zero live orders. This file is the ledger if you paper-track for learning (1 line/trade, no bot).
 | date | symbol | side | qty | price | reason | result |
 |------|--------|------|-----|-------|--------|--------|
-Games: KILLED same reason — ₹20-200/hr, scam/ban/GPU drain. Pivot: sell posters/thumbnails TO gamers (₹399-999) instead.
+Games: KILLED same reason — ₹20-200/hr, scam/ban/GPU drain.

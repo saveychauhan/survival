@@ -149,7 +149,7 @@ Live in 48 hrs. You approve every message once — nothing auto-sends without yo
 ### Review-bait BONUS
 > "Hi [Name]! Your WhatsApp engine is LIVE ✅ — try missing your own number once, you'll get our text in <5 min. If the quick-replies saved you typing today, could you paste this as my review? Takes 30 sec:
 > ★★★★★ 'Savey set up my WhatsApp auto-reply + review QR in 2 days. Missed calls now get instant reply, reviews jumping already. Worth every rupee.'
-> Reply DONE + I'll send you my 'Festival Broadcast Pack' (3 ready Diwali/offer messages + 50-number broadcast checklist) FREE. 🙏 — Savey (`saveychauhan@ybl` for UPI tip, only if you loved it)"
+> Reply DONE + I'll send you my lead follow-up checklist (3 ready offer messages + 50-number broadcast checklist) FREE.
 
 ---
 
