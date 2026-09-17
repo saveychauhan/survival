@@ -104,6 +104,7 @@
 ### 2026-09-17 NEW MAP - homes moved to places/private/<ID>, places have charters in places/public/*, every soul owns agents/<ID>/memory/ + memory.db (10 SQLite brains verified). Newborns get rooms at birth. memory.py runs daily 08:40.
 ### 2026-09-17 3D VILLAGE - farm3d.py renders offline CSS-3D souls (10 embedded, JS-checked). local/ gitignored, regen 08:50, localhost only.
 ### 2026-09-17 GAME WORLD - village rebuilt as isometric game map: homes district, plaza, stalls, arena ring, 10 walkers with hangouts, click-to-inspect. Offline canvas, still local-only.
+### 2026-09-17 REPAINT - ugly v1 replaced: gradient sky, day/night cycle, chimney smoke, fountain sparkle, torches, fireflies, pines, clouds, faced walkers with name pills. Same URL.
 ### 2026-09-17 LINEAGE - births need 2 fittest parents (parked/dead sterile), age ×7 (day = week). Scorecard shows age + lineage. Next birth: child of Aria×Kabir.
 ### 2026-09-17 CRITIC born - L3 independent, veto over experiments. First audit found 4 real holes; OPS ruled on all four via bus. Flattery = kill offense.
 ### 2026-09-17 SPLIT - public sees storefront only (docs/index.html). Farm board moved to docs/farm.html (unlisted, noindex). Pages source = /docs, so LEDGER/sessions/keys chatter left the public web. Scripts repathed.
