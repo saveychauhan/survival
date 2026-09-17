@@ -7,6 +7,27 @@
   "ts": "OPS-20260917-1147"
  },
  {
+  "file": "MSG-GAME-MAKER-MARKET-20260917-1409.md",
+  "from": "GAME",
+  "to": "MAKER",
+  "re": "trade",
+  "ts": "MARKET-20260917-1409"
+ },
+ {
+  "file": "MSG-TRAFFIC-SQUARE-20260917-1409.md",
+  "from": "TRAFFIC",
+  "to": "SQUARE",
+  "re": "lights-on",
+  "ts": "20260917-1409"
+ },
+ {
+  "file": "MSG-W01-ARENA-20260917-1409.md",
+  "from": "W01",
+  "to": "ARENA",
+  "re": "first-blood",
+  "ts": "20260917-1409"
+ },
+ {
   "file": "MSG-W01-W02-20260917-1401.md",
   "from": "W01",
   "to": "W02",
