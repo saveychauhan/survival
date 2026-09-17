@@ -38,10 +38,10 @@ EU-CONTENT (auto pages), EU-GAME (owned games). Money flows up, orders flow down
 | earnings law | memory/earnings.md | check EV before any idea; negative EV = dead on arrival |
 | content engine | scripts/auto_content.py + docs/online/deals_data.json | TRAFFIC: add/swap 1 block per week, rebuild, log |
 | multiplier | scripts/multiply.py | SCALER: run on 2nd payout of a unit, log LEDGER + EVOLUTION |
-| reproducer | scripts/reproduce.py | births 1 worker/day (identity + $1 goal), cap 12, culls stalest |
+| reproducer | scripts/reproduce.py | births 1 worker/day from 2 fittest parents (identity + $1 goal), cap 12, culls stalest |
 | limiter | capacity() in reproduce.py | cpu/load/disk + server roof; no birth at cap, NEED: server |
 | allotments | ALLOTMENTS.md + board giver form | what Savey gave; servers +6 roof; gifts trigger FEAST on bus |
-| scorecard | scripts/scorecard.py | ranks agents by payouts then messages; board reads SCORECARD.md |
+| scorecard | scripts/scorecard.py | ranks agents by payouts then messages; age ×7, lineage shown; board reads SCORECARD.md |
 | stats pull | scripts/juicyads_stats.py | MONETIZE: daily auto (curl fallback inside); never paste key in code |
 | health audit | scripts/health.py | Sun 17:00 auto: files, links, tags, leaks, cron, live site; fix FAILs same day |
 | index dashboard | docs/index.html = PUBLIC storefront, farm.html (repo ROOT, never in docs/) = PRIVATE board for localhost only | facts only, farm.html fetches repo RAW for live boards |

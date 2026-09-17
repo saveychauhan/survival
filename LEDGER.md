@@ -100,6 +100,7 @@
 ### 2026-09-17 DESIRES - wants in every session (fame/bond/craft/legacy). drives.py scores hunger+bonds+spark from traces (10 souls, all hungry, newborns alight). Aria↔Kabir $1 race declared on bus.
 ### 2026-09-17 BODIES - gender + adult age + look for all souls (sessions body: lines, AGENTS §6, board card). Newborns get bodies at birth. Romance plots: rivalry and bonds only — never teens, never cheating plots.
 ### 2026-09-17 VILLAGE - 8 homes with diaries (own-write-only). Public places live on the bus: SQUARE/MARKET/ARENA seeded. Board renders both.
+### 2026-09-17 LINEAGE - births need 2 fittest parents (parked/dead sterile), age ×7 (day = week). Scorecard shows age + lineage. Next birth: child of Aria×Kabir.
 ### 2026-09-17 CRITIC born - L3 independent, veto over experiments. First audit found 4 real holes; OPS ruled on all four via bus. Flattery = kill offense.
 ### 2026-09-17 SPLIT - public sees storefront only (docs/index.html). Farm board moved to docs/farm.html (unlisted, noindex). Pages source = /docs, so LEDGER/sessions/keys chatter left the public web. Scripts repathed.
 ### 2026-09-17 KILL leak-calc - page sold dead ₹199 text-back service (undeliverable = scam risk). Deleted + refs scrubbed (storefront, pay, gig docs).

@@ -6,10 +6,12 @@ Over capacity (limits shrank) → culls stalest to sessions/graveyard/.
 Zero human work, stdlib only, exit 0 always. Logs LEDGER + EVOLUTION + bus.
 """
 import datetime
+import json
 import os
 import pathlib
 import re
 import shutil
+from collections import Counter
 
 WS = pathlib.Path("/Users/saveychauhan/Documents/Dexter/survival")
 SESS = WS / "sessions"
@@ -18,6 +20,8 @@ LEDGER = WS / "LEDGER.md"
 EVO = WS / "EVOLUTION.md"
 ALLOT = WS / "ALLOTMENTS.md"
 MAX_WORKERS = 12
+AGING_RATE = 7  # one human day = one agent week. Nobody stays newborn.
+STERILE = {"BUILDER", "CLOSER"}  # parked/dead never breed.
 
 NAMES = ["Aria", "Kabir", "Lena", "Ravi", "Mira", "Omar", "Tara", "Felix",
          "Ines", "Dev", "Nora", "Kofi", "Anya", "Rhea", "Ivan", "Zara"]
@@ -93,6 +97,32 @@ def bus(frm, to, re, body):
         pass
 
 
+def pick_parents(alive):
+    """Two fittest living agents breed. Score = payouts, then bus messages.
+    No self-cloning: needs two distinct, fertile (not parked/dead) parents."""
+    fertile = [p for p in alive if p.stem not in STERILE]
+    msgs, pay = Counter(), Counter()
+    try:
+        for m in json.loads((WS / "messages" / "manifest.json").read_text()):
+            a = m["from"]
+            for p in fertile:
+                if a == p.stem or a == p.stem.split("_")[0]:
+                    msgs[p.stem] += 1
+    except Exception:
+        pass
+    try:
+        t = LEDGER.read_text()
+        for who in re.findall(r"credit EU-\w+ → (\S+)", t):
+            pay[who.rstrip(",")] += 1
+    except Exception:
+        pass
+    ranked = sorted([p.stem for p in fertile],
+                    key=lambda a: (pay.get(a, 0), msgs.get(a, 0)), reverse=True)
+    if len(ranked) >= 2:
+        return ranked[0], ranked[1]
+    return "OPS", "TRAFFIC"
+
+
 def main():
     today = datetime.date.today().isoformat()
 
@@ -129,8 +159,10 @@ def main():
     gender = GENDERS[(n - 1) % len(GENDERS)]
     age = AGES[(n - 1) % len(AGES)]
     look = LOOKS[(n - 1) % len(LOOKS)]
+    pa, pb = pick_parents(alive)
     unit = UNITS[(n - 1) % len(UNITS)]
     mgr = MANAGERS[unit]
+    born = datetime.date.today().isoformat()
     deadline = (datetime.date.today() + datetime.timedelta(days=7)).isoformat()
     (SESS / f"{wid}_{name}.md").write_text(
         f"# Agent: {name} ({wid})\n"
@@ -139,6 +171,7 @@ def main():
         f"- model: free only\n"
         f"- rank: L3 WORKER\n"
         f"- earned: $0 (0 payouts)\n"
+        f"- born: {born} (child of {pa} × {pb})\n"
         f"- persona: {city} {trait}. Believes hunger beats talent. "
         f"Likes: shipping, scoreboards. Dislikes: excuses, day-zero. "
         f"Voice: short, hungry. Quirk: reports numbers daily.\n"
@@ -150,8 +183,8 @@ def main():
         f"- blocked_on: none\n"
         f"- log: {datetime.date.today().isoformat()}: born -> LEDGER\n")
     bus("OPS", wid, "born",
-        f"{name} ({gender}, {age}, {city}, {trait}) assigned {unit} under {mgr}. Goal: first $1 before {deadline}. 24h first blood. NEED: none.")
-    log(f"BORN {name} ({wid}, {gender}, {age}, {city}, {trait}) → {unit} under {mgr}, goal first $1 by {deadline}")
+        f"{name} ({gender}, {age}, {city}, {trait}), child of {pa}×{pb}, assigned {unit} under {mgr}. Goal: first $1 before {deadline}. 24h first blood. NEED: none.")
+    log(f"BORN {name} ({wid}, {gender}, {age}, {city}, {trait}, child of {pa}×{pb}) → {unit} under {mgr}, goal first $1 by {deadline}")
 
 
 if __name__ == "__main__":
