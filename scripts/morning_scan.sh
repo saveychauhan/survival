@@ -5,10 +5,10 @@ mkdir -p "$WS/prompts" "$WS/logs"
 cat > "$WS/prompts/scan_$T.md" <<EOF
 # 9AM Scan $D - paste into opencode (free model)
 1. Read SURVIVAL_SYSTEM.md + LEDGER.md Totals.
-2. Find 5 new trades/salons (Maps, 4.0-4.4*, 20-200 revs, no WA CTA).
-3. Score: misses/wk x avg_job x 0.25 = leak INR. Top 2 only.
-4. Output: table name|phone|leak|first-line + 1 WA to send today.
-5. Log 5 rows to LEDGER Leads + 1 Time row.
+2. Pick 1 traffic niche (zero-work): check deals.html clicks/views, find 1 product block to add/swap.
+3. Score: search demand x affiliate commission x 0 effort = rank. Top 1 only.
+4. Output: 1 product block (title|keywords|blurb) for auto_content.py BLOCKS.
+5. Log 1 row to LEDGER + 1 Time row (agent minutes only, human 0).
 UPI: saveychauhan@ybl
 EOF
 echo "" >> "$WS/LEDGER.md"

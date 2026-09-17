@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Daily bid-draft generator — semi-auto, no bans. Creates 2 paste-ready proposals, no auto-post."""
+"""PARKED 2026-09-17 — paste-posting needs human hands. Violates zero-work rule."""
 import datetime, pathlib
 WS = pathlib.Path("/Users/saveychauhan/Documents/Dexter/survival")
 OUT = WS/"scripts"/"bid_drafts"

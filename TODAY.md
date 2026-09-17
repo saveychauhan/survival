@@ -1,35 +1,25 @@
-# TODAY.md — 2026-09-17 | UPI-ONLY | ₹0 spend | no calls, no phone
-UPI: `saveychauhan@ybl` | Mode: alwaysfree | Paid: OFF
+# TODAY.md — 2026-09-17 | PASSIVE FARM | ₹0 spend | ZERO HUMAN WORK
+Inbound: UPI `saveychauhan@ybl` + PayPal `sav.ey@live.co.uk` | Paid tools: OFF
 
-## 1. What changed (you give only UPI)
-- Killed: cold calls, field visits, personal WhatsApp. All order via `online/pay.html` QR + UPI remark.
-- Order = pay + remark `SERVICE Business Contact`. Example: `PILOT Sharma Plumbing savey@gmail.com`. We check UPI history daily. No number needed.
-- Chat = marketplace inbox only (Fiverr/Upwork/Contra/LinkedIn). No personal phone.
+## 1. Rule
+Savey does nothing. Agents do everything. If a task needs human hands → it is killed, not assigned.
 
-## 2. Pay assets (ready, verified)
-- `online/pay.html` + `upi-199.png` (₹199 pilot) + `upi-1499.png` + `upi-3999.png` + `upi-generic.png`
-- Links:
-  - ₹199: `upi://pay?pa=saveychauhan@ybl&pn=Savey&am=199&cu=INR&tn=Pilot199`
-  - ₹1499: `upi://pay?pa=saveychauhan@ybl&pn=Savey&am=1499&cu=INR&tn=GBPfix`
-  - ₹3999: `upi://pay?pa=saveychauhan@ybl&pn=Savey&am=3999&cu=INR&tn=Rescue3999`
-- `index.html` + `online/leak-calculator.html` now point to `pay.html`, zero `wa.me` dependency.
+## 2. Agents (live, see index.html)
+- OPS: cron + ledger + Sun kill/scale
+- TRAFFIC: auto pages + social queue (`online/deals.html`, 1 block/week via script)
+- MONETIZE: verify payouts (PayPal $1 test, JuicyAds stats pull, Adsterra/Dodo on code arrival)
+- SCALER: ≥2 payouts + 0 human min → clone unit ×3
 
-## 3. 5-step async checklist (agent can do 1-2, human only 3-5 if no login tokens)
-- [ ] 1. Host (15m, once): drag `survival/online/` to Netlify Drop → public URL. Replace `forms.gle/REPLACE` in pay.html if you make free Google Form (optional).
-- [ ] 2. Post 2 listings (30m): copy from `online/gig-kit.md` Gig1 + Gig2 to Fiverr/Contra/Upwork catalog. Attach `leak-calculator.html` link + `pay.html` link as portfolio/proof. Price INR tiers as-is.
-- [ ] 3. 10 async audits (30m, no calls): Maps search below → screenshot flaw → send via marketplace/LinkedIn inbox (not personal WA): “Free 2-min audit + calculator link. Pay via UPI remark if fit.”
-- [ ] 4. Log LEDGER (5m): views/inbox/UPI hits. UPI app history = source of truth.
-- [ ] 5. Deliver (on UPI hit): read remark contact → deliver via inbox → log Revenue + ask 2 referrals.
+## 3. Accounts (status on index.html)
+- WORKING now: UPI, Amazon tag `dexter03d-21`, Shop page, Pollinations
+- ADDED, VERIFY: PayPal ($1 test), JuicyAds key on file (stats pull next)
+- NEEDS 1 paste (index forms): Adsterra ad-unit, Dodo key, social handles
+- NOT USED: Fiverr/Upwork (manual work — killed for farm)
 
-Maps searches (async, no call): `plumber Andheri West` / `electrician Andheri West` / `AC repair Goregaon` / `salon Andheri West` / `dental clinic Goregaon` / `beauty parlour Andheri East` / `car garage Andheri West` / `physiotherapy Goregaon` / `pest control Andheri West` / `RO service Goregaon` — filter 4.0-4.4★, 20-200 revs.
+## 4. Agent checklist (no human)
+- [ ] TRAFFIC: run `auto_content.py` → deals.html fresh → log LEDGER
+- [ ] MONETIZE: run `juicyads_stats.py` → stats → LEDGER (or KEY-FAIL → form stays)
+- [ ] OPS: 21:00 funnel nudge → LEDGER; Sun 18:00 kill/scale
+- [ ] On 2nd payout any unit → SCALER clones ×3
 
-Inbox opener (copy-paste, no phone):
-```
-Namaste [Name], Savey here. Your Maps listing misses top-3 (no photos/Q&A). Free audit + leak calc: [LINK]. Fix in 48h ₹1499 via UPI saveychauhan@ybl — pay with remark “GBP [Biz] [email]”. I confirm in inbox <12h. Want audit?
-```
-
-## 4. KILL CHECK (async, slower — 14d windows)
-- 0 inbox after 5 listings+100 views/14d → rewrite titles, change thumb to QR + leak number.
-- 20 audits 0 UPI/14d → drop to ₹99 tripwire or free audit page.
-- Still 0/40 touches Day 14 → pause BU1, push BU-D free tool traffic only.
-Next dollar: ₹199 UPI-remark pilot via pay.html QR from inbox traffic.
+Next dollar: first Amazon click or ad impression from hosted pages. Human cost: 0.

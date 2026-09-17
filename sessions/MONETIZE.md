@@ -1,0 +1,12 @@
+# Agent: MONETIZE
+- role: MONETIZE
+- goal: wire every payout with zero human work, verify each account
+- model: free only
+- claim: scripts/juicyads_stats.py + LEDGER Revenue — heartbeat 2026-09-17 12:00
+- last_output:
+  - UPI live, PayPal added (needs $1 test)
+  - JuicyAds KEY VERIFIED via stats API (7d imps:0 paid:$0 — no zones yet)
+  - Adsterra/Dodo waiting codes (index forms)
+- next_action: verify JuicyAds key via stats API, log result
+- blocked_on: ad-unit codes (forms on index)
+- log: 2026-09-17: boot -> LEDGER

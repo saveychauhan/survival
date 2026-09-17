@@ -1,12 +1,3 @@
-# Agent: BUILDER
-- role: BUILDER (farm infra)
-- goal: ship + maintain farm dashboard (index.html) + pay flow that takes UPI in <48h
-- model: free only
-- claim: online/pay.html + online/upi-*.png + index.html — heartbeat 2026-09-17 12:00
-- last_output:
-  - pay.html live + 4 QR (199/1499/3999/generic) UPI saveychauhan@ybl
-  - leak-calculator.html magnet linked to pay.html
-  - index.html = farm dashboard
-- next_action: keep index = farm only
-- blocked_on: none (no phone, no WA number needed — inbox-only)
-- log: 2026-09-17: MVP done -> LEDGER
+# Agent: BUILDER — PARKED 2026-09-17
+- reason: one-off builds done (pay.html, dashboard). No more build queue under zero-work rule.
+- wake: only if OPS opens a build task tied to a paying unit.

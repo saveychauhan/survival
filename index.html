@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Survival Farm — agents + cash</title>
-<meta name="description" content="Local farm dashboard: what subagents are doing, money in via UPI receive-only.">
+<title>Survival Farm — agents + accounts</title>
+<meta name="description" content="Passive farm dashboard: what agents are doing, which accounts earn, what is missing. Zero human work.">
 <style>
 *{box-sizing:border-box}body{font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;margin:0;background:#0b1220;color:#e2e8f0;line-height:1.5}
-.wrap{max-width:860px;margin:0 auto;padding:20px}
+.wrap{max-width:900px;margin:0 auto;padding:20px}
 .top{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:14px}
 .badge{display:inline-block;background:#22c55e;color:#052e16;font-weight:800;font-size:12px;padding:5px 11px;border-radius:999px}
 .badge.dim{background:#1e293b;color:#94a3b8;border:1px solid #334155}
@@ -20,113 +20,195 @@ h1{font-size:28px;margin:10px 0 4px;color:#fff}
 .kpi div{background:#111c33;border:1px solid #1e293b;border-radius:10px;padding:10px;text-align:center}
 .kpi b{display:block;font-size:20px;color:#fff}.kpi span{font-size:12px;color:#94a3b8}
 .agent{border-left:4px solid #22c55e}
-.agent.stale{border-color:#f59e0b}.agent small{color:#94a3b8}
+.agent small{color:#94a3b8}
+.acct{border-left:4px solid #334155}
+.acct.ok{border-color:#22c55e}.acct.warn{border-color:#f59e0b}.acct.bad{border-color:#ef4444}
+.pill{display:inline-block;font-size:11px;font-weight:800;padding:3px 10px;border-radius:999px;margin-bottom:6px}
+.pill.ok{background:#22c55e;color:#052e16}.pill.warn{background:#f59e0b;color:#451a03}.pill.bad{background:#ef4444;color:#fff}.pill.dim{background:#334155;color:#cbd5e1}
 code{background:#1e293b;padding:2px 6px;border-radius:6px;color:#fff;font-size:13px}
 a{color:#4ade80}
-.btn{display:inline-block;background:#22c55e;color:#052e16;font-weight:800;padding:11px 16px;border-radius:10px;text-decoration:none;margin:6px 6px 0 0;border:0;cursor:pointer}
+.btn{display:inline-block;background:#22c55e;color:#052e16;font-weight:800;padding:10px 15px;border-radius:10px;text-decoration:none;margin:6px 6px 0 0;border:0;cursor:pointer;font-size:14px}
 .btn.line{background:transparent;color:#e2e8f0;border:2px solid #334155}
-input,select{width:100%;padding:10px;border:1px solid #334155;border-radius:8px;margin:6px 0;font-size:14px;background:#0b1220;color:#e2e8f0}
-pre.out{background:#020617;border:1px solid #1e293b;color:#a5f3fc;padding:12px;border-radius:10px;white-space:pre-wrap;font-size:13px}
+input,textarea{width:100%;padding:10px;border:1px solid #334155;border-radius:8px;margin:6px 0;font-size:14px;background:#0b1220;color:#e2e8f0}
 .mut{color:#94a3b8;font-size:13px}
+.profit{color:#a5f3fc;font-size:13px}
 ol,ul{margin:8px 0;padding-left:20px}
 li{margin:4px 0}
 .dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:#22c55e;margin-right:6px}
+.dot.r{background:#ef4444}.dot.a{background:#f59e0b}
+h3{margin:6px 0}
 </style>
 </head>
 <body>
 <div class="wrap">
 
 <div class="top">
-<span class="badge">FARM DASHBOARD • LOCAL ONLY</span>
-<span class="badge dim">UPI RECEIVE-ONLY • ₹0 OUTBOUND</span>
+<span class="badge">PASSIVE FARM • LOCAL ONLY</span>
+<span class="badge dim">ZERO HUMAN WORK • ₹0 OUTBOUND</span>
 <span class="badge dim" id="clock">--:--</span>
 </div>
-<h1>Survival farm — who does what.</h1>
-<p class="sub">3 subagents + 1 auto-bidder, inbox-only, no calls. <span id="live">snapshot 2026-09-17</span></p>
+<h1>Farm — agents working, accounts earning.</h1>
+<p class="sub">Savey does nothing. Agents do everything. Inbound only: UPI <code>saveychauhan@ybl</code> + PayPal <code>sav.ey@live.co.uk</code>. <span id="live">snapshot 2026-09-17</span></p>
 
 <div class="card">
 <h2>Cash truth</h2>
 <div class="kpi">
-<div><b>₹0</b><span>cash / revenue</span></div>
-<div><b>₹0</b><span>MRR</span></div>
-<div><b id="kLeads">0</b><span>leads → inbox → UPI</span></div>
-<div><b>≤14d</b><span>target to next UPI</span></div>
+<div><b>₹0 / $0</b><span>cash in</span></div>
+<div><b>0</b><span>page views</span></div>
+<div><b>0</b><span>affiliate clicks</span></div>
+<div><b>0</b><span>payouts</span></div>
 </div>
-<p class="mut">Source of truth = <code>LEDGER.md</code> + UPI app history. Funnel: views → inbox → UPI hits → paid. <a href="LEDGER.md">LEDGER</a> • <a href="SURVIVAL_SYSTEM.md">SYSTEM</a> • <a href="TODAY.md">TODAY</a></p>
+<p class="mut">Truth = <code>LEDGER.md</code> + payout dashboards. Rule: ≥2 payouts + 0 human min → SCALER clones unit ×3. <a href="LEDGER.md">LEDGER</a> • <a href="SURVIVAL_SYSTEM.md">SYSTEM</a> • <a href="TODAY.md">TODAY</a></p>
 </div>
 
 <div class="card">
-<h2>Subagents — live status</h2>
+<h2>Agents — what each is working on</h2>
 <div class="grid">
 <div class="card agent" id="a-ops">
 <h3><span class="dot"></span>OPS — keeper</h3>
-<small>claim: SURVIVAL_SYSTEM.md + scripts/ • heartbeat 2026-09-17 12:00</small>
-<p><b>Doing:</b> cron alive, ledger truth, kill/scale Sun 18:00.</p>
-<p><b>Last:</b> UPI receive-only lock, 4 cron jobs live.</p>
-<p><b>Next:</b> verify 09:00 scan fires, review EX01-03.</p>
-<p class="mut">File: <a href="sessions/OPS.md">sessions/OPS.md</a></p>
+<small>sessions/OPS.md • heartbeat 2026-09-17 12:00</small>
+<p><b>Working on:</b> cron alive, ledger truth, Sun kill/scale review.</p>
+<p><b>Last:</b> passive rewrite, 5 cron jobs, accounts registry.</p>
+<p><b>Next:</b> Sun 18:00 review.</p>
 </div>
-<div class="card agent" id="a-builder">
-<h3><span class="dot"></span>BUILDER — infra</h3>
-<small>claim: online/pay.html + index.html • heartbeat 2026-09-17 12:00</small>
-<p><b>Doing:</b> farm dashboard + pay flow.</p>
-<p><b>Last:</b> pay.html + 4 QRs live.</p>
-<p><b>Next:</b> keep index = farm only, zero shop refs.</p>
-<p class="mut">File: <a href="sessions/BUILDER.md">sessions/BUILDER.md</a></p>
+<div class="card agent" id="a-traffic">
+<h3><span class="dot"></span>TRAFFIC — views</h3>
+<small>sessions/TRAFFIC.md • heartbeat 2026-09-17 12:00</small>
+<p><b>Working on:</b> <a href="online/deals.html">deals.html</a> affiliate blocks (tag <code>dexter03d-21</code>), 1 niche block/week via script.</p>
+<p><b>Last:</b> deals page auto-built, 6 blocks live.</p>
+<p><b>Next:</b> weekly block via <code>auto_content.py</code>. Blocked: social handles (form below).</p>
 </div>
-<div class="card agent" id="a-closer">
-<h3><span class="dot"></span>CLOSER — sales, inbox-only</h3>
-<small>claim: TODAY.md + bid_drafts/ • heartbeat 2026-09-17 12:00</small>
-<p><b>Doing:</b> 2 listings + 10 async audits/day, no calls.</p>
-<p><b>Last:</b> inbox opener + Maps targets ready.</p>
-<p><b>Next:</b> paste 4 bids, log views/inbox/UPI.</p>
-<p class="mut">File: <a href="sessions/CLOSER.md">sessions/CLOSER.md</a> • <a href="scripts/bid_drafts/2026-09-17.md">today's bids</a></p>
+<div class="card agent" id="a-monet">
+<h3><span class="dot"></span>MONETIZE — payouts</h3>
+<small>sessions/MONETIZE.md • heartbeat 2026-09-17 12:00</small>
+<p><b>Working on:</b> verifying every payout pipe with zero human work.</p>
+<p><b>Last:</b> JuicyAds key VERIFIED (API live, 0 imps — no zones yet). PayPal added, needs $1 test.</p>
+<p><b>Next:</b> daily stats pull; bake ad tags the moment codes land.</p>
 </div>
-<div class="card agent" id="a-auto">
-<h3><span class="dot"></span>AUTO-BIDDER — cron, no bot</h3>
-<small>scripts/autobid.py • 09:30 daily • paste-only</small>
-<p><b>Doing:</b> generates 2 paste-ready proposals/day.</p>
-<p><b>Last:</b> <a href="scripts/bid_drafts/2026-09-17.md">2026-09-17.md</a> (catalog + GBP).</p>
-<p><b>Next:</b> human pastes 2/day each, logs LEDGER.</p>
-<p class="mut">Ban-safe: never auto-posts. Files: <a href="scripts/autobid.py">autobid.py</a> • <a href="scripts/cron.txt">cron.txt</a></p>
+<div class="card agent" id="a-scale">
+<h3><span class="dot a"></span>SCALER — rule, auto</h3>
+<small>fires on 2nd payout, no heartbeat needed</small>
+<p><b>Working on:</b> watching. Nothing has paid twice yet.</p>
+<p><b>When it fires:</b> clones the paying unit ×3 (more pages / placements / geos).</p>
+<p><b>Small money, zero work = scale it.</b> That is the whole strategy.</p>
 </div>
 </div>
-<p class="mut">Stale &gt;2h = free to claim. Rule: read other <code>sessions/*.md</code> before work, edit only own file.</p>
-</div>
-
- <div class="card">
-<h2>Today — human does 5 (15-60m, async)</h2>
-<ol>
-<li><b>Host once (15m):</b> drag <code>survival/online/</code> to Netlify Drop → paste URL into listings.</li>
-<li><b>2 listings (30m):</b> copy from <a href="online/gig-kit.md">gig-kit.md</a> + <a href="online/fiverr-contra-packs.md">packs</a> to Fiverr/Contra. Attach pay.html + leak-calc link.</li>
-<li><b>10 audits (30m, no calls):</b> Maps: plumber / electrician / AC / salon / dental / garage Andheri-Goregaon, 4.0-4.4★ 20-200 revs → inbox opener from <a href="TODAY.md">TODAY.md</a>.</li>
-<li><b>Log (5m):</b> views / inbox / UPI hits in <a href="LEDGER.md">LEDGER</a>.</li>
-<li><b>On UPI hit:</b> read remark → deliver in inbox → log Revenue → 2 referrals.</li>
-</ol>
-<p class="mut">Inbox opener: <code>Namaste [Name], Savey here. Your Maps misses top-3. Free audit + calc: [LINK]. Fix 48h ₹1499 via UPI saveychauhan@ybl, remark “GBP [Biz] [email]”. Confirm &lt;12h. Want audit?</code></p>
+<p class="mut">PARKED: BUILDER (builds done). KILLED: CLOSER (manual sales need hands). Stale &gt;48h = free to claim.</p>
 </div>
 
 <div class="card">
-<h2>Automation — Air-safe, free</h2>
+<h2>Accounts — every pipe, honest status</h2>
+<div class="grid">
+
+<div class="card acct ok">
+<span class="pill ok">WORKING</span>
+<h3>UPI — receive</h3>
+<p><code>saveychauhan@ybl</code> • <a href="online/pay.html">pay.html</a> + QRs live.</p>
+<p class="profit">Profit: direct inbound ₹, zero fees, zero work.</p>
+</div>
+
+<div class="card acct warn">
+<span class="pill warn">ADDED · VERIFY</span>
+<h3>PayPal — receive</h3>
+<p><code>sav.ey@live.co.uk</code> • <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=sav.ey@live.co.uk&currency_code=USD">send link</a> live on pay page.</p>
+<p class="profit">Profit: direct inbound $. Needs one $1 test to confirm receipt.</p>
+</div>
+
+<div class="card acct ok">
+<span class="pill ok">WORKING</span>
+<h3>Amazon Associates — <code>dexter03d-21</code></h3>
+<p>Tag live in <a href="online/deals.html">deals.html</a>. Store: <a href="https://www.amazon.in/shop/saveychauhan">shop page</a>.</p>
+<p class="profit">Profit: 1–10% per qualifying sale, auto, forever.</p>
+</div>
+
+<div class="card acct ok">
+<span class="pill ok">WORKING</span>
+<h3>Pollinations — content engine</h3>
+<p>Free tier configured. Generates page images, zero cost.</p>
+<p class="profit">Profit: $0-cost content that feeds ads + affiliate.</p>
+</div>
+
+<div class="card acct warn">
+<span class="pill warn">KEY VERIFIED · NEEDS AD TAG</span>
+<h3>JuicyAds — publisher</h3>
+<p>API key verified live (stats pull daily, 0 imps — no zones running yet). Key stored local-only, never in repo.</p>
+<label>Ad-zone tag (1 paste, then zero work forever)
+<input id="f-juicy" placeholder="paste JuicyAds ad-zone / site tag"></label>
+<button class="btn" onclick="saveAcct('juicy','f-juicy')">Save</button> <span class="mut" id="s-juicy"></span>
+<p class="profit">Profit when tag lands: banner/native/pop rev-share on every page view, weekly payouts, fully automatic.</p>
+</div>
+
+<div class="card acct bad">
+<span class="pill bad">NOT WORKING · NEEDS CODE</span>
+<h3>Adsterra — publisher</h3>
+<p>Account exists, but no ad-unit tag in our pages yet → earning $0.</p>
+<label>Ad-unit tag (1 paste from Adsterra dashboard, then zero work forever)
+<input id="f-ads" placeholder="paste Adsterra ad script / unit ID"></label>
+<button class="btn" onclick="saveAcct('ads','f-ads')">Save</button> <span class="mut" id="s-ads"></span>
+<p class="profit">Profit when code lands: auto CPM on every view, payouts 2×/month from $5, no traffic minimum.</p>
+</div>
+
+<div class="card acct bad">
+<span class="pill bad">NOT WORKING · NEEDS KEY</span>
+<h3>DodoPayments — checkout</h3>
+<p>No key on file → can't create automated checkout.</p>
+<label>API key (1 paste, then zero work forever)
+<input id="f-dodo" placeholder="paste DodoPayments API key"></label>
+<button class="btn" onclick="saveAcct('dodo','f-dodo')">Save</button> <span class="mut" id="s-dodo"></span>
+<p class="profit">Profit when key lands: automated digital-product checkout + bank payouts, no manual delivery.</p>
+</div>
+
+<div class="card acct bad">
+<span class="pill bad">NOT WORKING · PENDING</span>
+<h3>Social accounts — traffic</h3>
+<p>No handles handed over yet → TRAFFIC can't queue posts.</p>
+<label>Handles (1 paste, then zero work forever)
+<input id="f-soc" placeholder="e.g. instagram:@x youtube:@y x:@z"></label>
+<button class="btn" onclick="saveAcct('soc','f-soc')">Save</button> <span class="mut" id="s-soc"></span>
+<p class="profit">Profit when live: free traffic → ad impressions + affiliate clicks on every post.</p>
+</div>
+
+</div>
+<div class="card acct">
+<span class="pill dim">NOT USED</span>
+<h3 style="display:inline">Fiverr / Upwork</h3>
+<p class="mut">Marketplace gigs need manual fulfillment (chat, delivery, revisions) — violates zero-work rule. Killed for the farm. If a gig ever becomes 100% auto-deliverable, an agent will reopen it.</p>
+</div>
+<p class="mut">Saved form values stay in this browser only (localStorage). Tell the agent what you saved and it bakes the code into the pages on the next run — then that pipe earns forever with zero work.</p>
+</div>
+
+<div class="card">
+<h2>Get paid (inbound only)</h2>
+<p><a class="btn" href="upi://pay?pa=saveychauhan@ybl&pn=Savey&cu=INR">Pay UPI saveychauhan@ybl</a>
+<a class="btn line" href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=sav.ey@live.co.uk&currency_code=USD">Pay PayPal sav.ey@live.co.uk</a>
+<a class="btn line" href="online/pay.html">Pay page →</a></p>
+<p class="mut">Shop our picks: <a href="online/deals.html">deals</a> • <a href="https://www.amazon.in/shop/saveychauhan">Amazon shop</a></p>
+</div>
+
+<div class="card">
+<h2>Automation — runs itself</h2>
 <ul>
-<li>09:00 <code>scripts/morning_scan.sh</code> → <code>prompts/scan_*.md</code> (5 async leads, no calls)</li>
-<li>09:30 <code>scripts/autobid.py</code> → <code>scripts/bid_drafts/*.md</code> (paste-only)</li>
+<li>09:00 <code>scripts/morning_scan.sh</code> → traffic topic → LEDGER</li>
+<li>09:30 <code>scripts/auto_content.py</code> → deals page rebuild</li>
+<li>12:00 <code>scripts/juicyads_stats.py</code> → earnings → LEDGER</li>
 <li>21:00 <code>scripts/evening_nudge.py</code> → funnel → LEDGER</li>
 <li>Sun 18:00 <code>scripts/weekly_review.py</code> → kill/scale</li>
 </ul>
-<p class="mut">Kill: 5 listings+100 views/14d 0 inbox → rewrite. 20 audits/14d 0 UPI → ₹99 tripwire. &gt;15h/14d ₹0 → pause, gig-hunt only. Scale: ≥3 paid → +25% price, 2 referrals/client.</p>
+<p class="mut">Kill: any unit needing &gt;15 human min/14d dies. Scale: ≥2 payouts + 0 human min → clone ×3.</p>
 </div>
 
 <div class="card mut">
-Repo files: <a href="README.md">README</a> • <a href="GO_TO_MARKET.md">GO_TO_MARKET</a> • <a href="OFFER.md">OFFER</a> • <a href="LEDGER.md">LEDGER</a> • <a href="SURVIVAL_SYSTEM.md">SYSTEM</a> • <a href="TODAY.md">TODAY</a> • <a href="online/pay.html">pay</a> • <a href="online/leak-calculator.html">leak calc</a><br>
-© 2026 Savey • UPI <code>saveychauhan@ybl</code> receive-only • local file, not hosted until you drag to Netlify.
+Files: <a href="README.md">README</a> • <a href="LEDGER.md">LEDGER</a> • <a href="SURVIVAL_SYSTEM.md">SYSTEM</a> • <a href="TODAY.md">TODAY</a> • <a href="online/pay.html">pay</a> • <a href="online/deals.html">deals</a> • <a href="online/leak-calculator.html">magnet</a><br>
+© 2026 Savey farm • inbound UPI + PayPal • local file until hosted.
 </div>
 
 </div>
 <script>
 function tick(){var d=new Date(),p=function(n){return(n<10?'0':'')+n};document.getElementById('clock').textContent=p(d.getHours())+':'+p(d.getMinutes())+':'+p(d.getSeconds())}setInterval(tick,1000);tick();
-// Try live-load agent files when hosted (http), silent fallback to snapshot on file://
-(function(){if(location.protocol==='file:')return;var files=['sessions/OPS.md','sessions/BUILDER.md','sessions/CLOSER.md','LEDGER.md'];Promise.all(files.map(function(f){return fetch(f).then(function(r){return r.ok?r.text():''}).catch(function(){return''})})).then(function(t){if(t[0]||t[3])document.getElementById('live').textContent='live '+new Date().toLocaleString();}).catch(function(){})})();
+function saveAcct(k,f){try{var v=document.getElementById(f).value.trim();if(!v){alert('Paste the code first.');return}localStorage.setItem('farm_'+k,v);document.getElementById('s-'+k).textContent='Saved in this browser — tell the agent to bake it in.'}catch(e){alert('Save failed: '+e)}}
+function loadAccts(){['juicy','ads','dodo','soc'].forEach(function(k){try{var v=localStorage.getItem('farm_'+k);if(v){var f=document.getElementById('f-'+k);if(f)f.value=v;document.getElementById('s-'+k).textContent='On file in this browser.'}}catch(e){}})}
+loadAccts();
+(function(){if(location.protocol==='file:')return;fetch('LEDGER.md').then(function(r){return r.ok?'':''}).then(function(){document.getElementById('live').textContent='live '+new Date().toLocaleString()}).catch(function(){})})();
 </script>
 </body>
 </html>

@@ -1,12 +1,3 @@
-# Agent: CLOSER
-- role: CLOSER (farm sales, inbox-only)
-- goal: 3 UPI hits in 14d via listings + audits + paste-bids, zero calls
-- model: free only
-- claim: TODAY.md checklist + scripts/bid_drafts/ — heartbeat 2026-09-17 12:00
-- last_output:
-  - inbox opener + 10 Maps searches in TODAY.md (no calls, no field, no WA-personal)
-  - autobid paste-packs ready in scripts/bid_drafts/
-  - funnel: views → inbox → UPI remark → deliver → LEDGER
-- next_action: post 2 listings + 10 async audits via marketplace/LinkedIn inbox, log LEDGER
-- blocked_on: needs hosted pay.html URL from human (Netlify Drop, 15m)
-- log: 2026-09-17: waiting for links
+# Agent: CLOSER — KILLED 2026-09-17
+- reason: manual sales (listings, audits, paste-bids) need human hands. Violates Rule 1 (zero human work).
+- replaced_by: TRAFFIC (auto pages) + MONETIZE (auto payouts).

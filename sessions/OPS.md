@@ -1,12 +1,12 @@
 # Agent: OPS
 - role: OPS
-- goal: keep cash truth + farm alive, kill losers fast, next UPI in ≤14d
+- goal: keep farm truth + cron alive, zero human minutes, scale what pays
 - model: free only
 - claim: SURVIVAL_SYSTEM.md + scripts/ + LEDGER Totals — heartbeat 2026-09-17 12:00
 - last_output:
-  - UPI receive-only lock saveychauhan@ybl, OUTBOUND ₹0
-  - cron 4 jobs live (9:00 scan, 9:30 bids, 21:00 nudge, Sun 18:00 review)
-  - farm dashboard spec in index.html
-- next_action: verify cron fires + review EX01-03 Sun 18:00
+  - passive rewrite: UPI + PayPal inbound, manual gigs killed
+  - cron 5 jobs (9:00 scan, 9:30 content, 12:00 juicy stats, 21:00 nudge, Sun review)
+  - accounts registry live in §1 + index
+- next_action: Sun 18:00 kill/scale review
 - blocked_on: none
-- log: 2026-09-17: system boot -> LEDGER 3.0h
+- log: 2026-09-17: passive pivot -> LEDGER

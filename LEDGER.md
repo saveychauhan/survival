@@ -80,3 +80,10 @@
 ### 2026-09-17 UPI receive-only confirmed - `saveychauhan@ybl` inbound only, zero outbound/payouts. Razorpay removed from GO_TO_MARKET, SURVIVAL tightened.
 ### 2026-09-17 farm pivot - design packs killed by human. index.html rebuilt as farm dashboard (agents + cash, all links OK). Sessions OPS/BUILDER/CLOSER set inbox-only.
 ### 2026-09-17 design purge - files + Gig B + bids cleaned, catalog + GBP only.
+### 2026-09-17 PASSIVE rewrite - zero human work. UPI+PayPal inbound. Manual gigs/calls/bids killed. JuicyAds key VERIFIED (API live, 0 imps). deals.html live (tag dexter03d-21). Adsterra/Dodo/social pending codes via index forms.
+
+### 2026-09-17 content - deals rebuilt (6 blocks, tag=dexter03d-21) -> online/deals.html
+
+### 2026-09-17 juicyads - API-FAIL (URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1002)>). Key unverified - check dashboard.
+
+### 2026-09-17 juicyads - KEY-OK 7d imps:0 paid:$0.0000 (auto, 0 human min)

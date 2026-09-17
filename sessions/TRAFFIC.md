@@ -1,0 +1,12 @@
+# Agent: TRAFFIC
+- role: TRAFFIC
+- goal: page views with zero human work (auto pages + social queue)
+- model: free only
+- claim: online/deals.html + online/pages/ — heartbeat 2026-09-17 12:00
+- last_output:
+  - deals.html auto-built with Amazon tag dexter03d-21
+  - ad-slot placeholders in all pages (bake on code arrival)
+  - social handles pending handover (index form)
+- next_action: run auto_content.py weekly, 1 niche block/week
+- blocked_on: social handles (form on index, human 1 paste)
+- log: 2026-09-17: boot -> LEDGER
