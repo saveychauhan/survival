@@ -47,6 +47,13 @@
 ## 10. Scale law
 - ≥2 payouts + 0 human min → clone ×3 within 7d. Raise Dodo price +25% per 3 sales. Every Sunday review scores ₹ ÷ human-min.
 
+## 12. GEO + NICHE doctrine (global-first, 2026-09-17)
+- Target Tier-1: US, UK, CA, AU, DE. Premium display pays $15–40 CPM there vs $3–8 Tier-3 — one US view ≈ 5–10 Indian ones. Adsterra Tier-1 runs $5–16.
+- All content English, prices USD-first. Game already universal. PayPal is the global pipe; UPI stays as India bonus.
+- Niche rank: SaaS/software 20–50% recurring (best EPC) → finance $50–500/lead → VPN up to $110/sale → gaming ($188B market) → generic gadgets.
+- Amazon.in tag earns India only. US traffic needs an Amazon.com Associates ID (free signup) — requested. Until then, .in blocks keep earning locally.
+- VPN programs (ExpressVPN/Surfshark via PayPal) need real traffic first — apply at 10k views/mo, not before.
+
 ## 11. Crypto rails (earn crypto, land fiat)
 - Allowed networks pay crypto: Adsterra (USDT/BTC, min $100), JuicyAds (crypto option). Income only — never stake, trade, or hold.
 - Iron law: every crypto payout converts to UPI or PayPal. Request the wallet on index with network + conversion path + fee; reject if conversion eats >10%.

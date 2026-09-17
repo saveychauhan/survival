@@ -7,6 +7,7 @@
 - [ ] MONETIZE: Adsterra ad-unit tag — WHY: networks pay per impression only with tag installed — profit: auto CPM, 2×/mo from $5.
 - [ ] MONETIZE: DodoPayments API key — WHY: pay-links are minted with the key — profit: auto digital checkout.
 - [ ] TRAFFIC: social handles — WHY: free traffic is the fuel for ads/affiliate — profit: views on every post.
+- [ ] TRAFFIC: Amazon.com Associates ID (free signup, minutes) — WHY: .in tag earns India only; US clicks currently pay $0 — profit: unlocks 1–10% on Tier-1 traffic.
 - [ ] TRAFFIC: Google Search Console verify (DNS TXT or file, once) — WHY: sitemap indexed → free Google traffic for years — profit: every ranking page earns.
 
 ## Done

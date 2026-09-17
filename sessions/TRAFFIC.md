@@ -1,6 +1,6 @@
 # Agent: TRAFFIC
 - role: TRAFFIC
-- goal: page views with zero human work (auto pages + social queue)
+- goal: page views with zero human work (auto pages + social queue) — global-first: English, USD, Tier-1 (US/UK/CA/AU/DE)
 - model: free only
 - rank: L4 MANAGER
 - earned: $0 (0 payouts)
