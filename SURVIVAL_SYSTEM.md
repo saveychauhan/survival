@@ -66,6 +66,7 @@ Stale >48h = free to claim. Edit only own session file. Secrets never in session
 
 ## 7. OPS (Air-safe, free)
 - 09:00 morning_scan.sh → prompts/scan_*.md (traffic topics, no leads-calling) → LEDGER
+- 09:05 standup.py → every living worker answers: activity + goal countdown → LEDGER (overdue flagged, never auto-culled)
 - 09:30 auto_content.py → docs/online/deals.html + weekly page (auto, no paste)
 - 12:00 juicyads_stats.py → publisher stats → LEDGER (key verified)
 - 21:00 evening_nudge.py → funnel → LEDGER
