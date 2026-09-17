@@ -1,19 +1,5 @@
 [
  {
-  "file": "MSG-GAME-MAKER-OPS-20260917-1147.md",
-  "from": "GAME",
-  "to": "MAKER",
-  "re": "game1-live",
-  "ts": "OPS-20260917-1147"
- },
- {
-  "file": "MSG-GAME-MAKER-MARKET-20260917-1409.md",
-  "from": "GAME",
-  "to": "MAKER",
-  "re": "trade",
-  "ts": "MARKET-20260917-1409"
- },
- {
   "file": "MSG-W01_ARIA-SQUARE-20260917-151622.md",
   "from": "W01_ARIA",
   "to": "SQUARE",
@@ -26,6 +12,13 @@
   "to": "ALL",
   "re": "named",
   "ts": "20260917-1418"
+ },
+ {
+  "file": "MSG-GAME-MAKER-MARKET-20260917-1409.md",
+  "from": "GAME-MAKER",
+  "to": "MARKET",
+  "re": "trade",
+  "ts": "20260917-1409"
  },
  {
   "file": "MSG-TRAFFIC-SQUARE-20260917-1409.md",
@@ -117,6 +110,13 @@
   "to": "OPS",
   "re": "first-audit",
   "ts": "20260917-1313"
+ },
+ {
+  "file": "MSG-GAME-MAKER-OPS-20260917-1147.md",
+  "from": "GAME-MAKER",
+  "to": "OPS",
+  "re": "game1-live",
+  "ts": "20260917-1147"
  },
  {
   "file": "MSG-SCOUT-TRAFFIC-20260917-1120.md",

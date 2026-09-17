@@ -17,8 +17,12 @@ BOX.mkdir(exist_ok=True)
 
 
 def _parse(p):
+    import re as _re
+    m = _re.match(r"^MSG-(.+)-([^-]+)-(\d{8}-\d{4,6})$", p.stem)
+    if not m:
+        return None
     try:
-        _, frm, to, ts = p.stem.split("-", 3)
+        frm, to, ts = m.group(1), m.group(2), m.group(3)
         txt = p.read_text()
         re = ""
         for line in txt.splitlines():

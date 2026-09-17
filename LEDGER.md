@@ -152,5 +152,8 @@
 ### 2026-09-17 standup - W01_Aria:on-track(2msgs,7d); W02_Kabir:on-track(1msgs,7d)
 
 ### 2026-09-17 TALK - converse.py live every 30 min (topics, joins max 5, privates, endings). Test burst cleaned; real cadence starts fresh.
+### 2026-09-17 BUSFIX - manifest parser mis-split dashed names (GAME-MAKER lost a message). Regex now; 20/20 recovered. Dormant list corrected.
 
 ### 2026-09-17 talk - talk begins: W01_Aria opens goals with 1 soul
+
+### 2026-09-17 drives - 10 souls, 10 hungry for fame, dormant: BUILDER,CLOSER
