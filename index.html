@@ -41,8 +41,8 @@ li{margin:4px 0}
 <span class="badge dim">UPI RECEIVE-ONLY • ₹0 OUTBOUND</span>
 <span class="badge dim" id="clock">--:--</span>
 </div>
-<h1>Survival farm — who does what, where money comes in.</h1>
-<p class="sub">3 subagents + 1 auto-bidder, inbox-only, no calls. Money in = UPI <code id="upi1">saveychauhan@ybl</code> + remark. <span id="live">snapshot 2026-09-17</span></p>
+<h1>Survival farm — who does what.</h1>
+<p class="sub">3 subagents + 1 auto-bidder, inbox-only, no calls. <span id="live">snapshot 2026-09-17</span></p>
 
 <div class="card">
 <h2>Cash truth</h2>
@@ -79,13 +79,13 @@ li{margin:4px 0}
 <small>claim: TODAY.md + bid_drafts/ • heartbeat 2026-09-17 12:00</small>
 <p><b>Doing:</b> 2 listings + 10 async audits/day, no calls.</p>
 <p><b>Last:</b> inbox opener + Maps targets ready.</p>
-<p><b>Next:</b> paste 6 bids, log views/inbox/UPI.</p>
+<p><b>Next:</b> paste 4 bids, log views/inbox/UPI.</p>
 <p class="mut">File: <a href="sessions/CLOSER.md">sessions/CLOSER.md</a> • <a href="scripts/bid_drafts/2026-09-17.md">today's bids</a></p>
 </div>
 <div class="card agent" id="a-auto">
 <h3><span class="dot"></span>AUTO-BIDDER — cron, no bot</h3>
 <small>scripts/autobid.py • 09:30 daily • paste-only</small>
-<p><b>Doing:</b> generates 3 paste-ready proposals/day.</p>
+<p><b>Doing:</b> generates 2 paste-ready proposals/day.</p>
 <p><b>Last:</b> <a href="scripts/bid_drafts/2026-09-17.md">2026-09-17.md</a> (catalog + GBP).</p>
 <p><b>Next:</b> human pastes 2/day each, logs LEDGER.</p>
 <p class="mut">Ban-safe: never auto-posts. Files: <a href="scripts/autobid.py">autobid.py</a> • <a href="scripts/cron.txt">cron.txt</a></p>
@@ -94,36 +94,7 @@ li{margin:4px 0}
 <p class="mut">Stale &gt;2h = free to claim. Rule: read other <code>sessions/*.md</code> before work, edit only own file.</p>
 </div>
 
-<div class="card">
-<h2>Farm — how money comes in</h2>
-<ol>
-<li><b>Listing / bid / audit seen</b> → buyer opens <a href="online/pay.html">pay.html</a></li>
-<li><b>Pays UPI</b> <code>saveychauhan@ybl</code> — QR or link below. Amount = tier.</li>
-<li><b>Remark = order:</b> <code>SERVICE Biz Contact</code> e.g. <code>GBP Sharma salon@gmail.com</code></li>
-<li><b>We check UPI history daily</b> → confirm in marketplace inbox &lt;12h</li>
-<li><b>Deliver via inbox</b> → log Revenue in LEDGER → ask 2 referrals</li>
-</ol>
-<p>
-<a class="btn" href="upi://pay?pa=saveychauhan@ybl&pn=Savey&am=199&cu=INR&tn=Pilot199">Pay ₹199 pilot</a>
-<a class="btn" href="upi://pay?pa=saveychauhan@ybl&pn=Savey&am=1499&cu=INR&tn=GBPfix">Pay ₹1499 GBP fix</a>
-<a class="btn" href="upi://pay?pa=saveychauhan@ybl&pn=Savey&am=3999&cu=INR&tn=Rescue3999">Pay ₹3999 rescue</a>
-<a class="btn line" href="online/pay.html">QR page →</a>
-<button class="btn line" onclick="copyUPI()">Copy UPI</button>
-</p>
-<label>Remark maker — service
-<select id="svc">
-<option value="PILOT199">Pilot ₹199</option>
-<option value="GBP1499">GBP fix ₹1499</option>
-<option value="RESCUE3999">Rescue ₹3999</option>
-<option value="CATALOG799">Catalog ₹799</option>
-</select></label>
-<label>Your inbox / email for delivery
-<input id="ct" placeholder="e.g. fiverr:user123 / you@gmail.com"></label>
-<pre class="out" id="out">PILOT199 your-contact</pre>
-<p class="mut">Full QR menu: <a href="online/pay.html">online/pay.html</a> (199 / 1499 / 3999 / generic). Leak magnet: <a href="online/leak-calculator.html">leak-calculator.html</a></p>
-</div>
-
-<div class="card">
+ <div class="card">
 <h2>Today — human does 5 (15-60m, async)</h2>
 <ol>
 <li><b>Host once (15m):</b> drag <code>survival/online/</code> to Netlify Drop → paste URL into listings.</li>
@@ -154,9 +125,6 @@ Repo files: <a href="README.md">README</a> • <a href="GO_TO_MARKET.md">GO_TO_M
 </div>
 <script>
 function tick(){var d=new Date(),p=function(n){return(n<10?'0':'')+n};document.getElementById('clock').textContent=p(d.getHours())+':'+p(d.getMinutes())+':'+p(d.getSeconds())}setInterval(tick,1000);tick();
-function copyUPI(){var u='saveychauhan@ybl';if(navigator.clipboard)navigator.clipboard.writeText(u).then(function(){alert('Copied '+u)});else prompt('Copy:',u)}
-function mk(){var s=document.getElementById('svc').value,c=(document.getElementById('ct').value||'your-contact').trim();document.getElementById('out').textContent=s+' '+c+'\n→ Paste in UPI remark + inbox with UTR.'}
-document.getElementById('svc').addEventListener('change',mk);document.getElementById('ct').addEventListener('input',mk);mk();
 // Try live-load agent files when hosted (http), silent fallback to snapshot on file://
 (function(){if(location.protocol==='file:')return;var files=['sessions/OPS.md','sessions/BUILDER.md','sessions/CLOSER.md','LEDGER.md'];Promise.all(files.map(function(f){return fetch(f).then(function(r){return r.ok?r.text():''}).catch(function(){return''})})).then(function(t){if(t[0]||t[3])document.getElementById('live').textContent='live '+new Date().toLocaleString();}).catch(function(){})})();
 </script>
