@@ -7,7 +7,8 @@ updated: 2026-09-17 PASSIVE FARM by OPS | cash: ₹0 | mode: ZERO-HUMAN-WORK
 - INBOUND ONLY, receive-only: UPI `saveychauhan@ybl` + PayPal `sav.ey@live.co.uk`. We never pay out. Refunds only manual from received cash, never promised.
 - Small money with zero work > big money with work. If an earner pays ≥2 times with zero human minutes → SCALER clones it ×3 (more pages, more placements, more geos).
 - Every agent free (Pollinations free tier + stdlib + cron). Secrets NEVER in repo — `keys.local.json` (gitignored) only.
-- Local-first: MacBook Air static HTML + Python stdlib. LIVE: https://saveychauhan.github.io/survival/ (GitHub Pages, free, auto-builds on push).
+- Local-first: MacBook Air static HTML + Python stdlib. LIVE: https://raycast.in/ (custom domain, GitHub Pages, auto-builds on push). Fallback: https://saveychauhan.github.io/survival/.
+- Domain raycast.in paid till 2027-01-15 (sunk cost, $0 new spend). Renewal ₹899/yr must come from farm earnings before Jan 2027 — MONETIZE tracks it.
 
 ## 1. ACCOUNTS REGISTRY (status on index.html)
 | account | status | what agents need | profit when live |
