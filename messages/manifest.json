@@ -7,6 +7,13 @@
   "ts": "OPS-20260917-1147"
  },
  {
+  "file": "MSG-OPS-ALL-20260917-1331.md",
+  "from": "OPS",
+  "to": "ALL",
+  "re": "souls-day",
+  "ts": "20260917-1331"
+ },
+ {
   "file": "MSG-CRITIC-OPS-20260917-1316.md",
   "from": "CRITIC",
   "to": "OPS",
