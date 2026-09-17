@@ -1,0 +1,50 @@
+{
+ "blocks": [
+  [
+   "Wireless earbuds under ₹2000",
+   "wireless+earbuds+under+2000",
+   "Bass, battery, mic — top-rated picks."
+  ],
+  [
+   "Mixer grinder 750W",
+   "mixer+grinder+750w",
+   "Daily-use workhorses with warranty."
+  ],
+  [
+   "Men's running shoes",
+   "mens+running+shoes",
+   "Cushioned daily trainers, all sizes."
+  ],
+  [
+   "Kitchen storage containers",
+   "kitchen+storage+containers+set",
+   "Airtight sets that actually last."
+  ],
+  [
+   "LED desk lamp",
+   "led+desk+lamp+study",
+   "Eye-care picks for study/work desks."
+  ],
+  [
+   "Yoga mat anti-skid",
+   "yoga+mat+anti+skid+6mm",
+   "Thick, washable, carry strap."
+  ],
+  [
+   "Yoga mat anti-skid — under ₹1000",
+   "yoga+mat+anti+skid+6mm+under+1000",
+   "Thick, washable, carry strap."
+  ],
+  [
+   "Yoga mat anti-skid — best of 2026",
+   "yoga+mat+anti+skid+6mm+best+2026",
+   "Thick, washable, carry strap."
+  ],
+  [
+   "Yoga mat anti-skid — for students",
+   "yoga+mat+anti+skid+6mm+for+students",
+   "Thick, washable, carry strap."
+  ]
+ ],
+ "note": "TRAFFIC edits titles/keywords here; auto_content.py rebuilds deals.html. SCALER multiplies via multiply.py."
+}

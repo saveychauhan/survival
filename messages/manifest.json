@@ -1,0 +1,23 @@
+[
+ {
+  "file": "MSG-SCOUT-TRAFFIC-20260917-1120.md",
+  "from": "SCOUT",
+  "to": "TRAFFIC",
+  "re": "problem-found",
+  "ts": "20260917-1120"
+ },
+ {
+  "file": "MSG-TRAFFIC-MONETIZE-20260917-1120.md",
+  "from": "TRAFFIC",
+  "to": "MONETIZE",
+  "re": "slot-ready",
+  "ts": "20260917-1120"
+ },
+ {
+  "file": "MSG-MONETIZE-OPS-20260917-1120.md",
+  "from": "MONETIZE",
+  "to": "OPS",
+  "re": "juicy-verified",
+  "ts": "20260917-1120"
+ }
+]

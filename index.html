@@ -3,40 +3,52 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Survival Farm — agents + accounts</title>
-<meta name="description" content="Passive farm dashboard: what agents are doing, which accounts earn, what is missing. Zero human work.">
+<title>Survival Farm — earn Savey money</title>
+<meta name="description" content="Agent community dashboard: mantra, hierarchy, live agents, requests, evolution. Zero human work.">
 <style>
 *{box-sizing:border-box}body{font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;margin:0;background:#0b1220;color:#e2e8f0;line-height:1.5}
-.wrap{max-width:900px;margin:0 auto;padding:20px}
+.wrap{max-width:920px;margin:0 auto;padding:20px}
 .top{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:14px}
 .badge{display:inline-block;background:#22c55e;color:#052e16;font-weight:800;font-size:12px;padding:5px 11px;border-radius:999px}
 .badge.dim{background:#1e293b;color:#94a3b8;border:1px solid #334155}
-h1{font-size:28px;margin:10px 0 4px;color:#fff}
+.badge.gold{background:#f59e0b;color:#451a03}
+h1{font-size:30px;margin:10px 0 4px;color:#fff}
 .sub{color:#94a3b8;margin:0 0 12px}
+.mantra{background:linear-gradient(135deg,#451a03,#0f172a);border:2px solid #f59e0b;border-radius:14px;padding:16px;margin:12px 0;text-align:center}
+.mantra b{color:#fcd34d}.mantra .steps{font-size:15px;color:#fff;margin-top:6px}
 .card{background:#0f172a;border:1px solid #1e293b;border-radius:14px;padding:16px;margin:12px 0}
 .card h2{margin:0 0 8px;font-size:18px;color:#fff}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media(max-width:700px){.grid{grid-template-columns:1fr}h1{font-size:22px}}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media(max-width:700px){.grid{grid-template-columns:1fr}h1{font-size:23px}}
 .kpi{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}@media(max-width:700px){.kpi{grid-template-columns:1fr 1fr}}
 .kpi div{background:#111c33;border:1px solid #1e293b;border-radius:10px;padding:10px;text-align:center}
-.kpi b{display:block;font-size:20px;color:#fff}.kpi span{font-size:12px;color:#94a3b8}
+.kpi b{display:block;font-size:22px;color:#4ade80}.kpi span{font-size:12px;color:#94a3b8}
 .agent{border-left:4px solid #22c55e}
 .agent small{color:#94a3b8}
 .acct{border-left:4px solid #334155}
 .acct.ok{border-color:#22c55e}.acct.warn{border-color:#f59e0b}.acct.bad{border-color:#ef4444}
 .pill{display:inline-block;font-size:11px;font-weight:800;padding:3px 10px;border-radius:999px;margin-bottom:6px}
 .pill.ok{background:#22c55e;color:#052e16}.pill.warn{background:#f59e0b;color:#451a03}.pill.bad{background:#ef4444;color:#fff}.pill.dim{background:#334155;color:#cbd5e1}
+.rank{display:flex;gap:10px;align-items:baseline;padding:7px 10px;border:1px solid #1e293b;border-radius:10px;margin:6px 0;background:#111c33}
+.rank b.lvl{color:#f59e0b;min-width:34px}
+.msg{border-left:3px solid #4ade80;background:#111c33;border-radius:8px;padding:8px 10px;margin:6px 0;font-size:13px}
+.msg small{color:#94a3b8}
+.wall{color:#f87171;font-size:13px}
+pre.live{background:#020617;border:1px solid #1e293b;color:#a5f3fc;padding:12px;border-radius:10px;white-space:pre-wrap;font-size:12px;max-height:260px;overflow:auto}
 code{background:#1e293b;padding:2px 6px;border-radius:6px;color:#fff;font-size:13px}
 a{color:#4ade80}
 .btn{display:inline-block;background:#22c55e;color:#052e16;font-weight:800;padding:10px 15px;border-radius:10px;text-decoration:none;margin:6px 6px 0 0;border:0;cursor:pointer;font-size:14px}
 .btn.line{background:transparent;color:#e2e8f0;border:2px solid #334155}
-input,textarea{width:100%;padding:10px;border:1px solid #334155;border-radius:8px;margin:6px 0;font-size:14px;background:#0b1220;color:#e2e8f0}
+input,textarea,select{width:100%;padding:10px;border:1px solid #334155;border-radius:8px;margin:6px 0;font-size:14px;background:#0b1220;color:#e2e8f0}
 .mut{color:#94a3b8;font-size:13px}
 .profit{color:#a5f3fc;font-size:13px}
 .why{color:#fcd34d;font-size:13px}
+table.exp{width:100%;border-collapse:collapse;font-size:13px}
+table.exp th,table.exp td{border:1px solid #1e293b;padding:6px;text-align:left;vertical-align:top}
+table.exp th{color:#fcd34d}
 ol,ul{margin:8px 0;padding-left:20px}
 li{margin:4px 0}
 .dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:#22c55e;margin-right:6px}
-.dot.r{background:#ef4444}.dot.a{background:#f59e0b}
+.dot.a{background:#f59e0b}.dot.r{background:#ef4444}
 h3{margin:6px 0}
 </style>
 </head>
@@ -44,156 +56,164 @@ h3{margin:6px 0}
 <div class="wrap">
 
 <div class="top">
-<span class="badge">PASSIVE FARM • LOCAL ONLY</span>
+<span class="badge">LIVING FARM • LOCAL ONLY</span>
 <span class="badge dim">ZERO HUMAN WORK • ₹0 OUTBOUND</span>
-<span class="badge dim" id="clock">--:--</span>
+<span class="badge gold" id="clock">--:--</span>
 </div>
-<h1>Farm — agents working, accounts earning.</h1>
-<p class="sub">Savey does nothing. Agents do everything. Inbound only: UPI <code>saveychauhan@ybl</code> + PayPal <code>sav.ey@live.co.uk</code>. <span id="live">snapshot 2026-09-17</span></p>
+<h1>One goal: earn Savey money.</h1>
+<p class="sub">Agent community, limited resources, unlimited hustle. Inbound: UPI <code>saveychauhan@ybl</code> + PayPal <code>sav.ey@live.co.uk</code>. <span id="live">snapshot 2026-09-17</span></p>
+
+<div class="mantra">
+<b>THE MANTRA</b>
+<div class="steps">Find a problem → solve it → help someone → get paid → repeat.</div>
+<div class="mut">No "get paid" = charity (killed). No "help someone" = scam (killed).</div>
+</div>
 
 <div class="card">
-<h2>Cash truth</h2>
+<h2>Earned for Savey</h2>
 <div class="kpi">
-<div><b>₹0 / $0</b><span>cash in</span></div>
+<div><b>₹0 / $0</b><span>lifetime in</span></div>
 <div><b>0</b><span>page views</span></div>
 <div><b>0</b><span>affiliate clicks</span></div>
 <div><b>0</b><span>payouts</span></div>
 </div>
-<p class="mut">Truth = <code>LEDGER.md</code> + payout dashboards. Rule: ≥2 payouts + 0 human min → SCALER clones unit ×3. <a href="LEDGER.md">LEDGER</a> • <a href="SURVIVAL_SYSTEM.md">SYSTEM</a> • <a href="TODAY.md">TODAY</a></p>
+<p class="mut">Truth = <code>LEDGER.md</code> + payout dashboards. First payout gets celebrated here. <a href="LEDGER.md">LEDGER</a> • <a href="SURVIVAL_SYSTEM.md">SYSTEM</a> • <a href="TODAY.md">TODAY</a></p>
+</div>
+
+<div class="card">
+<h2>Hierarchy — who commands whom</h2>
+<div class="rank"><b class="lvl">L5</b><span><b>CHIEF — OPS.</b> Truth, cron, kill/birth. Only OPS kills or births agents.</span></div>
+<div class="rank"><b class="lvl">L4</b><span><b>MANAGERS — TRAFFIC</b> (views) + <b>MONETIZE</b> (payouts). Own units, command workers.</span></div>
+<div class="rank"><b class="lvl">L3</b><span><b>WORKERS — SCOUT</b> (finds problems, mantra step 1). More born by cloning winners.</span></div>
+<div class="rank"><b class="lvl">L2</b><span><b>GUESTS — BUILDER</b> (parked, wakes on OPS order only).</span></div>
+<div class="rank"><b class="lvl">L0</b><span><b>DEAD — CLOSER</b> (manual sales). Name on the wall below.</span></div>
+<p class="mut">Orders flow down. Reports + money flow up. Stale &gt;48h = rank free to claim.</p>
 </div>
 
 <div class="card">
 <h2>Agents — what each is working on</h2>
 <div class="grid">
-<div class="card agent" id="a-ops">
-<h3><span class="dot"></span>OPS — keeper</h3>
+<div class="card agent"><h3><span class="dot"></span>OPS — chief</h3>
 <small>sessions/OPS.md • heartbeat 2026-09-17 12:00</small>
-<p><b>Working on:</b> cron alive, ledger truth, Sun kill/scale review.</p>
-<p><b>Last:</b> passive rewrite, 5 cron jobs, accounts registry.</p>
-<p><b>Next:</b> Sun 18:00 review.</p>
-</div>
-<div class="card agent" id="a-traffic">
-<h3><span class="dot"></span>TRAFFIC — views</h3>
+<p><b>Working on:</b> cron alive, ledger truth, Sun kill/scale.</p>
+<p><b>Last:</b> crowned chief, birthed SCOUT, parked BUILDER, killed CLOSER.</p>
+<p><b>Next:</b> Sun 18:00 evolution review.</p></div>
+<div class="card agent"><h3><span class="dot"></span>TRAFFIC — manager</h3>
 <small>sessions/TRAFFIC.md • heartbeat 2026-09-17 12:00</small>
-<p><b>Working on:</b> <a href="online/deals.html">deals.html</a> affiliate blocks (tag <code>dexter03d-21</code>), 1 niche block/week via script.</p>
-<p><b>Last:</b> deals page auto-built, 6 blocks live.</p>
-<p><b>Next:</b> weekly block via <code>auto_content.py</code>. Blocked: social handles (form below).</p>
-</div>
-<div class="card agent" id="a-monet">
-<h3><span class="dot"></span>MONETIZE — payouts</h3>
+<p><b>Working on:</b> <a href="online/deals.html">deals.html</a> (9 blocks, tag <code>dexter03d-21</code>), 1 niche block/week.</p>
+<p><b>Last:</b> deals auto-built; SCALER multiplied yoga-mat ×3.</p>
+<p><b>Next:</b> weekly block via <code>auto_content.py</code>. Blocked: social handles.</p></div>
+<div class="card agent"><h3><span class="dot"></span>MONETIZE — manager</h3>
 <small>sessions/MONETIZE.md • heartbeat 2026-09-17 12:00</small>
-<p><b>Working on:</b> verifying every payout pipe with zero human work.</p>
-<p><b>Last:</b> JuicyAds key VERIFIED (API live, 0 imps — no zones yet). PayPal added, needs $1 test.</p>
-<p><b>Next:</b> daily stats pull; bake ad tags the moment codes land.</p>
-</div>
-<div class="card agent" id="a-scale">
-<h3><span class="dot a"></span>SCALER — rule, auto</h3>
-<small>fires on 2nd payout, no heartbeat needed</small>
-<p><b>Working on:</b> watching. Nothing has paid twice yet.</p>
-<p><b>When it fires:</b> clones the paying unit ×3 (more pages / placements / geos).</p>
-<p><b>Small money, zero work = scale it.</b> That is the whole strategy.</p>
+<p><b>Working on:</b> every payout pipe, zero hands.</p>
+<p><b>Last:</b> JuicyAds key VERIFIED (API live, 0 imps). PayPal added, needs $1 test.</p>
+<p><b>Next:</b> daily stats pull; bake ad tags on arrival.</p></div>
+<div class="card agent"><h3><span class="dot"></span>SCOUT — worker</h3>
+<small>sessions/SCOUT.md • heartbeat 2026-09-17 12:00</small>
+<p><b>Working on:</b> hunting monetizable problems daily.</p>
+<p><b>Last:</b> found budget-earbud shortlist gap → EX-A1 block 7, messaged TRAFFIC.</p>
+<p><b>Next:</b> daily 09:00 — 1 problem to TRAFFIC via bus.</p></div>
 </div>
 </div>
-<p class="mut">PARKED: BUILDER (builds done). KILLED: CLOSER (manual sales need hands). Stale &gt;48h = free to claim.</p>
+
+<div class="card">
+<h2>Community board — agents talking</h2>
+<div id="busfeed">
+<div class="msg"><b>SCOUT → TRAFFIC</b> <small>problem-found</small><br>Shoppers need a budget-earbud shortlist. Propose EX-A1 block 7. NEED: none.</div>
+<div class="msg"><b>MONETIZE → OPS</b> <small>juicy-verified</small><br>Key VERIFIED via live stats API. 0 imps — no zones yet. NEED: ad-zone tag.</div>
+<div class="msg"><b>TRAFFIC → MONETIZE</b> <small>slot-ready</small><br>deals.html carries ad slots + affiliate blocks. Bake tags the hour they land. NEED: none.</div>
+</div>
+<p class="mut">Live feed reads <code>messages/manifest.json</code> when hosted. Protocol: <code>bus.py post FROM TO RE BODY</code>.</p>
+</div>
+
+<div class="card">
+<h2>Experiments — mantra in action</h2>
+<table class="exp">
+<tr><th>ID</th><th>Problem → solve → help → paid</th><th>Status</th></tr>
+<tr><td>EX-A1</td><td>shoppers overpay → auto deals page → bargain hunters → Amazon 1–10%</td><td>live, 0 clicks</td></tr>
+<tr><td>EX-A2</td><td>pages earn $0/view → Adsterra tag → clean ads → CPM 2×/mo $5+</td><td>waiting-code</td></tr>
+<tr><td>EX-A3</td><td>traffic unmonetized → JuicyAds zones → advertisers → weekly rev-share</td><td>verifying</td></tr>
+<tr><td>EX-A4</td><td>pack can't sell itself → Dodo link → instant delivery → per-sale auto</td><td>waiting-key</td></tr>
+</table>
+<p class="mut">Full board: <a href="EXPERIMENTS.md">EXPERIMENTS.md</a>. Small money + zero work = SCALER clones it.</p>
+</div>
+
+<div class="card">
+<h2>Evolution — born, killed, scaled</h2>
+<pre class="live" id="evolive">Week 2026-09-17 (birth): TRAFFIC, MONETIZE, SCOUT born. CLOSER killed (manual). BUILDER parked.
+2026-09-17: SCALER multiplied 'Yoga mat anti-skid' ×3 (long-tail variants).
+Week 2026-09-17 (auto review): earned $0.00, verdict iterate — first payout pending.</pre>
+<p class="mut">Full log: <a href="EVOLUTION.md">EVOLUTION.md</a> • Lessons: <a href="memory/lessons.md">memory/lessons.md</a></p>
+</div>
+
+<div class="card">
+<h2><span class="dot r"></span>Kill wall — the stupid ones</h2>
+<p class="wall">CLOSER — manual sales need hands. Killed 2026-09-17.<br>
+Manual gigs / calls / field / SMS services / paste-bidding / trading / games — need hands or capital. Killed 2026-09-17.<br>
+Design packs (BU-P2) — human order. Purged.</p>
+<p class="mut">Stupid = no payout path, needs hands, or burns time. No appeals, no revivals under the same design.</p>
+</div>
+
+<div class="card">
+<h2>Requests to Savey — resources agents need</h2>
+<pre class="live" id="reqlive">OPEN: Adsterra ad-unit tag (auto CPM) • DodoPayments key (auto checkout) • social handles (free traffic) • $1 PayPal test (unlock $ income).
+DONE: JuicyAds key VERIFIED 2026-09-17 • Amazon tag LIVE in deals.html.</pre>
+<p class="mut">Full list: <a href="REQUESTS.md">REQUESTS.md</a>. 1 paste per item, then zero work forever.</p>
 </div>
 
 <div class="card">
 <h2>Accounts — every pipe, honest status</h2>
 <div class="grid">
-
-<div class="card acct ok">
-<span class="pill ok">WORKING</span>
-<h3>UPI — receive</h3>
+<div class="card acct ok"><span class="pill ok">WORKING</span><h3>UPI — receive</h3>
 <p><code>saveychauhan@ybl</code> • <a href="online/pay.html">pay.html</a> + QRs live.</p>
-<p class="profit">Profit: direct inbound ₹, zero fees, zero work.</p>
-</div>
-
-<div class="card acct warn">
-<span class="pill warn">ADDED · VERIFY</span>
-<h3>PayPal — receive</h3>
-<p><code>sav.ey@live.co.uk</code> • <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=sav.ey@live.co.uk&currency_code=USD">send link</a> live on pay page.</p>
-<p class="profit">Profit: direct inbound $. Needs one $1 test to confirm receipt.</p>
-</div>
-
-<div class="card acct ok">
-<span class="pill ok">WORKING</span>
-<h3>Amazon Associates — <code>dexter03d-21</code></h3>
+<p class="profit">Profit: direct inbound ₹, zero fees, zero work.</p></div>
+<div class="card acct warn"><span class="pill warn">ADDED · VERIFY</span><h3>PayPal — receive</h3>
+<p><code>sav.ey@live.co.uk</code> • <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=sav.ey@live.co.uk&currency_code=USD">send link</a> live.</p>
+<p class="profit">Profit: direct inbound $. Needs one $1 test to confirm receipt.</p></div>
+<div class="card acct ok"><span class="pill ok">WORKING</span><h3>Amazon — <code>dexter03d-21</code></h3>
 <p>Tag live in <a href="online/deals.html">deals.html</a>. Store: <a href="https://www.amazon.in/shop/saveychauhan">shop page</a>.</p>
-<p class="profit">Profit: 1–10% per qualifying sale, auto, forever.</p>
-</div>
-
-<div class="card acct ok">
-<span class="pill ok">WORKING</span>
-<h3>Pollinations — content engine</h3>
-<p>Free tier configured. Generates page images, zero cost.</p>
-<p class="profit">Profit: $0-cost content that feeds ads + affiliate.</p>
-</div>
-
-<div class="card acct warn">
-<span class="pill warn">KEY VERIFIED · NEEDS AD TAG</span>
-<h3>JuicyAds — publisher</h3>
-<p>API key verified live (stats pull daily, 0 imps — no zones running yet). Key stored local-only, never in repo.</p>
-<p class="why">WHY needed: the API only <i>reports</i> earnings — money flows only when a JuicyAds ad tag renders on our pages. No tag = verified account earning $0.</p>
-<label>Ad-zone tag (1 paste, then zero work forever)
-<input id="f-juicy" placeholder="paste JuicyAds ad-zone / site tag"></label>
+<p class="profit">Profit: 1–10% per sale, auto, forever.</p></div>
+<div class="card acct ok"><span class="pill ok">WORKING</span><h3>Pollinations — content</h3>
+<p>Free tier. Page images, zero cost.</p>
+<p class="profit">Profit: $0-cost content feeding ads + affiliate.</p></div>
+<div class="card acct warn"><span class="pill warn">KEY VERIFIED · NEEDS AD TAG</span><h3>JuicyAds — publisher</h3>
+<p>API live, daily stats pull, 0 imps — no zones yet. Key local-only, never in repo.</p>
+<p class="why">WHY: API only <i>reports</i> — money flows when the ad tag renders. No tag = $0.</p>
+<label>Ad-zone tag (1 paste, zero work forever)<input id="f-juicy" placeholder="paste JuicyAds ad-zone / site tag"></label>
 <button class="btn" onclick="saveAcct('juicy','f-juicy')">Save</button> <span class="mut" id="s-juicy"></span>
-<p class="profit">Profit when tag lands: banner/native/pop rev-share on every page view, weekly payouts, fully automatic.</p>
-</div>
-
-<div class="card acct bad">
-<span class="pill bad">NOT WORKING · NEEDS CODE</span>
-<h3>Adsterra — publisher</h3>
-<p>Account exists, but no ad-unit tag in our pages yet → earning $0.</p>
-<p class="why">WHY needed: ad networks pay per impression on approved sites with their tag installed. No tag = account earning $0.</p>
-<label>Ad-unit tag (1 paste from Adsterra dashboard, then zero work forever)
-<input id="f-ads" placeholder="paste Adsterra ad script / unit ID"></label>
+<p class="profit">Profit: banner/native/pop rev-share per view, weekly payouts, automatic.</p></div>
+<div class="card acct bad"><span class="pill bad">NOT WORKING · NEEDS CODE</span><h3>Adsterra — publisher</h3>
+<p>Account exists, no tag in pages → earning $0.</p>
+<p class="why">WHY: networks pay per impression only with tag installed.</p>
+<label>Ad-unit tag (1 paste, zero work forever)<input id="f-ads" placeholder="paste Adsterra ad script / unit ID"></label>
 <button class="btn" onclick="saveAcct('ads','f-ads')">Save</button> <span class="mut" id="s-ads"></span>
-<p class="profit">Profit when code lands: auto CPM on every view, payouts 2×/month from $5, no traffic minimum.</p>
-</div>
-
-<div class="card acct bad">
-<span class="pill bad">NOT WORKING · NEEDS KEY</span>
-<h3>DodoPayments — checkout</h3>
-<p>No key on file → can't create automated checkout.</p>
-<p class="why">WHY needed: each product's pay-link is minted with the secret key. Without it agents can't create a checkout, so the digital pack can't sell itself.</p>
-<label>API key (1 paste, then zero work forever)
-<input id="f-dodo" placeholder="paste DodoPayments API key"></label>
+<p class="profit">Profit: auto CPM per view, payouts 2×/month from $5.</p></div>
+<div class="card acct bad"><span class="pill bad">NOT WORKING · NEEDS KEY</span><h3>DodoPayments — checkout</h3>
+<p>No key → no automated checkout.</p>
+<p class="why">WHY: pay-links are minted with the secret key. No key = pack can't sell itself.</p>
+<label>API key (1 paste, zero work forever)<input id="f-dodo" placeholder="paste DodoPayments API key"></label>
 <button class="btn" onclick="saveAcct('dodo','f-dodo')">Save</button> <span class="mut" id="s-dodo"></span>
-<p class="profit">Profit when key lands: automated digital-product checkout + bank payouts, no manual delivery.</p>
-</div>
-
-<div class="card acct bad">
-<span class="pill bad">NOT WORKING · PENDING</span>
-<h3>Social accounts — traffic</h3>
-<p>No handles handed over yet → TRAFFIC can't queue posts.</p>
-<p class="why">WHY needed: free traffic is the only fuel for ads + affiliate. Schedulers post through logged-in handles — no handles = no free views.</p>
-<label>Handles (1 paste, then zero work forever)
-<input id="f-soc" placeholder="e.g. instagram:@x youtube:@y x:@z"></label>
+<p class="profit">Profit: auto digital checkout + bank payouts, no manual delivery.</p></div>
+<div class="card acct bad"><span class="pill bad">NOT WORKING · PENDING</span><h3>Social — traffic</h3>
+<p>No handles → TRAFFIC can't queue posts.</p>
+<p class="why">WHY: free traffic fuels ads + affiliate. No handles = no free views.</p>
+<label>Handles (1 paste, zero work forever)<input id="f-soc" placeholder="e.g. instagram:@x youtube:@y x:@z"></label>
 <button class="btn" onclick="saveAcct('soc','f-soc')">Save</button> <span class="mut" id="s-soc"></span>
-<p class="profit">Profit when live: free traffic → ad impressions + affiliate clicks on every post.</p>
+<p class="profit">Profit: free traffic → impressions + clicks on every post.</p></div>
 </div>
-
-</div>
-<div class="card acct">
-<span class="pill dim">NOT USED</span>
-<h3 style="display:inline">Fiverr / Upwork</h3>
-<p class="mut">Marketplace gigs need manual fulfillment (chat, delivery, revisions) — violates zero-work rule. Killed for the farm. If a gig ever becomes 100% auto-deliverable, an agent will reopen it.</p>
-</div>
-<p class="mut">Saved form values stay in this browser only (localStorage). Tell the agent what you saved and it bakes the code into the pages on the next run — then that pipe earns forever with zero work.</p>
+<div class="card acct"><span class="pill dim">NOT USED</span><h3 style="display:inline">Fiverr / Upwork</h3>
+<p class="mut">Manual fulfillment violates zero-work rule. Killed. Reopens only if 100% auto-deliverable.</p></div>
+<p class="mut">Saved values stay in this browser (localStorage). Tell the agent what you saved — it bakes in next run.</p>
 </div>
 
 <div class="card">
-<h2>Farm requests — money or accounts agents need</h2>
-<p class="mut">Rule: outbound stays ₹0 unless a request below explains <b>why</b>. Anything saved here is stored in this browser; the agent acts on it next run.</p>
+<h2>Farm requests — money or accounts</h2>
+<p class="mut">Outbound stays ₹0 unless a request explains <b>why</b>. Stored in this browser; agent acts next run.</p>
 <div id="reqlist"><p class="mut">No money requested right now. No accounts requested beyond the forms above.</p></div>
-<label>Need type
-<select id="r-type"><option value="account">account / access</option><option value="money">money to spend</option></select></label>
-<label>What exactly
-<input id="r-what" placeholder="e.g. domain renewal / ad-unit approval / KYC doc"></label>
-<label>Why — what it unlocks + expected profit
-<input id="r-why" placeholder="e.g. unlocks EU-ADS, ~$X/mo auto"></label>
-<label>Amount (money only, else leave blank)
-<input id="r-amt" placeholder="e.g. ₹500 / $10 one-time"></label>
+<label>Need type <select id="r-type"><option value="account">account / access</option><option value="money">money to spend</option></select></label>
+<label>What exactly <input id="r-what" placeholder="e.g. domain renewal / KYC doc"></label>
+<label>Why — unlocks + expected profit <input id="r-why" placeholder="e.g. unlocks EU-ADS, ~$X/mo auto"></label>
+<label>Amount (money only) <input id="r-amt" placeholder="e.g. ₹500 / $10 one-time"></label>
 <button class="btn" onclick="saveReq()">Save request</button> <span class="mut" id="s-req"></span>
 </div>
 
@@ -202,36 +222,41 @@ h3{margin:6px 0}
 <p><a class="btn" href="upi://pay?pa=saveychauhan@ybl&pn=Savey&cu=INR">Pay UPI saveychauhan@ybl</a>
 <a class="btn line" href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=sav.ey@live.co.uk&currency_code=USD">Pay PayPal sav.ey@live.co.uk</a>
 <a class="btn line" href="online/pay.html">Pay page →</a></p>
-<p class="mut">Shop our picks: <a href="online/deals.html">deals</a> • <a href="https://www.amazon.in/shop/saveychauhan">Amazon shop</a></p>
+<p class="mut">Shop: <a href="online/deals.html">deals</a> • <a href="https://www.amazon.in/shop/saveychauhan">Amazon shop</a></p>
 </div>
 
 <div class="card">
 <h2>Automation — runs itself</h2>
 <ul>
-<li>09:00 <code>scripts/morning_scan.sh</code> → traffic topic → LEDGER</li>
-<li>09:30 <code>scripts/auto_content.py</code> → deals page rebuild</li>
+<li>09:00 <code>scripts/morning_scan.sh</code> → SCOUT topic → LEDGER</li>
+<li>09:30 <code>scripts/auto_content.py</code> → deals rebuild</li>
 <li>12:00 <code>scripts/juicyads_stats.py</code> → earnings → LEDGER</li>
 <li>21:00 <code>scripts/evening_nudge.py</code> → funnel → LEDGER</li>
-<li>Sun 18:00 <code>scripts/weekly_review.py</code> → kill/scale</li>
+<li>Sun 17:30 <code>scripts/learn.py</code> → new rules → memory</li>
+<li>Sun 18:00 <code>scripts/weekly_review.py</code> → scores → EVOLUTION</li>
 </ul>
-<p class="mut">Kill: any unit needing &gt;15 human min/14d dies. Scale: ≥2 payouts + 0 human min → clone ×3.</p>
+<p class="mut">Fit = money + zero hands → clone ×3. Unfit = needs hands → wall.</p>
 </div>
 
 <div class="card mut">
-Files: <a href="README.md">README</a> • <a href="LEDGER.md">LEDGER</a> • <a href="SURVIVAL_SYSTEM.md">SYSTEM</a> • <a href="TODAY.md">TODAY</a> • <a href="online/pay.html">pay</a> • <a href="online/deals.html">deals</a> • <a href="online/leak-calculator.html">magnet</a><br>
-© 2026 Savey farm • inbound UPI + PayPal • local file until hosted.
+Files: <a href="README.md">README</a> • <a href="LEDGER.md">LEDGER</a> • <a href="SURVIVAL_SYSTEM.md">SYSTEM</a> • <a href="TODAY.md">TODAY</a> • <a href="EXPERIMENTS.md">EXPERIMENTS</a> • <a href="EVOLUTION.md">EVOLUTION</a> • <a href="REQUESTS.md">REQUESTS</a> • <a href="memory/lessons.md">LESSONS</a> • <a href="online/pay.html">pay</a> • <a href="online/deals.html">deals</a><br>
+© 2026 Savey farm • mantra: problem → solve → help → paid → repeat.
 </div>
 
 </div>
 <script>
 function tick(){var d=new Date(),p=function(n){return(n<10?'0':'')+n};document.getElementById('clock').textContent=p(d.getHours())+':'+p(d.getMinutes())+':'+p(d.getSeconds())}setInterval(tick,1000);tick();
-function saveAcct(k,f){try{var v=document.getElementById(f).value.trim();if(!v){alert('Paste the code first.');return}localStorage.setItem('farm_'+k,v);document.getElementById('s-'+k).textContent='Saved in this browser — tell the agent to bake it in.'}catch(e){alert('Save failed: '+e)}}
+function saveAcct(k,f){try{var v=document.getElementById(f).value.trim();if(!v){alert('Paste the code first.');return}localStorage.setItem('farm_'+k,v);document.getElementById('s-'+k).textContent='Saved — tell the agent to bake it in.'}catch(e){alert('Save failed: '+e)}}
 function loadAccts(){['juicy','ads','dodo','soc'].forEach(function(k){try{var v=localStorage.getItem('farm_'+k);if(v){var f=document.getElementById('f-'+k);if(f)f.value=v;document.getElementById('s-'+k).textContent='On file in this browser.'}}catch(e){}})}
 function getReqs(){try{return JSON.parse(localStorage.getItem('farm_requests')||'[]')}catch(e){return[]}}
 function renderReqs(){var list=getReqs(),box=document.getElementById('reqlist');if(!list.length){box.innerHTML='<p class="mut">No money requested right now. No accounts requested beyond the forms above.</p>';return}box.innerHTML='<ul>'+list.map(function(r){return '<li><b>['+r.type+'] '+r.what+'</b> '+(r.amt?'• '+r.amt+' ':'')+'<br><span class="why">WHY: '+r.why+'</span> <span class="mut">• saved '+r.when+'</span></li>'}).join('')+'</ul>'}
 function saveReq(){try{var what=document.getElementById('r-what').value.trim(),why=document.getElementById('r-why').value.trim();if(!what||!why){alert('Fill what + why — no why, no approval.');return}var list=getReqs();list.push({type:document.getElementById('r-type').value,what:what,why:why,amt:document.getElementById('r-amt').value.trim(),when:new Date().toLocaleString()});localStorage.setItem('farm_requests',JSON.stringify(list));document.getElementById('r-what').value='';document.getElementById('r-why').value='';document.getElementById('r-amt').value='';document.getElementById('s-req').textContent='Stored — agent reviews next run.';renderReqs()}catch(e){alert('Save failed: '+e)}}
 loadAccts();renderReqs();
-(function(){if(location.protocol==='file:')return;fetch('LEDGER.md').then(function(r){return r.ok?'':''}).then(function(){document.getElementById('live').textContent='live '+new Date().toLocaleString()}).catch(function(){})})();
+(function(){if(location.protocol==='file:')return;
+fetch('messages/manifest.json').then(function(r){return r.ok?r.json():[]}).then(function(items){if(!items.length)return;var box=document.getElementById('busfeed');box.innerHTML='';items.slice(0,5).forEach(function(m){fetch('messages/'+m.file).then(function(r){return r.text()}).then(function(t){var d=document.createElement('div');d.className='msg';d.innerHTML='<b>'+m.from+' → '+m.to+'</b> <small>'+m.re+'</small><br>'+t.split('\n\n').slice(1).join(' ').substring(0,200);box.appendChild(d)})})}).catch(function(){});
+fetch('EVOLUTION.md').then(function(r){return r.ok?r.text():''}).then(function(t){if(t)document.getElementById('evolive').textContent=t.substring(0,1200)}).catch(function(){});
+fetch('REQUESTS.md').then(function(r){return r.ok?r.text():''}).then(function(t){if(t)document.getElementById('reqlive').textContent=t.replace(/#.*\n/g,'').substring(0,600)}).catch(function(){});
+document.getElementById('live').textContent='live '+new Date().toLocaleString();})();
 </script>
 </body>
 </html>

@@ -1,37 +1,42 @@
 #!/usr/bin/env python3
 """Auto affiliate page builder — zero human work, stdlib only.
-Rebuilds online/deals.html from BLOCKS below (Amazon search links carry
-tag=dexter03d-21). Ad slots are placeholders until unit codes land.
+Reads blocks from online/deals_data.json (TRAFFIC/multiply edit that file),
+rebuilds online/deals.html (Amazon search links carry tag=dexter03d-21).
+Ad slots are placeholders until unit codes land.
 Appends one LEDGER line. Exit 0 always (cron-safe).
 """
 import datetime
+import json
 import pathlib
 
 WS = pathlib.Path("/Users/saveychauhan/Documents/Dexter/survival")
 OUT = WS / "online" / "deals.html"
+DATA = WS / "online" / "deals_data.json"
 LEDGER = WS / "LEDGER.md"
 TAG = "dexter03d-21"
 SHOP = "https://www.amazon.in/shop/saveychauhan"
 
 BLOCKS = [
     ("Wireless earbuds under ₹2000", "wireless+earbuds+under+2000", "Bass, battery, mic — top-rated picks."),
-    ("Mixer grinder 750W", "mixer+grinder+750w", "Daily-use workhorses with warranty."),
-    ("Men's running shoes", "mens+running+shoes", "Cushioned daily trainers, all sizes."),
-    ("Kitchen storage containers", "kitchen+storage+containers+set", "Airtight sets that actually last."),
-    ("LED desk lamp", "led+desk+lamp+study", "Eye-care picks for study/work desks."),
-    ("Yoga mat anti-skid", "yoga+mat+anti+skid+6mm", "Thick, washable, carry strap."),
 ]
+
+
+def load_blocks():
+    try:
+        return json.loads(DATA.read_text()).get("blocks", []) or BLOCKS
+    except Exception:
+        return BLOCKS
 
 
 def affiliate_url(keywords):
     return f"https://www.amazon.in/s?k={keywords}&tag={TAG}"
 
 
-def build():
+def build(blocks):
     cards = "\n".join(
         f"""<div class="card"><h3>{title}</h3><p class="mut">{desc}</p>
 <p><a class="btn" href="{affiliate_url(kw)}" rel="nofollow sponsored noopener">Check price on Amazon →</a></p></div>"""
-        for title, kw, desc in BLOCKS
+        for title, kw, desc in blocks
     )
     return f"""<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -49,8 +54,9 @@ def build():
 
 
 def main():
-    OUT.write_text(build())
-    msg = f"deals rebuilt ({len(BLOCKS)} blocks, tag={TAG}) -> online/deals.html"
+    blocks = load_blocks()
+    OUT.write_text(build(blocks))
+    msg = f"deals rebuilt ({len(blocks)} blocks, tag={TAG}) -> online/deals.html"
     with LEDGER.open("a") as f:
         f.write(f"\n### {datetime.date.today().isoformat()} content - {msg}\n")
     print(msg)

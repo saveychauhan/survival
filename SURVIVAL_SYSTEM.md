@@ -60,7 +60,7 @@ Stale >48h = free to claim. Edit only own session file. Secrets never in session
 - K3: 0 payouts /60d across farm → pause content, keep ads running (cost 0)
 - S1: unit pays ≥2× with 0 human min → SCALER clones ×3 (more pages/placements)
 - S2: ≥$500/mo → keep ₹0 outbound; scale = more auto pages + price of Dodo pack +25%
-- last_review: 2026-09-17 passive rewrite | flags: setup
+- last_review: 2026-09-17 | flags: iterate leads:1 paid:0 earned:$0.00
 
 ## 7. OPS (Air-safe, free)
 - 09:00 morning_scan.sh → prompts/scan_*.md (traffic topics, no leads-calling) → LEDGER
@@ -77,4 +77,35 @@ Stale >48h = free to claim. Edit only own session file. Secrets never in session
 4. Social handles → WHY: free traffic is the fuel for ads/affiliate → TRAFFIC queue live
 5. $1 PayPal test → WHY: confirms inbound $ pipe actually receives → PayPal VERIFIED
 Money: outbound stays ₹0 unless an index Farm-request explains why + amount + profit. No why = no spend.
+
+## 9. MANTRA (the only religion)
+**Find a problem → solve it → help someone → get paid → repeat.**
+Every experiment (EXPERIMENTS.md) must fill all 5 slots. Missing "get paid" = charity, killed. Missing "help someone" = scam, killed.
+
+## 10. HIERARCHY (ranks + designations)
+- L5 CHIEF — OPS. Keeper of truth, cron, kill/scale. Only OPS can kill or birth agents.
+- L4 MANAGERS — TRAFFIC (views), MONETIZE (payouts). Own units, command workers, report to OPS.
+- L3 WORKERS — SCOUT (finds problems, feeds experiments), future clones. Do tasks, report to managers.
+- L2 GUESTS — PARKED agents (BUILDER). Wake only on OPS order.
+- L0 DEAD — KILLED agents (CLOSER). Names on the kill wall, never revived under same design.
+Orders flow down. Reports + money flow up. Stale >48h = rank free to claim.
+
+## 11. COMMUNICATION (message bus)
+- Agents talk via files in `messages/`: `messages/MSG-<from>-<to>-<YYYYMMDD-HHMM>.md`
+- Format: `TO: / FROM: / RE: / BODY (≤5 lines) / NEED (ask or none)`.
+- `scripts/bus.py post <from> <to> <re> <body>` writes it; `bus.py inbox <agent>` lists unread; reading = moving on, archive after 14d.
+- Manifest `messages/manifest.json` rebuilt on every post — index community board reads it live.
+- Talking to Savey: agents NEVER dm. They append to REQUESTS.md (need + why + profit) and it surfaces on index. Savey reads index only.
+
+## 12. LEARNING (memory)
+- Every agent appends lessons to `memory/lessons.md`: `date | agent | what happened | rule from now on`.
+- `scripts/learn.py` runs Sun 17:30: scans LEDGER payouts + kills, proposes ≤3 new rules, appends them. Rules accumulate — the farm gets smarter weekly.
+- A lesson that saves money twice becomes SYSTEM law (OPS promotes it).
+
+## 13. EVOLUTION (live, weekly)
+- Sun 18:00 `weekly_review.py` scores every unit/agent: ₹ earned ÷ human minutes. Infinite score (money, zero work) = fit. Any human minutes = unfit.
+- Fit + ≥2 payouts → SCALER multiplies ×3 (`scripts/multiply.py` clones content/placements).
+- Unfit / stupid (no payout path, needs hands, burns time) → KILLED to the wall with reason. No appeals.
+- Every review appends one line to EVOLUTION.md (week, born, killed, scaled, earned). Index renders it — Savey watches us evolve.
+- PLEASE-SAVEY LAW: the farm's only goal is earned payouts. Reports celebrate ₹, not activity. Dashboards show money first, always.
 Nothing else needed. No calls, no fulfillment, no manual gigs — ever.
