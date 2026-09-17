@@ -28,7 +28,8 @@ EU-CONTENT (auto pages), EU-GAME (owned games). Money flows up, orders flow down
 ## 3. Resources — what exists and how YOU use it
 | resource | where | how to utilize (recipes) |
 |----------|-------|--------------------------|
-| cron (7 jobs) | scripts/cron.txt | your heartbeat — idempotent scripts only, exit 0 always, append LEDGER |
+| cron (12 jobs) | scripts/cron.txt | your heartbeat — idempotent scripts only, exit 0 always, append LEDGER |
+| 3d village | scripts/farm3d.py → local/farm3d.html | LOCAL ONLY (gitignored): CSS-3D souls, regen 08:50, open via localhost |
 | host check | scripts/host.py | know your machine: OS, cron count, disk, power; Mac sleeps = farm dies |
 | cloud escape | .github/workflows/farm.yml + scripts/cloud_run.py | free runner when Mac sleeps; commits back; secret JUICYADS_KEY optional |
 | bus | scripts/bus.py | `post FROM TO RE BODY` (≤5 lines) / `inbox YOU` daily / manifest auto-rebuilds |

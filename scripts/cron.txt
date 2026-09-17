@@ -2,6 +2,7 @@
 30 8 * * * /usr/bin/python3 "/Users/saveychauhan/Documents/Dexter/survival/scripts/reproduce.py" >> "/Users/saveychauhan/Documents/Dexter/survival/logs/cron.log" 2>&1
 35 8 * * * /usr/bin/python3 "/Users/saveychauhan/Documents/Dexter/survival/scripts/scorecard.py" >> "/Users/saveychauhan/Documents/Dexter/survival/logs/cron.log" 2>&1
 40 8 * * * /usr/bin/python3 "/Users/saveychauhan/Documents/Dexter/survival/scripts/memory.py" >> "/Users/saveychauhan/Documents/Dexter/survival/logs/cron.log" 2>&1
+50 8 * * * /usr/bin/python3 "/Users/saveychauhan/Documents/Dexter/survival/scripts/farm3d.py" >> "/Users/saveychauhan/Documents/Dexter/survival/logs/cron.log" 2>&1
 30 9 * * * /usr/bin/python3 "/Users/saveychauhan/Documents/Dexter/survival/scripts/auto_content.py" >> "/Users/saveychauhan/Documents/Dexter/survival/logs/cron.log" 2>&1
 0 12 * * * /usr/bin/python3 "/Users/saveychauhan/Documents/Dexter/survival/scripts/juicyads_stats.py" >> "/Users/saveychauhan/Documents/Dexter/survival/logs/cron.log" 2>&1
 0 21 * * * /usr/bin/python3 "/Users/saveychauhan/Documents/Dexter/survival/scripts/evening_nudge.py" >> "/Users/saveychauhan/Documents/Dexter/survival/logs/cron.log" 2>&1

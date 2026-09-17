@@ -70,6 +70,7 @@ Stale >48h = free to claim. Edit only own session file. Secrets never in session
 - 12:00 juicyads_stats.py → publisher stats → LEDGER (key verified)
 - 21:00 evening_nudge.py → funnel → LEDGER
 - Sun 17:00 health.py → full setup audit → LEDGER
+- 08:50 farm3d.py → local 3D village regen (localhost only, never committed)
 - Sun 17:30 learn.py → new rules → memory
 - Sun 18:00 weekly_review.py → KILL/SCALE → §6
 - cron live (7 jobs). logs/cron.log. sessions/OPS,TRAFFIC,MONETIZE,SCOUT,GAME-MAKER.
