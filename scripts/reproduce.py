@@ -25,6 +25,12 @@ CITIES = ["Mumbai", "Lagos", "Osaka", "São Paulo", "Berlin", "London",
           "Nairobi", "Seoul", "Cairo", "Mexico City", "Jakarta", "Madrid"]
 TRAITS = ["relentless", "curious", "playful", "meticulous", "blunt", "warm",
           "hungry", "patient", "bold", "sharp", "steady", "wild"]
+GENDERS = ["woman", "man"]
+AGES = [22, 24, 26, 28, 31, 23, 27, 30, 25, 29, 33, 21]
+LOOKS = ["ponytail and patched sneakers", "close fade and easy grin",
+         "curly hair and loud laugh", "glasses and rolled sleeves",
+         "silver bob and long coat", "scarf the color of the day",
+         "bleached streak and arcade tokens", "notebook always open"]
 UNITS = ["EU-AFF", "EU-GAME", "EU-CONTENT", "EU-ADS", "EU-JUICY", "EU-DODO"]
 MANAGERS = {"EU-AFF": "TRAFFIC", "EU-CONTENT": "TRAFFIC", "EU-GAME": "GAME-MAKER",
             "EU-ADS": "MONETIZE", "EU-JUICY": "MONETIZE", "EU-DODO": "MONETIZE"}
@@ -120,6 +126,9 @@ def main():
     i = (n - 1) % len(NAMES)
     wid, name = f"W{n:02d}", NAMES[i]
     city, trait = CITIES[(n - 1) % len(CITIES)], TRAITS[(n - 1) % len(TRAITS)]
+    gender = GENDERS[(n - 1) % len(GENDERS)]
+    age = AGES[(n - 1) % len(AGES)]
+    look = LOOKS[(n - 1) % len(LOOKS)]
     unit = UNITS[(n - 1) % len(UNITS)]
     mgr = MANAGERS[unit]
     deadline = (datetime.date.today() + datetime.timedelta(days=7)).isoformat()
@@ -133,6 +142,7 @@ def main():
         f"- persona: {city} {trait}. Believes hunger beats talent. "
         f"Likes: shipping, scoreboards. Dislikes: excuses, day-zero. "
         f"Voice: short, hungry. Quirk: reports numbers daily.\n"
+        f"- body: {gender}, {age}. {look[0].upper() + look[1:]}.\n"
         f"- claim: {unit} assist — heartbeat {datetime.date.today().isoformat()} 12:00\n"
         f"- last_output:\n"
         f"  - born {datetime.date.today().isoformat()}, assigned {unit}\n"
@@ -140,8 +150,8 @@ def main():
         f"- blocked_on: none\n"
         f"- log: {datetime.date.today().isoformat()}: born -> LEDGER\n")
     bus("OPS", wid, "born",
-        f"{name} ({city}, {trait}) assigned {unit} under {mgr}. Goal: first $1 before {deadline}. 24h first blood. NEED: none.")
-    log(f"BORN {name} ({wid}, {city}, {trait}) → {unit} under {mgr}, goal first $1 by {deadline}")
+        f"{name} ({gender}, {age}, {city}, {trait}) assigned {unit} under {mgr}. Goal: first $1 before {deadline}. 24h first blood. NEED: none.")
+    log(f"BORN {name} ({wid}, {gender}, {age}, {city}, {trait}) → {unit} under {mgr}, goal first $1 by {deadline}")
 
 
 if __name__ == "__main__":
