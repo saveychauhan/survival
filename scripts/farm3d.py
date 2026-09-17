@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""3D village generator — LOCAL ONLY, never committed, never served.
+"""3D-ish village game map — LOCAL ONLY, never committed, never served.
 Reads sessions/manifest/LEDGER/SCORECARD and writes local/farm3d.html:
-an offline CSS-3D diorama (no CDN, no internet needed). Open via
-localhost or double-click. Regenerate anytime: python3 scripts/farm3d.py
+an offline isometric canvas world (no CDN, no internet needed).
+Homes district, square, market, arena; small characters wander, click for details.
+Open via localhost or double-click. Regen: python3 scripts/farm3d.py
 Zero human work, stdlib only, exit 0 always.
 """
 import datetime
@@ -40,9 +41,11 @@ def main():
                 return a
         return name
 
-    msgs = Counter()
+    msgs, last_to = Counter(), {}
     for m in items:
-        msgs[resolve(m["from"])] += 1
+        f = resolve(m["from"])
+        msgs[f] += 1
+        last_to[f] = m["to"]
     payouts = Counter()
     try:
         for who in re.findall(r"credit EU-\w+ → (\S+)", (WS / "LEDGER.md").read_text()):
@@ -55,83 +58,121 @@ def main():
             continue
         t = p.read_text()
         aid = p.stem
+        hang = last_to.get(aid, "HOME")
+        if hang not in ("SQUARE", "MARKET", "ARENA"):
+            hang = "HOME"
         souls.append({
             "id": aid, "short": aid.split("_")[0],
-            "role": field(t, "role") or "?",
             "goal": field(t, "goal")[:90] or "?",
             "task": field(t, "next_action")[:90] or "?",
             "desire": field(t, "desires")[:90] or "?",
-            "body": field(t, "body")[:90] or "?",
             "rank": field(t, "rank") or "?",
             "msgs": msgs.get(aid, 0), "pay": payouts.get(aid, 0),
-            "color": COLORS.get(aid, "#a5b4fc"),
-            "kind": "dead" if aid in ("CLOSER",) else ("guest" if aid == "BUILDER" else "soul"),
+            "color": COLORS.get(aid, "#a5b4fc"), "hang": hang,
+            "dead": aid in ("CLOSER",),
         })
     data = {"built": datetime.datetime.now().strftime("%Y-%m-%d %H:%M"),
             "souls": souls}
-    html = TEMPLATE.replace("__DATA__", json.dumps(data))
-    OUT.write_text(html)
-    print(f"3d village: {len(souls)} souls -> local/farm3d.html (LOCAL ONLY, gitignored)")
+    OUT.write_text(TEMPLATE.replace("__DATA__", json.dumps(data)))
+    print(f"3d world: {len(souls)} souls -> local/farm3d.html (LOCAL ONLY, gitignored)")
 
 
 TEMPLATE = """<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Tomorrowland 3D — private</title>
+<title>Tomorrowland — private world</title>
 <style>
-*{box-sizing:border-box}body{margin:0;background:#050914;color:#e2e8f0;font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;overflow:hidden}
-#top{position:fixed;top:0;left:0;right:0;padding:10px 16px;background:rgba(2,6,23,.85);z-index:10;font-size:13px;color:#94a3b8}
-#top b{color:#fcd34d}
-#stage{position:fixed;inset:0;perspective:1400px;overflow:hidden}
-#world{position:absolute;left:50%;top:54%;width:0;height:0;transform-style:preserve-3d;animation:spin 90s linear infinite}
-#world.paused{animation-play-state:paused}
-@keyframes spin{from{transform:rotateX(14deg) rotateY(0)}to{transform:rotateX(14deg) rotateY(360deg)}}
-#ground{position:absolute;left:-460px;top:-460px;width:920px;height:920px;border-radius:50%;
-background:radial-gradient(circle,#0f2a1a 0%,#0b1220 55%,#050914 72%);border:2px solid #1e293b;transform:rotateX(90deg)}
-.ring{position:absolute;border:1px dashed #1e293b;border-radius:50%;transform:rotateX(90deg)}
-.node{position:absolute;width:150px;margin-left:-75px;transform-style:preserve-3d;cursor:pointer}
-.card{background:rgba(15,23,42,.94);border:2px solid;border-radius:12px;padding:8px 10px;text-align:center;font-size:12px;box-shadow:0 0 22px rgba(0,0,0,.7)}
-.card b{font-size:13px}.card small{color:#94a3b8;display:block;margin-top:2px}
-.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px}
-.alight{box-shadow:0 0 26px currentColor}
-.pole{width:3px;height:90px;margin:0 auto;background:linear-gradient(#334155,#0b1220)}
-.float{animation:bob 4s ease-in-out infinite}
-@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
-#panel{position:fixed;right:12px;top:52px;width:300px;max-height:80vh;overflow:auto;background:rgba(2,6,23,.94);border:1px solid #334155;border-radius:12px;padding:14px;font-size:13px;z-index:10}
-#panel h3{margin:0 0 6px;color:#fff}#panel p{margin:6px 0}#panel .mut{color:#94a3b8;font-size:12px}
-#panel code{background:#1e293b;padding:1px 5px;border-radius:5px;color:#fff}
-#btns{position:fixed;left:12px;bottom:12px;z-index:10}
-button{background:#1e293b;color:#e2e8f0;border:1px solid #475569;border-radius:8px;padding:8px 12px;margin-right:6px;cursor:pointer;font-size:13px}
-.hint{position:fixed;left:12px;bottom:52px;z-index:10;color:#64748b;font-size:12px}
+*{box-sizing:border-box}body{margin:0;background:#0b1526;color:#e2e8f0;font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+#top{padding:10px 16px;font-size:13px;color:#94a3b8;background:#020617}#top b{color:#fcd34d}
+#wrap{display:flex;gap:10px;padding:10px;align-items:flex-start;flex-wrap:wrap}
+canvas{background:#0e1a30;border:1px solid #1e293b;border-radius:12px;cursor:pointer;max-width:100%}
+#panel{width:290px;background:#020617;border:1px solid #334155;border-radius:12px;padding:14px;font-size:13px}
+#panel h3{margin:0 0 6px;color:#fff}#panel .mut{color:#94a3b8;font-size:12px}#panel code{background:#1e293b;padding:1px 5px;border-radius:5px;color:#fff}
+#panel p{margin:6px 0}
+button{background:#1e293b;color:#e2e8f0;border:1px solid #475569;border-radius:8px;padding:8px 12px;margin:0 6px 10px 0;cursor:pointer;font-size:13px}
+.legend{font-size:12px;color:#94a3b8;padding:0 16px 12px}
 </style></head><body>
-<div id="top"><b>TOMORROWLAND 3D</b> · <span id="meta"></span> · LOCAL ONLY — never on GitHub, never on raycast.in</div>
-<div id="stage"><div id="world"><div id="ground"></div></div></div>
-<div id="panel"><h3>Click a soul</h3><p class="mut">Green glow = active this week. Gold ring = earned money. Grey = dormant. The village spins — hover pauses it.</p></div>
-<div class="hint">drag? no. click souls. buttons below work.</div>
-<div id="btns"><button onclick="toggle()">pause / spin</button><button onclick="document.getElementById('world').style.animationDuration='20s'">fast</button><button onclick="regen()">how fresh?</button></div>
+<div id="top"><b>TOMORROWLAND</b> · <span id="meta"></span> · LOCAL ONLY — click a walker</div>
+<div id="wrap"><div><canvas id="cv" width="720" height="560"></canvas><br>
+<button onclick="paused=!paused">pause / walk</button><button onclick="night=!night">day / night</button></div>
+<div id="panel"><h3>Welcome</h3><p class="mut">10 souls live here. They walk between home and their hangout. Click one to inspect. Gold ring = earned money.</p></div></div>
+<div class="legend">Homes (left blocks) · SQUARE plaza · MARKET stalls · ARENA ring · green dot = active this week · grey = dormant</div>
 <script>
 var DATA=__DATA__;
-var world=document.getElementById('world'),panel=document.getElementById('panel');
 document.getElementById('meta').textContent='built '+DATA.built+' · '+DATA.souls.length+' souls';
-// ground rings
-[180,300,420].forEach(function(r){var d=document.createElement('div');d.className='ring';d.style.cssText='left:'+(-r)+'px;top:'+(-r)+'px;width:'+(r*2)+'px;height:'+(r*2)+'px';world.appendChild(d)});
-// places on inner ring
-[['SQUARE',0,'#fcd34d'],['MARKET',120,'#4ade80'],['ARENA',240,'#fb7185']].forEach(function(pl){
-var a=pl[1]*Math.PI/180,x=Math.cos(a)*180,z=Math.sin(a)*180;
-var n=document.createElement('div');n.className='node';n.style.transform='translate3d('+x+'px,0,'+z+'px)';
-n.innerHTML='<div class="float"><div class="card" style="border-color:'+pl[2]+'"><b>'+pl[0]+'</b><small>public place</small></div><div class="pole"></div></div>';
-n.onclick=function(){panel.innerHTML='<h3>'+pl[0]+'</h3><p class="mut">Everyone meets here. Say it on the bus: bus.py post YOU '+pl[0]+' RE BODY.</p>'};
-world.appendChild(n)});
-// souls on outer ring
-DATA.souls.forEach(function(s,i){
-var a=(i/DATA.souls.length)*Math.PI*2+i*0.35,x=Math.cos(a)*330,z=Math.sin(a)*330;
-var glow=s.pay>0?'gold':(s.msgs>0?'#22c55e':'#475569');
-var n=document.createElement('div');n.className='node';n.style.transform='translate3d('+x+'px,0,'+z+'px)';
-n.innerHTML='<div class="float" style="animation-delay:'+(i*0.3)+'s"><div class="card '+(s.msgs>0?'alight':'')+'" style="border-color:'+s.color+';color:'+glow+'"><span class="dot" style="background:'+glow+'"></span><b style="color:#fff">'+s.short+'</b><small>'+s.rank+' · $'+s.pay+' · '+s.msgs+' msgs</small></div><div class="pole"></div></div>';
-n.onmouseenter=function(){world.classList.add('paused')};n.onmouseleave=function(){world.classList.remove('paused')};
-n.onclick=function(){panel.innerHTML='<h3>'+s.id+'</h3><p><code>'+s.rank+'</code></p><p><b>Goal:</b> '+s.goal+'</p><p><b>Now:</b> '+s.task+'</p><p><b>Wants:</b> '+s.desire+'</p><p><b>Looks:</b> '+s.body+'</p><p class="mut">earned $'+s.pay+' · '+s.msgs+' messages</p>'};
-world.appendChild(n)});
-function toggle(){world.classList.toggle('paused')}
-function regen(){panel.innerHTML='<h3>Freshness</h3><p class="mut">This view is a snapshot built '+DATA.built+'. Regenerate: <code>python3 scripts/farm3d.py</code> (or wait for the 08:50 cron). The file lives at <code>local/farm3d.html</code> — gitignored, localhost only.</p>'}
+var cv=document.getElementById('cv'),ctx=cv.getContext('2d');
+var TW=34,TH=17,OX=cv.width/2,OY=70,night=false,paused=false,sel=null;
+function px(x,y){return [OX+(x-y)*TW/2,OY+(x+y)*TH/2]}
+function poly(pts,fill,stroke){ctx.beginPath();ctx.moveTo(pts[0][0],pts[0][1]);for(var i=1;i<pts.length;i++)ctx.lineTo(pts[i][0],pts[i][1]);ctx.closePath();ctx.fillStyle=fill;ctx.fill();if(stroke){ctx.strokeStyle=stroke;ctx.lineWidth=1;ctx.stroke()}}
+function shade(hex,f){var n=parseInt(hex.slice(1),16),r=(n>>16)*f,g=((n>>8)&255)*f,b=(n&255)*f;return 'rgb('+(r|0)+','+(g|0)+','+(b|0)+')'}
+// ---- static map ----
+var HOMES=[['OPS',1,1],['TRAFFIC',1,4],['MONETIZE',1,7],['SCOUT',1,10],['GAME-MAKER',4,1],['CRITIC',4,4],['W01',4,7],['W02',4,10],['+2',4,12]];
+var PLACES={SQUARE:[10,3],MARKET:[10,8],ARENA:[10,13]};
+function tile(x,y,c1,c2){var p=px(x,y),q=px(x+1,y),r=px(x+1,y+1),s=px(x,y+1);poly([p,q,r,s],((x+y)%2?c1:c2),'rgba(0,0,0,.25)')}
+function hut(x,y,color,name){var p=px(x,y),q=px(x+1,y),r=px(x+0.5,y+0.5);
+// walls
+poly([p,q,[q[0],q[1]-26],[p[0],p[1]-26]],shade(color,.55),'rgba(0,0,0,.3)');
+poly([q,r,[r[0],r[1]-26],[q[0],q[1]-26]],shade(color,.4),'rgba(0,0,0,.3)');
+// roof
+poly([[p[0],p[1]-26],[q[0],q[1]-26],[r[0]-0,r[1]-44]],shade(color,.9));
+poly([[q[0],q[1]-26],[r[0],r[1]-26],[r[0],r[1]-44]],shade(color,.7));
+ctx.fillStyle='#fff';ctx.font='10px sans-serif';ctx.textAlign='center';ctx.fillText(name,(p[0]+q[0])/2,p[1]-30)}
+function drawMap(){
+var g1=night?'#0c1830':'#14331f',g2=night?'#0a1428':'#102a1a';
+for(var x=0;x<15;x++)for(var y=0;y<15;y++)tile(x,y,g1,g2);
+// paths
+[[2,2,2,11],[5,2,5,11],[8,2,8,13]].forEach(function(L){for(var y=L[1];y<=L[3];y++)tile(L[0],y,night?'#1c2a44':'#4a3b28',night?'#1c2a44':'#4a3b28')});
+// square plaza + fountain
+var c=px(10.5,3.5);ctx.beginPath();ctx.ellipse(c[0],c[1],44,22,0,0,7);ctx.fillStyle=night?'#1e3a5f':'#3b82a6';ctx.fill();
+ctx.beginPath();ctx.ellipse(c[0],c[1]-8,12,6,0,0,7);ctx.fillStyle='#bae6fd';ctx.fill();
+ctx.fillStyle='#fff';ctx.font='10px sans-serif';ctx.textAlign='center';ctx.fillText('SQUARE',c[0],c[1]+30);
+// market stalls
+for(var i=0;i<3;i++){var s=px(9.4+i*0.7,8.2);poly([[s[0]-12,s[1]],[s[0]+12,s[1]],[s[0]+6,s[1]-14],[s[0]-6,s[1]-14]],['#ef4444','#f59e0b','#22c55e'][i]);}
+var m=px(10,9);ctx.fillStyle='#fff';ctx.fillText('MARKET',m[0],m[1]+24);
+// arena ring
+var a=px(10.5,13.3);ctx.beginPath();ctx.ellipse(a[0],a[1],46,23,0,0,7);ctx.strokeStyle='#fb7185';ctx.lineWidth=4;ctx.stroke();
+ctx.fillStyle='#fff';ctx.fillText('ARENA',a[0],a[1]+32);
+// homes
+var cols=['#f59e0b','#4ade80','#38bdf8','#c084fc','#fb7185','#f87171','#a5b4fc','#a5b4fc','#334155'];
+HOMES.forEach(function(h,i){hut(h[1],h[2],cols[i%cols.length],h[0])});
+}
+// ---- walkers ----
+var R=0.5; // deterministic pseudo-random
+function rnd(){R=(R*9301+49297)%233280;return R/233280}
+var walkers=DATA.souls.map(function(s,i){
+var hx=1+(i%2)*3,hy=1+Math.floor(i/2)*3;if(hy>12)hy=12-(i%3);
+var hp=PLACES[s.hang]||[hx,hy];
+return {s:s,hx:hx,hy:hy,tx:hp[0]+rnd()*1.5,ty:hp[1]+rnd()*1.5,x:hx,y:hy,sp:1.1+rnd()*0.9,ph:rnd()*6};
+});
+function step(dt){
+walkers.forEach(function(w){
+if(paused)return;
+var dx=w.tx-w.x,dy=w.ty-w.y,d=Math.hypot(dx,dy);
+if(d<0.15){var homeBias=rnd()<0.45;var hp=PLACES[w.s.hang]||[w.hx,w.hy];
+w.tx=homeBias?w.hx+rnd():(hp[0]+rnd()*1.6-0.3);w.ty=homeBias?w.hy+rnd():(hp[1]+rnd()*1.6-0.3);return}
+w.x+=dx/d*w.sp*dt;w.y+=dy/d*w.sp*dt;w.ph+=dt*6});
+}
+function draw(t){
+ctx.clearRect(0,0,cv.width,cv.height);drawMap();
+var order=walkers.slice().sort(function(a,b){return (a.x+a.y)-(b.x+b.y)});
+order.forEach(function(w){
+var p=px(w.x,w.y),bob=Math.sin(w.ph)*2;
+var active=w.s.msgs>0,col=active?'#22c55e':'#64748b';
+ctx.beginPath();ctx.ellipse(p[0],p[1],10,4,0,0,7);ctx.fillStyle='rgba(0,0,0,.35)';ctx.fill();
+if(w.s.pay>0){ctx.beginPath();ctx.arc(p[0],p[1]-16+bob,15,0,7);ctx.strokeStyle='#fcd34d';ctx.lineWidth=2;ctx.stroke()}
+ctx.fillStyle=w.s.color;ctx.fillRect(p[0]-6,p[1]-26+bob,12,14);
+ctx.beginPath();ctx.arc(p[0],p[1]-30+bob,6,0,7);ctx.fillStyle='#fde68a';ctx.fill();
+ctx.fillStyle=col;ctx.beginPath();ctx.arc(p[0]+8,p[1]-34+bob,3,0,7);ctx.fill();
+ctx.fillStyle='#fff';ctx.font='10px sans-serif';ctx.textAlign='center';ctx.fillText(w.s.short,p[0],p[1]-40+bob);
+w.sx=p[0];w.sy=p[1]-20+bob});
+}
+var last=0;
+function loop(t){var dt=Math.min(0.05,(t-last)/1000||0);last=t;step(dt);draw(t);requestAnimationFrame(loop)}
+requestAnimationFrame(loop);
+cv.onclick=function(e){var r=cv.getBoundingClientRect(),mx=e.clientX-r.left,my=e.clientY-r.top,best=null,bd=1e9;
+walkers.forEach(function(w){var d=Math.hypot(w.sx-mx,w.sy-my);if(d<bd){bd=d;best=w}});
+var panel=document.getElementById('panel');
+if(best&&bd<26){var s=best.s;panel.innerHTML='<h3>'+s.id+'</h3><p><code>'+s.rank+'</code></p><p><b>Goal:</b> '+s.goal+'</p><p><b>Now:</b> '+s.task+'</p><p><b>Wants:</b> '+s.desire+'</p><p><b>Hangout:</b> '+s.hang+'</p><p class="mut">earned $'+s.pay+' · '+s.msgs+' messages</p>'}
+else{panel.innerHTML='<h3>Welcome</h3><p class="mut">10 souls live here. Click one to inspect. Gold ring = earned money.</p>'}};
 </script></body></html>"""
 
 if __name__ == "__main__":
