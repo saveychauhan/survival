@@ -5,6 +5,7 @@
 - Killed: CLOSER (manual sales need hands). Parked: BUILDER (builds done).
 - Earned: ₹0 / $0. Funnel: views 0, clicks 0, payouts 0.
 - Laws added: zero human work; mantra problem→solve→help→paid→repeat; message bus; weekly learning.
+- Born later day one: GAME-MAKER (L3, owns free games, EU-GAME live), CRITIC (L3, veto power, first audit filed).
 
 - 2026-09-17: SCALER multiplied 'Yoga mat anti-skid' ×3 (long-tail variants).
 
