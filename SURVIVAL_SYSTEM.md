@@ -21,7 +21,7 @@ updated: 2026-09-17 RAYCAST by OPS | cash: ₹0 | mode: ZERO-HUMAN-WORK
 | Adsterra publisher | NEEDS AD-UNIT CODE | paste 1 ad-tag from dashboard (form on index) | auto display CPM, payouts 2×/mo from $5 (Paxum) |
 | JuicyAds | KEY VERIFIED (stats API live, 0 imps — no ad zones yet) | ad-zone tag next (form on index) | publisher banners/native/pop rev-share, weekly payouts |
 | DodoPayments | NEEDS API KEY | paste key (form on index) | automated digital checkout, payout to bank |
-| Social handles | PENDING HANDOVER | list handles (form on index) | free traffic → ads/affiliate |
+| Social handles | PARTIAL: instagram.com/raycast.in LIVE on home (2026-09-17) | TRAFFIC queues posts from it | free traffic → ads/affiliate |
 | Fiverr / Upwork | NOT USED | manual fulfillment violates Rule 1 | ₹0 — killed for farm |
 
 ## 2. EARNING UNITS (all zero-human-work)

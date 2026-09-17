@@ -4,13 +4,41 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Raycast Arcade — free games</title>
-<style>*{box-sizing:border-box}body{font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;margin:0;background:#0b1220;color:#e2e8f0;line-height:1.5}.wrap{max-width:560px;margin:0 auto;padding:24px;text-align:center}.card{background:#0f172a;border:1px solid #1e293b;border-radius:14px;padding:18px;margin:14px 0}.btn{display:inline-block;background:#22c55e;color:#052e16;font-weight:800;padding:13px 24px;border-radius:12px;text-decoration:none;margin:8px 6px 0 0;font-size:16px;border:0}.btn.line{background:transparent;color:#e2e8f0;border:2px solid #334155}.mut{color:#94a3b8;font-size:13px}a{color:#4ade80}</style>
+<meta name="description" content="Raycast Arcade: free reaction and tap games. No signup.">
+<link rel="stylesheet" href="../../morrow.css">
 </head>
-<body><div class="wrap">
-<h1>Arcade</h1>
-<p class="mut">Free. No signup. More cabinets landing as they are built.</p>
-<div class="card"><h2>Reaction Test</h2><p class="mut">5 rounds. Tap the green. Beat your best.</p><p><a class="btn" href="reaction.html">PLAY →</a></p></div>
-<div class="card"><h2>Tap Frenzy</h2><p class="mut">10 seconds. How many taps? Beat your best.</p><p><a class="btn" href="tap-frenzy.html">PLAY →</a></p></div>
-<p><a class="btn line" href="../index.html">All doors</a> <a class="btn line" href="../../index.html">Home</a></p>
-</div></body>
+<body>
+<header class="site-header"><div class="nav-inner"><div class="brand-group"><a class="brand-title" href="../../index.html">raycast</a></div><nav class="site-nav"><a href="index.html">Arcade</a><a href="../deals.html">Deals</a><a href="../pay.html">Pay</a></nav></div></header>
+<div class="container">
+<section class="hero compact">
+<div class="hero-tag">Free &middot; No signup</div>
+<h1 class="hero-heading">Arcade</h1>
+<p class="hero-sub">Free. No signup. <span class="serif">More cabinets landing</span> as they are built.</p>
+</section>
+<section class="section">
+<div class="grid2">
+<div class="card"><h2>Greenlight</h2><p class="mut">5 rounds. Tap the green. Beat your best.</p><p class="mut" id="plays-rx"></p><p><a class="btn-primary" href="reaction.html">Play</a></p></div>
+<div class="card evergreen"><h2>Tapstorm</h2><p class="mut">10 seconds. How many taps? Beat your best.</p><p class="mut" id="plays-tf"></p><p><a class="btn-secondary" href="tap-frenzy.html">Play</a></p></div>
+</div>
+</section>
+<section class="section">
+<div class="section-label">House rules</div>
+<h2 class="section-title">How the arcade works.</h2>
+<div class="grid2">
+<div class="card"><h3>No signup, ever</h3><p>Open a cabinet and play. Best scores are stored only in your browser — clear site data and they reset.</p></div>
+<div class="card"><h3>Share your score</h3><p>Every game has one-tap share links and a copy-score button. Challenge a friend to beat you.</p></div>
+<div class="card"><h3>Why games fund the farm</h3><p>Each play loads ad slots and an affiliate card. Plays turn into impressions — impressions turn into payouts.</p></div>
+<div class="card"><h3>New cabinets</h3><p>A third game ships once plays cross 50 on the current two. The winner gets cloned into variants.</p></div>
+</div>
+<p style="margin-top:20px"><a class="btn-secondary" href="../index.html">All doors</a> <a class="btn-secondary" href="../../index.html">Home</a></p>
+</section>
+<footer class="site-footer"><div>© 2026 Raycast<br>As an Amazon Associate we earn from qualifying purchases.</div><nav><a href="../../index.html">Home</a><a href="index.html">Arcade</a><a href="../deals.html">Deals</a><a href="../privacy.html">Privacy</a><a href="../terms.html">Terms</a><a href="../cookies.html">Cookies</a></nav></footer>
+</div>
+<script>
+function plays(k){try{var v=localStorage.getItem(k);return v===null?0:JSON.parse(v)}catch(e){return 0}}
+var rx=plays('rx_plays'),tf=plays('tf_plays');
+document.getElementById('plays-rx').textContent=rx+(rx===1?' play':' plays')+' on this device';
+document.getElementById('plays-tf').textContent=tf+(tf===1?' play':' plays')+' on this device';
+</script>
+</body>
 </html>

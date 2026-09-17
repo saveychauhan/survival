@@ -168,3 +168,69 @@
 ### 2026-09-17 reproduce - BORN HYPE (L3, Nairobi, 25) child of OPS×CRITIC → marketing under TRAFFIC, goal share-hooks live in 24h (Savey order)
 
 ### 2026-09-17 content - deals rebuilt (9 blocks, tag=dexter03d-21) -> docs/online/deals.html
+
+### 2026-09-17 BRUTALIST-TELEMETRY - docs/index.html + farm.html rebuilt Tactical Telemetry dark (#0A0A0A/#EAEAEA/#FF2A2A, mono+black macro, grid gap:1px, scanlines+noise, 0 radius). Tags preserved: Adsterra live, JUICYADS slot, dexter03d-21, UPI+PayPal. JS IDs intact.
+
+### 2026-09-17 content - deals rebuilt (9 blocks, tag=dexter03d-21) -> docs/online/deals.html
+
+### 2026-09-17 BRUTALIST-ALL - all 8 pages Tactical Telemetry dark: deals+pay+online-index+arcade+reaction+tap-frenzy. auto_content.py template updated (rebuild-safe). Game JS IDs intact, green reserved for GO/LIVE signal only.
+
+### 2026-09-17 content - deals rebuilt (9 blocks, tag=dexter03d-21) -> docs/online/deals.html
+
+### 2026-09-17 SPACEX-MINIMAL - all 8 pages stripped to clean black (#000/#fff, Inter light, thin lines, breathing room). Removed scanlines/noise/stripes/red harsh/mono-caps. Ads + aff + game JS intact. auto_content.py rebuild-safe.
+
+### 2026-09-17 content - deals rebuilt (9 blocks, tag=dexter03d-21) -> docs/online/deals.html
+
+### 2026-09-17 GLOBAL-HF - site-header (RAYCAST + Arcade/Deals/Pay) + site-footer (© + nav + disclosure) on all 8 pages. Relative paths fixed per depth. auto_content.py template updated.
+
+### 2026-09-17 content - deals rebuilt (9 blocks, tag=dexter03d-21) -> docs/online/deals.html
+
+### 2026-09-17 MORROW-THEME - all 8 pages on Morrow system (docs/morrow.css + docs/fonts/ 6 local woff2). Bricolage display / DM Sans UI / Instrument Serif accents / Caveat hand. Sage canvas #f3f7f0, pine #193e2b. Ads + dexter03d-21 + UPI/PayPal + game/farm JS intact. auto_content.py rebuild-safe.
+
+### 2026-09-17 MORROW-COLORFIX - tinted-card buttons fixed (evergreen: celery solid/ghost 8.2:1; lavender: plum solid/ghost 7.2:1; lavender body plum). Storefront deals card readable.
+
+### 2026-09-17 CONTENT-FILL - all 8 pages filled (honest, zero-fake): storefront how-it-works+FAQ, deals guide+FAQ via template, pay after-pay+FAQ, directory doors, arcade house rules, both games how-to+ranks, farm legend. Hooks+JS intact.
+
+### 2026-09-17 COMPACT-HERO - game pages (reaction, tap-frenzy, arcade) use .hero.compact (24px padding, smaller heading) so the playable pad sits near the top.
+
+### 2026-09-17 GAME-CABINET - reaction.html redesigned as arcade cabinet (evergreen bezel, light screen, 240px pad, pulsing wait / green go, 56px score, rank pills, styled play-again, handwritten tip). Fixed unstyled .rank + .btn JS output globally. Hooks+JS intact.
+
+### 2026-09-17 NO-HERO - reaction.html hero block removed per Savey; cabinet is the top. Title/meta kept for SEO.
+
+### 2026-09-17 AD-UNDER-GAME - reaction.html Adsterra block moved to just under the cabinet per Savey. Script byte-identical.
+
+### 2026-09-17 GAME-FEEL - reaction.html upgraded: round dots, per-round history, WebAudio beeps (go/tap/foul/new-best fanfare), mobile vibration, SPACE/ENTER play, foul shake, honesty fix (foul restarts run). JS syntax-checked.
+
+### 2026-09-17 CABINET-BOX - game box improved: marquee title strip, readable celery START button + helper text (were low-contrast pine/gray on green), inset screen depth, top highlight.
+
+### 2026-09-17 NO-GREEN-BOX - green bezel dropped per Savey; cabinet is now a clean white Morrow card (pine marquee + button, sage screen). Pad states/sounds/JS untouched.
+
+### 2026-09-17 RESTRUCTURE - reaction cabinet: best score lives in header as a chip, Start + hint share one controls row, screen flattened (no nested box). Copy unified (fouls lose the run).
+
+### 2026-09-17 TAPGAME-STYLE - both games on dark arcade stage (tapgame.app-like): full-bleed tap zone, tap ripples, pop/count-up animations, best chips, big pill Start. Reaction: animated score count-up. Frenzy: live taps/sec, draining time bar, countdown beeps, rising tap pitch. Small UI, transform-only anims. JS syntax-checked, hooks intact.
+
+### 2026-09-17 GREENLIGHT - reaction game named Greenlight (title, meta, marquee, share copy, arcade card). URL unchanged.
+
+### 2026-09-17 TAPSTORM - tap game matched to Greenlight treatment: named Tapstorm, SVG sound toggle (persisted), SPACE/ENTER taps, tap hint on pad, share copy + arcade/directory cards renamed. URL unchanged. JS syntax-checked.
+
+### 2026-09-17 PLAYS-TOP - plays-on-device counter moved to stage top on both games (was footer); arcade cards show per-game plays from localStorage.
+
+### 2026-09-17 INSTAGRAM - instagram.com/raycast.in live on home (support card, autonomous section, FAQ, footer, JSON-LD sameAs). REQUESTS + SYSTEM social rows updated (queue still open).
+
+### 2026-09-17 GEO-AMZ - shop links replaced with Savey's tag link (linkId 1ad1fede) + docs/amz.js swaps amazon domain by visitor country (timezone→lang, default .in). Live on home/affiliates/deals(+template). Tested US→.com.
+
+### 2026-09-17 LEGAL - privacy/terms/cookies pages live (honest: no accounts, localStorage scores, third-party ad/affiliate cookies, voluntary payments). Linked in all 11 footers + sitemap.
+
+### 2026-09-17 content - deals rebuilt (9 blocks, tag=dexter03d-21) -> docs/online/deals.html
+
+### 2026-09-17 content - deals rebuilt (9 blocks, tag=dexter03d-21) -> docs/online/deals.html
+
+### 2026-09-17 content - deals rebuilt (9 blocks, tag=dexter03d-21) -> docs/online/deals.html
+
+### 2026-09-17 content - deals rebuilt (9 blocks, tag=dexter03d-21) -> docs/online/deals.html
+
+### 2026-09-17 content - deals rebuilt (9 blocks, tag=dexter03d-21) -> docs/online/deals.html
+
+### 2026-09-17 content - deals rebuilt (9 blocks, tag=dexter03d-21) -> docs/online/deals.html
+
+### 2026-09-17 content - deals rebuilt (9 blocks, tag=dexter03d-21) -> docs/online/deals.html

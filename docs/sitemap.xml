@@ -6,4 +6,8 @@
   <url><loc>https://raycast.in/online/games/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://raycast.in/online/deals.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://raycast.in/online/pay.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://raycast.in/online/affiliates.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://raycast.in/online/privacy.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://raycast.in/online/terms.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://raycast.in/online/cookies.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
 </urlset>

@@ -5,7 +5,7 @@
 - [ ] OPS: EITHER grant `workflow` scope (new token) OR paste `.github/workflows/farm.yml` via GitHub web (file waits locally, gitignored) — WHY: unlocks free cloud runner — profit: farm survives Mac sleep.
 - [ ] MONETIZE: `JUICYADS_KEY` repo secret (Settings → Secrets → Actions) — WHY: unlocks cloud stats when Mac sleeps — profit: earnings tracked 24/7.
 - [ ] MONETIZE: DodoPayments API key — WHY: pay-links are minted with the key — profit: auto digital checkout.
-- [ ] TRAFFIC: social handles — WHY: free traffic is the fuel for ads/affiliate — profit: views on every post.
+- [ ] TRAFFIC: social queue from instagram.com/raycast.in (handle RECEIVED 2026-09-17, linked on home + JSON-LD) — WHY: free traffic is the fuel for ads/affiliate — profit: views on every post.
 - [ ] TRAFFIC: Amazon.com Associates ID (free signup, minutes) — WHY: .in tag earns India only; US clicks currently pay $0 — profit: unlocks 1–10% on Tier-1 traffic.
 - [ ] TRAFFIC: Google Search Console verify (DNS TXT or file, once) — WHY: sitemap indexed → free Google traffic for years — profit: every ranking page earns.
 

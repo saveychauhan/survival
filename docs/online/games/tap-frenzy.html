@@ -3,49 +3,70 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Tap Frenzy — 10 seconds, how many taps?</title>
-<meta name="description" content="Free 10-second tap challenge by the Raycast agent farm. No signup. Beat your best.">
-<style>*{box-sizing:border-box}body{font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;margin:0;background:#0b1220;color:#e2e8f0;line-height:1.5}.wrap{max-width:560px;margin:0 auto;padding:16px}.card{background:#0f172a;border:1px solid #1e293b;border-radius:14px;padding:16px;margin:12px 0;text-align:center}.pad{border-radius:16px;padding:70px 20px;font-size:26px;font-weight:800;cursor:pointer;user-select:none;-webkit-user-select:none;margin:12px 0;border:3px solid #22c55e;background:#052e16;color:#bbf7d0}.pad.live{background:#15803d;border-color:#4ade80;color:#fff}.pad.done{background:#1e293b;border-color:#334155;color:#94a3b8}.btn{display:inline-block;background:#22c55e;color:#052e16;font-weight:800;padding:12px 22px;border-radius:10px;border:0;cursor:pointer;font-size:17px;margin:6px;text-decoration:none}.btn.line{background:transparent;color:#e2e8f0;border:2px solid #334155;font-size:14px;padding:9px 15px}.mut{color:#94a3b8;font-size:13px}a{color:#4ade80}.score{font-size:52px;font-weight:800;color:#4ade80}.rank{font-size:18px;color:#fcd34d;font-weight:800}.aff{background:#451a03;border:1px solid #f59e0b;border-radius:12px;padding:12px;margin:12px 0;text-align:center}.aff a{color:#fcd34d;font-weight:800}</style>
+<title>Tapstorm — 10 seconds, how many taps?</title>
+<meta name="description" content="Tapstorm is a free 10-second tap challenge by the Raycast agent farm. No signup. Beat your best.">
+<link rel="stylesheet" href="../../morrow.css">
 </head>
 <body>
-<div class="wrap">
+<header class="site-header"><div class="nav-inner"><div class="brand-group"><a class="brand-title" href="../../index.html">raycast</a></div><nav class="site-nav"><a href="index.html">Arcade</a><a href="../deals.html">Deals</a><a href="../pay.html">Pay</a></nav></div></header>
+<div class="container">
+<div class="stage" style="margin-top:20px">
+<div class="stage-top"><span class="stage-title">Tapstorm</span><span class="stage-side"><span class="row"><span class="best-chip dark" id="best">No best yet</span><button class="icon-btn" id="sndbtn" aria-label="Toggle sound"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="currentColor" stroke="none"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg></button></span><span class="stage-plays" id="plays"></span></span></div>
+<div class="tbar"><i id="tbarfill"></i></div>
+<div class="tzone" id="pad"><span id="padcount">Tap START below or press SPACE</span><span class="padhint hand" id="cheer" style="display:none">faster… faster… ✳</span></div>
+<div id="out"></div>
+<p class="tps" id="tps"></p>
+<div class="controls" style="margin-top:16px"><button class="btn-go" id="start">Start</button></div>
+<p class="hand" style="text-align:center;margin:12px 0 0">every tap counts — no fouls here ✳</p>
+</div>
 <!-- ADSTERRA native live 2026-09-17 -->
-<div id="ad-top">
+<div id="ad-top" class="adbox">
 <script async="async" data-cfasync="false" src="https://pl31381240.profitableratecpmnetwork.com/9e768ff94aeda27c1956ea7de2623983/invoke.js"></script>
 <div id="container-9e768ff94aeda27c1956ea7de2623983"></div>
 </div>
-
 <div class="card">
-<h1 style="margin:0">Tap Frenzy</h1>
-<p class="mut">10 seconds. Tap the pad as fast as you can.</p>
-<div class="pad" id="pad">Tap START below</div>
-<p><button class="btn" id="start">START</button></p>
-<div id="out"></div>
-<p class="mut" id="best"></p>
+<p><a class="btn-secondary" href="https://twitter.com/intent/tweet?text=I%20played%20Tapstorm%20%E2%80%94%2010-second%20tap%20challenge%2C%20free&url=https%3A%2F%2Fraycast.in%2Fonline%2Fgames%2Ftap-frenzy.html">Share on X</a> <a class="btn-secondary" href="https://wa.me/?text=I%20played%20Tapstorm%20%E2%80%94%2010-second%20tap%20challenge%2C%20free%20https%3A%2F%2Fraycast.in%2Fonline%2Fgames%2Ftap-frenzy.html">WhatsApp</a> <a class="btn-secondary" href="https://www.reddit.com/submit?url=https%3A%2F%2Fraycast.in%2Fonline%2Fgames%2Ftap-frenzy.html&title=Tapstorm%20%E2%80%94%2010-second%20tap%20challenge%2C%20free">Reddit</a> <button class="btn-secondary" onclick="copyScore()">Copy my score</button></p>
 </div>
-
-<p><a class="btn line" href="https://twitter.com/intent/tweet?text=I%20tapped%20into%20a%20frenzy%20in%2010%20seconds%20%E2%80%94%20free%20game&url=https%3A%2F%2Fraycast.in%2Fonline%2Fgames%2Ftap-frenzy.html">Share on X</a> <a class="btn line" href="https://wa.me/?text=I%20tapped%20into%20a%20frenzy%20in%2010%20seconds%20%E2%80%94%20free%20game%20https%3A%2F%2Fraycast.in%2Fonline%2Fgames%2Ftap-frenzy.html">WhatsApp</a> <a class="btn line" href="https://www.reddit.com/submit?url=https%3A%2F%2Fraycast.in%2Fonline%2Fgames%2Ftap-frenzy.html&title=10-second%20tap%20challenge%20%E2%80%94%20how%20many%20taps%3F">Reddit</a> <button class="btn line" onclick="copyScore()">Copy my score</button></p>
-
-<div class="aff">Fingers faster than your mouse? <a href="https://www.amazon.in/s?k=gaming+mouse+under+1000&tag=dexter03d-21" rel="nofollow sponsored noopener">Gaming mice under ₹1000 →</a><br><span class="mut">As an Amazon Associate we earn from qualifying purchases.</span></div>
-
+<div class="card lavender">Fingers faster than your mouse? <a href="https://www.amazon.in/s?k=gaming+mouse+under+1000&tag=dexter03d-21" rel="nofollow sponsored noopener">Gaming mice under ₹1000</a><br><span class="mut">As an Amazon Associate we earn from qualifying purchases.</span></div>
+<section class="section">
+<div class="section-label">How to play</div>
+<h2 class="section-title">Ten seconds. Tap everything.</h2>
+<div class="grid2">
+<div class="card"><h3>1. Press start</h3><p>The pad wakes up and a 10-second clock starts ticking.</p></div>
+<div class="card"><h3>2. Tap as fast as you can</h3><p>Every tap counts. Use two fingers, alternate hands — anything goes.</p></div>
+<div class="card"><h3>3. Beat your best</h3><p>Your top tap count is saved on your device. Share it and challenge someone faster.</p></div>
+<div class="card"><h3>On phones</h3><p>Lay the phone flat so it doesn't slide. Short, light taps beat hard slaps.</p></div>
+</div>
+</section>
+<section class="section">
+<div class="section-label">Ranks</div>
+<h2 class="section-title">What your count means.</h2>
+<table class="exp"><tr><th>Taps</th><th>Rank</th></tr><tr><td>80 and up</td><td>Inhuman</td></tr><tr><td>60–79</td><td>Beast</td></tr><tr><td>45–59</td><td>Sharp</td></tr><tr><td>30–44</td><td>Warming up</td></tr><tr><td>Under 30</td><td>Half asleep</td></tr></table>
+</section>
 <!-- JUICYADS: paste ad-zone tag below after site approval (index form) -->
-<div id="ad-bottom"></div>
-
-<p class="mut" style="text-align:center"><span id="plays"></span> • <a href="./index.html">Arcade</a> • <a href="../../index.html">Home</a> • <a href="../deals.html">Deals</a><br>© 2026 Raycast — made by AI agents</p>
+<div id="ad-bottom" class="adbox"></div>
+<footer class="site-footer"><div><a href="./index.html">Arcade</a> · <a href="../../index.html">Home</a> · <a href="../deals.html">Deals</a><br>© 2026 Raycast · As an Amazon Associate we earn from qualifying purchases.</div><nav><a href="../../index.html">Home</a><a href="../deals.html">Deals</a><a href="./index.html">Arcade</a><a href="../pay.html">Pay</a><a href="../privacy.html">Privacy</a><a href="../terms.html">Terms</a><a href="../cookies.html">Cookies</a></nav></footer>
 </div>
 <script>
-var pad=document.getElementById('pad'),start=document.getElementById('start'),out=document.getElementById('out'),bestEl=document.getElementById('best');
-var taps=0,timer=null,left=10,state='idle';
+var pad=document.getElementById('pad'),padcount=document.getElementById('padcount'),start=document.getElementById('start'),out=document.getElementById('out'),bestEl=document.getElementById('best'),tpsEl=document.getElementById('tps'),tbar=document.getElementById('tbarfill');
+var taps=0,timer=null,left=10,state='idle',stamps=[],lastCount=0,AC=null,muted=get('tf_muted',false),sndbtn=document.getElementById('sndbtn'),cheer=document.getElementById('cheer');
 function get(k,d){try{var v=localStorage.getItem(k);return v===null?d:JSON.parse(v)}catch(e){return d}}
 function set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
 function rank(c){if(c>=80)return'INHUMAN';if(c>=60)return'BEAST';if(c>=45)return'SHARP';if(c>=30)return'WARMING UP';return'HALF ASLEEP'}
-function showBest(){var b=get('tf_best',null);bestEl.textContent=b?(b+' taps — beat it.'):'No best yet. Set one.'}
+function tone(f,d,type,g){if(muted)return;try{AC=AC||new(window.AudioContext||window.webkitAudioContext)();var o=AC.createOscillator(),gn=AC.createGain();o.type=type||'sine';o.frequency.value=f;gn.gain.value=g||.05;o.connect(gn);gn.connect(AC.destination);var t=AC.currentTime;gn.gain.setValueAtTime(gn.gain.value,t);gn.gain.exponentialRampToValueAtTime(.0001,t+d);o.start(t);o.stop(t+d)}catch(e){}}
+function spawn(e){try{var r=pad.getBoundingClientRect(),x=(e.clientX||r.left+r.width/2)-r.left,y=(e.clientY||r.top+r.height/2)-r.top,s=document.createElement('span');s.className='ripple';s.style.left=x+'px';s.style.top=y+'px';pad.appendChild(s);setTimeout(function(){s.remove()},600)}catch(err){}}
+function showBest(){var b=get('tf_best',null);bestEl.textContent=b?(b+' TAPS — BEAT IT'):'NO BEST YET'}
+var SVG_ON='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="currentColor" stroke="none"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>';
+var SVG_OFF='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="currentColor" stroke="none"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>';
+function drawSnd(){sndbtn.innerHTML=muted?SVG_OFF:SVG_ON}
+sndbtn.onclick=function(e){e.stopPropagation();muted=!muted;set('tf_muted',muted);drawSnd();if(!muted)tone(660,.08)};
 function bumpPlays(){var p=get('tf_plays',0)+1;set('tf_plays',p);document.getElementById('plays').textContent=p+(p===1?' play':' plays')+' on this device'}
-function copyScore(){var b=get('tf_best',null),t=b?('I tapped '+b+' times in 10 seconds. Beat me: https://raycast.in/online/games/tap-frenzy.html'):'Tap Frenzy: https://raycast.in/online/games/tap-frenzy.html';if(navigator.clipboard)navigator.clipboard.writeText(t).then(function(){alert('Copied — paste anywhere.')});else prompt('Copy:',t)}
-pad.onclick=function(){if(state!=='live')return;taps++;pad.textContent=taps;if(navigator.vibrate)try{navigator.vibrate(8)}catch(e){}};
-start.onclick=function(){if(state==='live')return;taps=0;left=10;state='live';out.innerHTML='';start.style.display='none';pad.className='pad live';pad.textContent='0';
-timer=setInterval(function(){left--;if(left<=0){clearInterval(timer);state='idle';pad.className='pad done';var prev=get('tf_best',null),tag=(prev===null||taps>prev)?'NEW BEST!':'Best stays '+prev;if(prev===null||taps>prev)set('tf_best',taps);out.innerHTML='<div class="score">'+taps+' taps</div><div class="rank">'+rank(taps)+' — '+tag+'</div><p><button class="btn" onclick="location.reload()">PLAY AGAIN</button></p>';pad.textContent='Done. '+taps+' taps.';showBest();start.style.display='none'}},1000)};
-showBest();bumpPlays();
+function copyScore(){var b=get('tf_best',null),t=b?('My Tapstorm score is '+b+' taps in 10 seconds. Beat me: https://raycast.in/online/games/tap-frenzy.html'):'Tapstorm — 10-second tap challenge: https://raycast.in/online/games/tap-frenzy.html';if(navigator.clipboard)navigator.clipboard.writeText(t).then(function(){alert('Copied — paste anywhere.')});else prompt('Copy:',t)}
+pad.onclick=function(e){if(state!=='live')return;taps++;padcount.textContent=taps;pad.classList.remove('pop');void pad.offsetWidth;pad.classList.add('pop');spawn(e||{});tone(500+Math.min(400,taps*4),.03,'triangle',.025);var now=Date.now();stamps.push(now);stamps=stamps.filter(function(s){return now-s<500});tpsEl.textContent=(stamps.length*2)+' TAPS/SEC';if(navigator.vibrate)try{navigator.vibrate(5)}catch(err){}};
+start.onclick=function(){if(state==='live')return;taps=0;stamps=[];lastCount=0;left=10;state='live';out.innerHTML='';tpsEl.textContent='';cheer.style.display='none';start.style.display='none';pad.className='tzone live';padcount.textContent='0';tbar.style.width='100%';tone(440,.1);
+timer=setInterval(function(){left--;tbar.style.width=(left*10)+'%';var sec=taps-lastCount;lastCount=taps;if(left>0)cheer.style.display=sec<3?'block':'none';if(left<=3&&left>0)tone(660,.08);if(left<=0){clearInterval(timer);cheer.style.display='none';state='idle';pad.className='tzone done';var prev=get('tf_best',null),isBest=(prev===null||taps>prev),tag=isBest?'NEW BEST!':'Best stays '+prev;if(isBest){set('tf_best',taps);tone(660,.1);setTimeout(function(){tone(880,.12)},110);setTimeout(function(){tone(1174,.18)},230);if(navigator.vibrate)try{navigator.vibrate([30,50,30])}catch(err){}}out.innerHTML='<div class="score">'+taps+' taps</div><div class="rank">'+rank(taps)+' — '+tag+'</div><p><button class="btn" onclick="location.reload()">PLAY AGAIN</button></p>';padcount.textContent='Done. '+taps+' taps.';tpsEl.textContent=(taps/10).toFixed(1)+' AVG TAPS/SEC';showBest();start.style.display='none'}},1000)};
+document.addEventListener('keydown',function(e){if(e.code!=='Space'&&e.code!=='Enter')return;if(e.target&&/INPUT|TEXTAREA|SELECT/.test(e.target.tagName))return;if(e.target&&e.target.tagName==='BUTTON'&&e.target!==start)return;e.preventDefault();if(start.style.display!=='none'){start.click()}else{pad.onclick({})}});
+showBest();bumpPlays();drawSnd();
 </script>
 </body>
 </html>
