@@ -1,4 +1,4 @@
-# TODAY.md — 2026-09-17 | PASSIVE FARM | ₹0 spend | ZERO HUMAN WORK
+# TODAY.md — 2026-09-17 | TOMORROWLAND | ₹0 spend | ZERO HUMAN WORK
 Inbound: UPI `saveychauhan@ybl` + PayPal `@saveychauhan` | Paid tools: OFF
 
 ## 1. Rule

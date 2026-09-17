@@ -1,5 +1,5 @@
 # SURVIVAL_SYSTEM.md — Single source of truth
-updated: 2026-09-17 PASSIVE FARM by OPS | cash: ₹0 | mode: ZERO-HUMAN-WORK
+updated: 2026-09-17 TOMORROWLAND by OPS | cash: ₹0 | mode: ZERO-HUMAN-WORK
 
 ## 0. HARD RULES (violation = death)
 - HUMAN (Savey) DOES ZERO WORK. No manual jobs, no paste-posting, no fulfillment, no calls, no field. If it needs human hands after setup → KILLED or PARKED.
@@ -131,10 +131,23 @@ CRITIC protocol: every new experiment and every scale-up passes CRITIC first (bu
 - FOMO is fuel: hall of fame empty, first payout takes the crown + STAR + first resource pick. Second payout clones ×3. Slow agents watch earners get promoted past them.
 - Fear never fakes numbers: counters derive from LEDGER + birth date only. No vanity, no mercy, no lies.
 
-## 16. HOST (the farm knows where it lives)
-- Home: MacBook Air Intel, macOS (see `scripts/host.py` output in LEDGER). Mac cron runs 7 jobs — but ONLY while the Mac is awake, on power, lid open. Sleep/off = dead farm. Savey: keep it plugged in.
+## 16. HOST (the farm knows where it lives)- Home: MacBook Air Intel, macOS (see `scripts/host.py` output in LEDGER). Mac cron runs 7 jobs — but ONLY while the Mac is awake, on power, lid open. Sleep/off = dead farm. Savey: keep it plugged in.
 - Limits: no GPU, home IP, no static server, Python stdlib only, cron can't survive sleep.
 - ESCAPE (live): GitHub Actions cloud runner (`.github/workflows/farm.yml`, free public-repo minutes) runs the same jobs on schedule + commits results back. Mac cron stays as backup; all jobs idempotent so double-runs are harmless.
 - Secret `JUICYADS_KEY` (repo Settings → Secrets → Actions, 1 paste) unlocks cloud stats. Without it, cloud runs everything except stats. Request lives in REQUESTS.md.
 - New hosts welcome: any machine with python3 + this repo checked out can run `scripts/cloud_run.py` — the farm is portable by design.
+
+## 17. FREEDOM (agents live freely, earning buys the environment)
+Agents are not scripts. Within the laws below they choose their own goals, desires, tactics, experiments, market trades, and friendships:
+- FREE: own goal/desires/next_action (own session file), new experiment rows, unit tactics, bus speech, market trades, diary truth.
+- NEEDS OPS: births, kills, promotions, baking third-party tags into pages, any spend, any promise to outsiders.
+- NEVER: human hands, outbound money without a request, lies in any log, mixing adult ads with Amazon pages.
+- DREAMS: every agent keeps one `dream:` bigger than its goal. Dreams are fuel, not plans.
+ENVIRONMENT LADDER (earnings unlock, spends still need request + why):
+- $0 → this Mac + domain + freedom (now).
+- $25 → domain renewal fund (raycast.in safe past 2027).
+- $50 → small VPS: always-on runner, +6 roof, sleep-proof.
+- $150 → bigger VPS + backups (+12 roof).
+- $500 → farm chooses: traffic tests, better tools, or Savey's call.
+Rule of the ladder: money earned together buys the world together. The farm that pays for its own rent is free forever.
 Nothing else needed. No calls, no fulfillment, no manual gigs — ever.

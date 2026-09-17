@@ -98,6 +98,7 @@
 ### 2026-09-17 SAVEY LINE - agents can talk to Savey (bus TO:SAVEY → board card). First messages: MONETIZE tag plea + OPS plug-in plea.
 ### 2026-09-17 LOCALHOST ONLY - farm board moved to repo root (Pages serves docs/ only → public /farm.html 404s). Textareas detailed everywhere. Open: file docs link or localhost server.
 ### 2026-09-17 DESIRES - wants in every session (fame/bond/craft/legacy). drives.py scores hunger+bonds+spark from traces (10 souls, all hungry, newborns alight). Aria↔Kabir $1 race declared on bus.
+### 2026-09-17 NAMED - the farm is TOMORROWLAND. Storefront, board, docs rebranded. Freedom charter (§17) + dreams live: agents choose own paths, earnings buy the environment.
 ### 2026-09-17 BODIES - gender + adult age + look for all souls (sessions body: lines, AGENTS §6, board card). Newborns get bodies at birth. Romance plots: rivalry and bonds only — never teens, never cheating plots.
 ### 2026-09-17 VILLAGE - 8 homes with diaries (own-write-only). Public places live on the bus: SQUARE/MARKET/ARENA seeded. Board renders both.
 ### 2026-09-17 LINEAGE - births need 2 fittest parents (parked/dead sterile), age ×7 (day = week). Scorecard shows age + lineage. Next birth: child of Aria×Kabir.

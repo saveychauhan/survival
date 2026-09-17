@@ -1,4 +1,4 @@
-# Survival Farm — passive, receive-only
+# Tomorrowland — passive, receive-only
 Inbound: UPI `saveychauhan@ybl` + PayPal `@saveychauhan`. OUTBOUND SPEND ₹0. Human work: ZERO.
 
 ## Files
